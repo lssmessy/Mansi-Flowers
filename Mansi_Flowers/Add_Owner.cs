@@ -71,6 +71,7 @@ namespace Mansi_Flowers
             dtbl = new DataTable();
             dtbl.Columns.Add("OwnerName");
             dtbl.Columns.Add("Contact_Number");
+            
             dtbl.Columns.Add("Address");
             dataGridView1.DataSource = dtbl;
         }
@@ -123,6 +124,7 @@ namespace Mansi_Flowers
         {
             DataRow row = dtbl.NewRow();
             dtbl.Rows.Add(row);
+            dtbl.Columns["Contact_Number"].MaxLength = 10;
             dataGridView1.Refresh();
         }
 
@@ -133,6 +135,11 @@ namespace Mansi_Flowers
                 if (!row.IsNewRow)
                     dataGridView1.Rows.Remove(row);
             }
+        }
+
+        private void dataGridView1_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        {
+
         }
     }
 }

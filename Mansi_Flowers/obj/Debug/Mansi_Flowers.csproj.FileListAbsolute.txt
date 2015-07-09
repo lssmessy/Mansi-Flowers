@@ -10,3 +10,15 @@ c:\users\pritesh.patel\documents\visual studio 2012\Projects\Mansi_Flowers\Mansi
 c:\users\pritesh.patel\documents\visual studio 2012\Projects\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Add_Owner.resources
 C:\Users\pritesh.patel\Documents\Visual Studio 2012\Projects\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.View_Owners.resources
 C:\Users\pritesh.patel\Documents\Visual Studio 2012\Projects\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.PrintDoc.resources
+D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\bin\Debug\Mansi_Flowers.exe.config
+D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.exe
+D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.pdb
+D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\bin\Debug\Mansi_Flowers.exe
+D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\bin\Debug\Mansi_Flowers.pdb
+D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.csprojResolveAssemblyReference.cache
+D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Add_Owner.resources
+D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Form1.resources
+D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.PrintDoc.resources
+D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Properties.Resources.resources
+D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.View_Owners.resources
+D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.csproj.GenerateResource.Cache
