@@ -1,6 +1,6 @@
 ﻿namespace Mansi_Flowers
 {
-    partial class View_Owners
+    partial class Delete_Owner
     {
         /// <summary>
         /// Required designer variable.
@@ -35,9 +35,9 @@
             this.Contact_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -51,10 +51,10 @@
             this.OwnerName,
             this.Contact_Number,
             this.Address});
-            this.dataGridView1.Location = new System.Drawing.Point(1, 44);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 38);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(448, 227);
-            this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.TabIndex = 6;
             // 
             // ID
             // 
@@ -76,16 +76,6 @@
             this.Address.HeaderText = "Address";
             this.Address.Name = "Address";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(170, 277);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Print";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // printDialog1
             // 
             this.printDialog1.UseEXDialog = true;
@@ -93,39 +83,51 @@
             // textBox1
             // 
             this.textBox1.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.textBox1.Location = new System.Drawing.Point(12, 11);
+            this.textBox1.Location = new System.Drawing.Point(23, 5);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(233, 20);
-            this.textBox1.TabIndex = 5;
+            this.textBox1.TabIndex = 8;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.textBox1_ControlRemoved);
-            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
-            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
-            this.textBox1.Move += new System.EventHandler(this.textBox1_Move);
+            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter_1);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Tomato;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(466, 38);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(156, 77);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Delete ";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(261, 277);
+            this.button2.BackColor = System.Drawing.Color.Silver;
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(466, 131);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Close";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.button2.Size = new System.Drawing.Size(156, 77);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Cancel";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // View_Owners
+            // Delete_Owner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.button2;
-            this.ClientSize = new System.Drawing.Size(449, 303);
+            this.ClientSize = new System.Drawing.Size(627, 267);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "View_Owners";
-            this.Text = "View_Owners";
-            this.Load += new System.EventHandler(this.View_Owners_Load);
+            this.Controls.Add(this.textBox1);
+            this.Name = "Delete_Owner";
+            this.Text = "Delete_Owner";
+            this.Load += new System.EventHandler(this.Delete_Owner_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -135,15 +137,14 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn OwnerName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Contact_Number;
         private System.Windows.Forms.DataGridViewTextBoxColumn Address;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-
     }
 }

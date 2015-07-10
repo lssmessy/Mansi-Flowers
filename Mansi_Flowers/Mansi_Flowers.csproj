@@ -59,11 +59,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Add_Lilies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Lilies.Designer.cs">
+      <DependentUpon>Add_Lilies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Add_Owner.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Add_Owner.Designer.cs">
       <DependentUpon>Add_Owner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Delete_Owner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Delete_Owner.Designer.cs">
+      <DependentUpon>Delete_Owner.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -91,8 +103,14 @@
     <Compile Include="View_Owners.Designer.cs">
       <DependentUpon>View_Owners.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Add_Lilies.resx">
+      <DependentUpon>Add_Lilies.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Add_Owner.resx">
       <DependentUpon>Add_Owner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Delete_Owner.resx">
+      <DependentUpon>Delete_Owner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

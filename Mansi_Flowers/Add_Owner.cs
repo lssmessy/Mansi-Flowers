@@ -38,14 +38,18 @@ namespace Mansi_Flowers
                     cmd.Connection = conn;
                     conn.Open();
                     cmd.CommandText = ("INSERT INTO owner_master(OwnerName,Contact_Number,Address) VALUES ('" + dataGridView1.Rows[i].Cells["OwnerName"].Value + "','" + dataGridView1.Rows[i].Cells["Contact_Number"].Value + "','" + dataGridView1.Rows[i].Cells["Address"].Value + "')");
-                    //cmd.CommandText = ("INSERT INTO owner_master(OwnerName,Contact_Number,Address) VALUES ('" + dataGridView1.Rows[i].Cells["OwnerName"].Value + "','" + dataGridView1.Rows[i].Cells["Contact_Number"].Value + "','" + dataGridView1.Rows[i].Cells["Address"].Value + "')");
+                                                  
+                    cmd.ExecuteNonQuery();
+                    String oname = dataGridView1.Rows[i].Cells["OwnerName"].Value.ToString();
+
+                    cmd.CommandText = ("INSERT INTO lilie_master(OwnerID) VALUES('" + "(SELECT `ID` FROM owner_master WHERE `OwnerName`='pritesh');" + "')");
                     cmd.ExecuteNonQuery();
                     conn.Close();
                     success = true;
                 }
                 else 
                 {
-                    MessageBox.Show("You can not leave blank data");
+                    MessageBox.Show("You can not leave blank data","Blank Data",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                     success = false;
                     break;
                 }
@@ -53,7 +57,7 @@ namespace Mansi_Flowers
             }
             if (success == true)
             {
-                MessageBox.Show("Your data has been saved successfully");
+                MessageBox.Show("Your data has been saved successfully","Success",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
                 this.Close();
             }
         }
@@ -71,27 +75,11 @@ namespace Mansi_Flowers
             dtbl = new DataTable();
             dtbl.Columns.Add("OwnerName");
             dtbl.Columns.Add("Contact_Number");
-            
             dtbl.Columns.Add("Address");
             dataGridView1.DataSource = dtbl;
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            var cell = dataGridView1.CurrentCell;
-            //var cellDisplayRect = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
-            if (cell.ColumnIndex == 1)
-            {
-                toolTip1.Show("You can enter number only here", dataGridView1,
-                          2000);
-            }
-            dataGridView1.ShowCellToolTips = false;
-        }
+        
 
         private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
@@ -124,12 +112,12 @@ namespace Mansi_Flowers
         {
             DataRow row = dtbl.NewRow();
             dtbl.Rows.Add(row);
-            dtbl.Columns["Contact_Number"].MaxLength = 10;
             dataGridView1.Refresh();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {
                 if (!row.IsNewRow)
@@ -140,6 +128,10 @@ namespace Mansi_Flowers
         private void dataGridView1_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
         {
 
+        }
+        private void SettingsGrid_MouseEnter(object sender, EventArgs e)
+        {
+            dataGridView1.Focus();
         }
     }
 }

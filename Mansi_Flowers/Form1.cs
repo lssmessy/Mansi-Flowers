@@ -41,5 +41,15 @@ namespace Mansi_Flowers
             View_Owners owner = new View_Owners();
             owner.ShowDialog();
         }
+
+        private void deleteOwnerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Delete_Owner().ShowDialog();
+        }
+
+        private void addUpdateLilisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Add_Lilies().ShowDialog();
+        }
     }
 }
