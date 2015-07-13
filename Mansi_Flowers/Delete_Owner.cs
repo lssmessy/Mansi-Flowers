@@ -35,7 +35,7 @@ namespace Mansi_Flowers
                 {
                     foreach (DataGridViewRow row in dataGridView1.SelectedRows)
                     {
-                        String owner = row.Cells[1].Value.ToString();
+                        int owner_id = Int32.Parse(row.Cells[0].Value.ToString());
 
                         if (!row.IsNewRow)
                         {
@@ -43,7 +43,7 @@ namespace Mansi_Flowers
                             dataGridView1.Rows.Remove(row);
                             cmd.Connection = conn;
                             conn.Open();
-                            cmd.CommandText = "DELETE FROM owner_master WHERE OwnerName='" + owner + "'";
+                            cmd.CommandText = "DELETE FROM owner_master WHERE Owner_ID=" + owner_id + "";
                             cmd.ExecuteNonQuery();
                             conn.Close();
 
