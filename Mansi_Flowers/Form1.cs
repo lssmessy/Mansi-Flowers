@@ -33,7 +33,7 @@ namespace Mansi_Flowers
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            
         }
 
         private void updateOwnerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -50,6 +50,21 @@ namespace Mansi_Flowers
         private void addUpdateLilisToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new Add_Lilies().ShowDialog();
+        }
+
+        private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void daysToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addEditRateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Lilie_Rates().ShowDialog();
         }
     }
 }

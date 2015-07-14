@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.liliEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addUpdateLilisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.liliOwnersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addOwnerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteOwnerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateOwnerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.liliEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addUpdateLilisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.liliRatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addEditRateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.billPrintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,6 +45,8 @@
             this.betweenDatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monthlyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.daysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +64,22 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // liliEntryToolStripMenuItem
+            // 
+            this.liliEntryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addUpdateLilisToolStripMenuItem,
+            this.exitToolStripMenuItem1});
+            this.liliEntryToolStripMenuItem.Name = "liliEntryToolStripMenuItem";
+            this.liliEntryToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.liliEntryToolStripMenuItem.Text = "Lili Entry";
+            // 
+            // addUpdateLilisToolStripMenuItem
+            // 
+            this.addUpdateLilisToolStripMenuItem.Name = "addUpdateLilisToolStripMenuItem";
+            this.addUpdateLilisToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.addUpdateLilisToolStripMenuItem.Text = "Add/Update Lilis";
+            this.addUpdateLilisToolStripMenuItem.Click += new System.EventHandler(this.addUpdateLilisToolStripMenuItem_Click);
+            // 
             // liliOwnersToolStripMenuItem
             // 
             this.liliOwnersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -76,45 +94,30 @@
             // addOwnerToolStripMenuItem
             // 
             this.addOwnerToolStripMenuItem.Name = "addOwnerToolStripMenuItem";
-            this.addOwnerToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.addOwnerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addOwnerToolStripMenuItem.Text = "Add Owner";
             this.addOwnerToolStripMenuItem.Click += new System.EventHandler(this.addOwnerToolStripMenuItem_Click);
             // 
             // deleteOwnerToolStripMenuItem
             // 
             this.deleteOwnerToolStripMenuItem.Name = "deleteOwnerToolStripMenuItem";
-            this.deleteOwnerToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.deleteOwnerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.deleteOwnerToolStripMenuItem.Text = "Delete Owner";
             this.deleteOwnerToolStripMenuItem.Click += new System.EventHandler(this.deleteOwnerToolStripMenuItem_Click);
             // 
             // updateOwnerToolStripMenuItem
             // 
             this.updateOwnerToolStripMenuItem.Name = "updateOwnerToolStripMenuItem";
-            this.updateOwnerToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.updateOwnerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.updateOwnerToolStripMenuItem.Text = "View Owner";
             this.updateOwnerToolStripMenuItem.Click += new System.EventHandler(this.updateOwnerToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // liliEntryToolStripMenuItem
-            // 
-            this.liliEntryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addUpdateLilisToolStripMenuItem});
-            this.liliEntryToolStripMenuItem.Name = "liliEntryToolStripMenuItem";
-            this.liliEntryToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.liliEntryToolStripMenuItem.Text = "Lili Entry";
-            // 
-            // addUpdateLilisToolStripMenuItem
-            // 
-            this.addUpdateLilisToolStripMenuItem.Name = "addUpdateLilisToolStripMenuItem";
-            this.addUpdateLilisToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.addUpdateLilisToolStripMenuItem.Text = "Add/Update Lilis";
-            this.addUpdateLilisToolStripMenuItem.Click += new System.EventHandler(this.addUpdateLilisToolStripMenuItem_Click);
             // 
             // liliRatesToolStripMenuItem
             // 
@@ -127,12 +130,14 @@
             // addEditRateToolStripMenuItem
             // 
             this.addEditRateToolStripMenuItem.Name = "addEditRateToolStripMenuItem";
-            this.addEditRateToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.addEditRateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addEditRateToolStripMenuItem.Text = "Add/Edit rate";
+            this.addEditRateToolStripMenuItem.Click += new System.EventHandler(this.addEditRateToolStripMenuItem_Click);
             // 
             // billPrintToolStripMenuItem
             // 
             this.billPrintToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.daysToolStripMenuItem,
             this.betweenDateToolStripMenuItem,
             this.monthkyToolStripMenuItem});
             this.billPrintToolStripMenuItem.Name = "billPrintToolStripMenuItem";
@@ -181,6 +186,20 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 1;
             // 
+            // exitToolStripMenuItem1
+            // 
+            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(162, 22);
+            this.exitToolStripMenuItem1.Text = "Exit";
+            this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
+            // 
+            // daysToolStripMenuItem
+            // 
+            this.daysToolStripMenuItem.Name = "daysToolStripMenuItem";
+            this.daysToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.daysToolStripMenuItem.Text = "15 Days";
+            this.daysToolStripMenuItem.Click += new System.EventHandler(this.daysToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,6 +236,8 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem liliEntryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addUpdateLilisToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem daysToolStripMenuItem;
     }
 }
 

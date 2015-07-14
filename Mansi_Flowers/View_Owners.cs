@@ -89,9 +89,9 @@ namespace Mansi_Flowers
             adapter.Fill(dt);
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                               
-                 dataGridView1.Rows.Add(dt.Rows[i][0], dt.Rows[i][1], dt.Rows[i][2], dt.Rows[i][3]);
-                
+
+                dataGridView1.Rows.Add(dt.Rows[i][0], dt.Rows[i][1], dt.Rows[i][2], dt.Rows[i][3]);
+
             }
         }
 

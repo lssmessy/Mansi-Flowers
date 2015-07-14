@@ -45,6 +45,8 @@ namespace Mansi_Flowers
                             conn.Open();
                             cmd.CommandText = "DELETE FROM owner_master WHERE Owner_ID=" + owner_id + "";
                             cmd.ExecuteNonQuery();
+                            cmd.CommandText = "DELETE FROM lilie_master WHERE Owner_ID=" + owner_id + "";
+                            cmd.ExecuteNonQuery();
                             conn.Close();
 
 
