@@ -36,34 +36,34 @@ namespace Mansi_Flowers
 
             cmd.CommandText = ("SELECT Lilie_Date,Rate FROM lilie_master WHERE Lilie_Date LIKE '%" + month + "%'");
             OleDbDataReader rd = cmd.ExecuteReader();
-            DataTable tbl = new DataTable();
-            tbl.Load(rd);
+            //DataTable tbl = new DataTable();
+            //tbl.Load(rd);
 
-            //int i = 0;
-            //while (rd.Read())
-            //{
-                
-            //    date1 = rd["Lilie_Date"].ToString();
-            //    if (dates.Contains(date1))
-            //    {
-            //        continue;
-            //    }
-            //    else
-            //    {
-            //        dates.Add(date1);
-            //        tbl.Rows[i].ItemArray[i].ToString();
+            int i = 0;
+            while (rd.Read())
+            {
+
+                date1 = rd["Lilie_Date"].ToString();
+                if (dates.Contains(date1))
+                {
+                    continue;
+                }
+                else
+                {
+                    dates.Add(date1);
+                    //tbl.Rows[i].ItemArray[i].ToString();
 
 
-            //    }
+                }
 
-            //}
+            }
 
             conn.Close();
 
-            //DataTable dt = ListToDataTable(dates);
+            DataTable dt = ListToDataTable(dates);
             //tbl.Columns.Add("Lilie_Date");
             //tbl.Columns.Add("Rate");
-            dataGridView1.DataSource = tbl;
+            dataGridView1.DataSource = dt;
             dataGridView1.Refresh();
 
             //String month = dateTimePicker1.Value.ToString("MM-yyyy");
