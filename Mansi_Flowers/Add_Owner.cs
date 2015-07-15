@@ -39,11 +39,11 @@ namespace Mansi_Flowers
                     conn.Open();
                     cmd.CommandText = ("INSERT INTO owner_master(OwnerName,Contact_Number,Address) VALUES ('" + dataGridView1.Rows[i].Cells["OwnerName"].Value + "','" + dataGridView1.Rows[i].Cells["Contact_Number"].Value + "','" + dataGridView1.Rows[i].Cells["Address"].Value + "')");
                     cmd.ExecuteNonQuery();
-                    cmd.CommandText=("SELECT `Owner_ID` FROM owner_master WHERE `OwnerName`='" + dataGridView1.Rows[i].Cells["OwnerName"].Value + "'");
-                    int oid=(int)cmd.ExecuteScalar();
-                    String owner_name = dataGridView1.Rows[i].Cells["OwnerName"].Value.ToString();
-                    cmd.CommandText=("INSERT INTO lilie_master(Owner_ID,OwnerName) VALUES('"+oid+"','"+owner_name+"')"); 
-                    cmd.ExecuteNonQuery();
+                    //cmd.CommandText=("SELECT `Owner_ID` FROM owner_master WHERE `OwnerName`='" + dataGridView1.Rows[i].Cells["OwnerName"].Value + "'");
+                    //int oid=(int)cmd.ExecuteScalar();
+                    //String owner_name = dataGridView1.Rows[i].Cells["OwnerName"].Value.ToString();
+                    //cmd.CommandText=("INSERT INTO lilie_master(Owner_ID,OwnerName) VALUES('"+oid+"','"+owner_name+"')"); 
+                    //cmd.ExecuteNonQuery();
                     
                     
                     conn.Close();

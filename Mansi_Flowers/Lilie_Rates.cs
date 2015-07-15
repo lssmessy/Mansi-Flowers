@@ -16,7 +16,8 @@ namespace Mansi_Flowers
         private OleDbConnection conn;
         private OleDbCommand cmd = new OleDbCommand();
         private String connectionString = Global_Connection.conn;
-        private DataTable dtbl;
+        //private DataTable dtbl;
+        //int i = 0;
         public Lilie_Rates()
         {
             conn = new OleDbConnection(connectionString);
@@ -25,21 +26,15 @@ namespace Mansi_Flowers
 
         private void Lilie_Rates_Load(object sender, EventArgs e)
         {
+
             String month = dateTimePicker1.Value.ToString("MM-yyyy");
             List<String> dates = new List<string>();
-            //List<int> rates = new List<int>();
+            List<DateRatePair> lstPairs = new List<DateRatePair>();
             String date1;
             cmd.Connection = conn;
             conn.Open();
-            //cmd.CommandText = ("CREATE VIEW rateview AS SELECT Lilie_Date,Rate FROM lilie_master WHERE Lilie_Date LIKE '%" + month + "%'");
-            //String rView = (String)cmd.ExecuteScalar();
-
-            cmd.CommandText = ("SELECT Lilie_Date,Rate FROM lilie_master WHERE Lilie_Date LIKE '%" + month + "%'");
+            cmd.CommandText = ("SELECT Lilie_Date,Rate FROM lilie_master WHERE Lilie_Date LIKE '%" + month + "%' ORDER BY Lilie_Date DESC");
             OleDbDataReader rd = cmd.ExecuteReader();
-            //DataTable tbl = new DataTable();
-            //tbl.Load(rd);
-
-            int i = 0;
             while (rd.Read())
             {
 
@@ -51,57 +46,124 @@ namespace Mansi_Flowers
                 else
                 {
                     dates.Add(date1);
-                    //tbl.Rows[i].ItemArray[i].ToString();
-
+                    DateRatePair aPair = new DateRatePair();
+                    aPair.Date = date1;
+                    String b = aPair.Rate = rd["Rate"].ToString();
+                    lstPairs.Add(aPair);
 
                 }
-
             }
 
             conn.Close();
 
-            DataTable dt = ListToDataTable(dates);
-            //tbl.Columns.Add("Lilie_Date");
-            //tbl.Columns.Add("Rate");
+            DataTable dt = ListToDataTable(lstPairs);
             dataGridView1.DataSource = dt;
             dataGridView1.Refresh();
-
-            //String month = dateTimePicker1.Value.ToString("MM-yyyy");
-
-            //dtbl = new DataTable();
-
-            //dtbl.Columns.Add("Lilie_Date");
-            //dtbl.Columns.Add("Rate");
-
-            //dtbl.Columns["Lilie_Date"].ReadOnly = true;
-
-            //dataGridView1.DataSource = dtbl;
-            //dataGridView1.Refresh();
-            //String query1 = "SELECT Lilie_Date,Rate FROM lilie_master WHERE Lilie_Date LIKE '%" + month + "%'";
-            //OleDbDataAdapter adapter = new OleDbDataAdapter(query1, conn);
-            //OleDbCommandBuilder cmdBuilder = new OleDbCommandBuilder(adapter);
-            //DataTable tbl = new DataTable();
-
-            //adapter.Fill(dtbl);
-            //for (int i = 0; i < tbl.Rows.Count; i++)
-            //{
-
-            //    dataGridView1.Rows.Add(dtbl.Rows[i][0], dtbl.Rows[i][1]);
-
-
-            //}
+           
         }
+        //private void GenerateUniqueData(int cellno)
+        //{
+        //    //Logic for unique names
+
+        //    //Step 1:
+
+        //    string initialnamevalue = dataGridView1.Rows[0].Cells[cellno].Value.ToString();
+
+        //    //Step 2:        
+
+        //    for (int i = 1; i < dataGridView1.Rows.Count; i++)
+        //    {
+
+        //        if (dataGridView1.Rows[i].Cells[0].Value.ToString() == initialnamevalue)
+        //            dataGridView1.Rows[i].Cells[0].Value= string.Empty;
+        //        else
+        //            initialnamevalue = dataGridView1.Rows[i].Cells[0].Value.ToString();
+        //    }
+        //}
+
+        //private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        //{
+
+        //    String month = dateTimePicker1.Value.ToString("MM-yyyy");
+        //    List<String> dates = new List<string>();
+        //    List<String> rates = new List<string>();
+
+        //    String date1;
+        //    cmd.Connection = conn;
+        //    conn.Open();
+        //    cmd.CommandText = ("SELECT Lilie_Date,Rate FROM lilie_master WHERE Lilie_Date LIKE '%" + month + "%'");
+        //    OleDbDataReader rd = cmd.ExecuteReader();
+        //    while (rd.Read())
+        //    {
+
+        //        date1 = rd["Lilie_Date"].ToString();
+        //        if (dates.Contains(date1))
+        //        {
+        //            continue;
+        //        }
+        //        else
+        //        {
+        //            dates.Add(date1);
+        //            rates.Add(rd["Rate"].ToString());
+        //        }
+        //    }
+
+        //    conn.Close();
+
+        //    DataTable dt = ListToDataTable(dates,rates);
+        //    dataGridView1.DataSource = dt;
+        //    dataGridView1.Refresh();
+
+        //    //DataTable dt2 = new DataTable();
+        //    //dt2.Columns.Add("Rate");
+        //    //dataGridView1.DataSource = dt2;
+        //    //dataGridView1.Refresh();
+        //    //cmd.Connection = conn;
+        //    //conn.Open();
+        //    //String q1 = ("SELECT Rate FROM lilie_master WHERE Lilie_Date LIKE '%" + month + "%'");
+        //    //OleDbDataAdapter adp = new OleDbDataAdapter(q1, conn);
+        //    //adp.Fill(dt2);
+        //    //conn.Close();
+
+        //}
+
+        //private static DataTable ListToDataTable(List<String> list, List<String> rate)
+        //{
+
+        //    DataTable table = new DataTable();
+        //    // DateTime dtime;
+
+        //    table.Columns.Add("Lilie_Date");
+        //    table.Columns.Add("Rate");
+
+        //    table.Columns["Lilie_Date"].ReadOnly = true;
+
+        //    //int columns = 0;
+        //    //foreach (var array in list)
+        //    //{
+        //    //    if (array.Length > columns)
+        //    //    {
+        //    //        columns = array.Length;
+        //    //    }
+        //    //}
+        //    foreach (var array in list)
+        //    {
+        //        table.Rows.Add(array);
+                
+        //    }
+        //    return table;
+        //}
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
             String month = dateTimePicker1.Value.ToString("MM-yyyy");
             List<String> dates = new List<string>();
-
+            List<DateRatePair> lstPairs = new List<DateRatePair>();
             String date1;
             cmd.Connection = conn;
             conn.Open();
-            cmd.CommandText = ("SELECT Lilie_Date,Rate FROM lilie_master WHERE Lilie_Date LIKE '%" + month + "%'");
+            cmd.CommandText = ("SELECT Lilie_Date,Rate FROM lilie_master WHERE Lilie_Date LIKE '%" + month + "%' ORDER BY Lilie_Date DESC");
             OleDbDataReader rd = cmd.ExecuteReader();
             while (rd.Read())
             {
@@ -114,19 +176,23 @@ namespace Mansi_Flowers
                 else
                 {
                     dates.Add(date1);
+                    DateRatePair aPair = new DateRatePair();
+                    aPair.Date = date1;
+                    String b=aPair.Rate = rd["Rate"].ToString();
+                    lstPairs.Add(aPair);
 
                 }
             }
 
             conn.Close();
 
-            DataTable dt = ListToDataTable(dates);
+            DataTable dt = ListToDataTable(lstPairs);
             dataGridView1.DataSource = dt;
             dataGridView1.Refresh();
 
         }
 
-        private static DataTable ListToDataTable(List<String> list)
+        private static DataTable ListToDataTable(List<DateRatePair> list)
         {
 
             DataTable table = new DataTable();
@@ -137,17 +203,20 @@ namespace Mansi_Flowers
 
             table.Columns["Lilie_Date"].ReadOnly = true;
 
-            int columns = 0;
+            //int count = 0;
+            //foreach (var array in list)
+            //{
+            //    if (array.Date != null)
+            //    {
+            //        count++;
+            //    }
+            //}
             foreach (var array in list)
             {
-                if (array.Length > columns)
-                {
-                    columns = array.Length;
-                }
-            }
-            foreach (var array in list)
-            {
-                table.Rows.Add(array);
+                DataRow dr = table.NewRow();
+                dr["Lilie_Date"] = array.Date;
+                dr["Rate"] = array.Rate;
+                table.Rows.Add(dr);
             }
             return table;
         }
@@ -160,11 +229,11 @@ namespace Mansi_Flowers
                 cmd.Connection = conn;
                 conn.Open();
                 string dts = dataGridView1.Rows[i].Cells[0].Value.ToString();
-                //int lls = 0;
-                //if (int.TryParse(dataGridView1.Rows[i].Cells[1].Value.ToString(), out lls))
+                int rates = 0;
+                if (int.TryParse(dataGridView1.Rows[i].Cells[1].Value.ToString(), out rates))
 
 
-                cmd.CommandText = ("UPDATE lilie_master SET Rate='" + i + "' WHERE Lilie_Date =" + dts + "");
+                    cmd.CommandText = ("UPDATE lilie_master SET Rate='" + rates + "' WHERE Lilie_Date ='" + dts + "'");
                 cmd.ExecuteNonQuery();//dataGridView1.Rows[i].Cells["Rate"].Value
                 conn.Close();
             }

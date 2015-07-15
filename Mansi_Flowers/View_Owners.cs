@@ -47,7 +47,38 @@ namespace Mansi_Flowers
                     dataGridView1.Rows.Add(dt.Rows[i][0], dt.Rows[i][1], dt.Rows[i][2], dt.Rows[i][3]);
                 }
             }
+            DataGridViewButtonColumn view_owner = new DataGridViewButtonColumn();
+            view_owner.Name = "View Owner";
+            view_owner.Text = "View";
+            //view_owner.HeaderText = "View";
+            view_owner.UseColumnTextForButtonValue = true;
+            if (dataGridView1.Columns["View Owner"] == null) {
+                dataGridView1.Columns.Insert(4, view_owner);
+               
+            }
         }
+        void dataGridView1_DataBindingComplete(object sender,
+    DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridView1.Rows[1].Cells["View"] = new DataGridViewTextBoxCell();
+        }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "View")
+            {
+                MessageBox.Show("You clicked me");
+            }
+        }
+    //    private void dataGridView1_CellClick(object sender,
+    //System.Windows.FormsDataGridViewCellEventArgs e)
+    //    {
+    //        if (DataGridView1.Columns[e.ColumnIndex].Name == "MyButton")
+    //        {
+    //            MessageBox.Show("You clicked me");
+    //        }
+    //    }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -126,6 +157,26 @@ namespace Mansi_Flowers
         private void button2_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "View Owner" )
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                
+                //MessageBox.Show("You clicked me " +dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
+                String owner = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                int oid = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+                Bill bill = new Bill(owner,oid);
+                bill.ShowDialog();
+
+            }
         }
     }
 }

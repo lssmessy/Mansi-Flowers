@@ -71,6 +71,13 @@
     <Compile Include="Add_Owner.Designer.cs">
       <DependentUpon>Add_Owner.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bill.Designer.cs">
+      <DependentUpon>Bill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DateRatePair.cs" />
     <Compile Include="Delete_Owner.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Add_Owner.resx">
       <DependentUpon>Add_Owner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bill.resx">
+      <DependentUpon>Bill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Delete_Owner.resx">
       <DependentUpon>Delete_Owner.cs</DependentUpon>
