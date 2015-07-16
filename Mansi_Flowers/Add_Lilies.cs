@@ -22,6 +22,7 @@ namespace Mansi_Flowers
         public Add_Lilies()
         {
             conn = new OleDbConnection(connectionString);
+            
             InitializeComponent();
         }
 
@@ -34,6 +35,7 @@ namespace Mansi_Flowers
         {
             string theDate = dateTimePicker1.Value.ToString("dd-MM-yyyy");
             dateTimePicker1.MaxDate = DateTime.Today;
+            
             try {
                 
                 cmd.Connection = conn;
@@ -77,7 +79,7 @@ namespace Mansi_Flowers
              
                 dataGridView1.DataSource = dtbl;
                 dataGridView1.Refresh();
-                String query1 = "SELECT Owner_ID,OwnerName,Lilies FROM lilie_master WHERE Lilie_Date='" + theDate + "'";
+                String query1 = "SELECT Owner_ID,OwnerName,Lilies FROM lilie_master WHERE Lilie_Date='" + theDate + "' ORDER BY Owner_ID ASC";
                 OleDbDataAdapter adapter = new OleDbDataAdapter(query1, conn);
                 OleDbCommandBuilder cmdBuilder = new OleDbCommandBuilder(adapter);
                 DataTable tbl = new DataTable();
@@ -91,11 +93,23 @@ namespace Mansi_Flowers
 
 
                 }
+                dataGridView1.Rows[0].Cells[0].Selected = false;
+                dataGridView1.Rows[0].Cells[2].Selected = true;
+                dataGridView1.KeyPress += OnDataGirdView1_KeyPress;
+
             }
             catch (Exception exp) {
                 MessageBox.Show(exp.ToString());
             }
             
+        }
+        private void OnDataGirdView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                button1_Click(sender, e);
+                //e.Handled = true; if you don't want the datagrid from hearing the enter pressed
+            }
         }
         private void SettingsGrid_MouseEnter(object sender, EventArgs e)
         {
@@ -125,7 +139,7 @@ namespace Mansi_Flowers
                     conn.Close();
                 }
                 label2.Text = total.ToString();
-                MessageBox.Show("Data updated");
+                MessageBox.Show("Data updated","Lilies",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             catch (Exception exp) {
                 MessageBox.Show(exp.ToString());
@@ -134,6 +148,8 @@ namespace Mansi_Flowers
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
+
+
             int total = 0;
             string theDate = dateTimePicker1.Value.ToString("dd-MM-yyyy");
             try
@@ -154,8 +170,8 @@ namespace Mansi_Flowers
                     int cnt = (int)cmd.ExecuteScalar();
                     if (cnt != 1 & cnt == 0)
                     {
-            
-                        cmd.CommandText = ("INSERT INTO lilie_master(Owner_ID,Lilie_Date,OwnerName) VALUES(" + ds.Tables[0].Rows[i].ItemArray[0].ToString() + ",'" + theDate + "','" + ds.Tables[0].Rows[i].ItemArray[1].ToString() + "')");
+                        int s = 0;
+                        cmd.CommandText = ("INSERT INTO lilie_master(Owner_ID,Lilie_Date,OwnerName,Lilies) VALUES(" + ds.Tables[0].Rows[i].ItemArray[0].ToString() + ",'" + theDate + "','" + ds.Tables[0].Rows[i].ItemArray[1].ToString() + "',"+s+")");
                         cmd.ExecuteNonQuery();
                         
                     }
@@ -251,5 +267,33 @@ namespace Mansi_Flowers
         {
 
         }
+        private void dataGridView1_EditingControlShowing_1(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            e.Control.KeyPress -= new KeyPressEventHandler(Contact_Number_Clicked);
+            if (dataGridView1.CurrentCell.ColumnIndex == 2) //Desired Column
+            {
+                TextBox tb = e.Control as TextBox;
+                if (tb != null)
+                {
+                    tb.KeyPress += new KeyPressEventHandler(Contact_Number_Clicked);
+                }
+            }
+
+        }
+        private void Contact_Number_Clicked(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        //private void dataGridView1_EditingControlShowing_1(object sender, DataGridViewEditingControlShowingEventArgs e)
+        //{
+
+        //}
+
+        
     }
 }

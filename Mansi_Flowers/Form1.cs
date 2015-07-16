@@ -49,7 +49,10 @@ namespace Mansi_Flowers
 
         private void addUpdateLilisToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Add_Lilies().ShowDialog();
+            Add_Lilies add_lilies = new Add_Lilies();
+            //add_lilies.MdiParent=this;
+            add_lilies.ShowDialog();
+            
         }
 
         private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -65,6 +68,13 @@ namespace Mansi_Flowers
         private void addEditRateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new Lilie_Rates().ShowDialog();
+        }
+
+        private void updateOwnerToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            View_Owners owner = new View_Owners();
+            owner.ShowDialog();
+
         }
     }
 }

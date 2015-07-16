@@ -24,6 +24,7 @@ namespace Mansi_Flowers
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try{
             int count = dataGridView1.SelectedRows.Count;
             if (count == 0)
             {
@@ -59,14 +60,15 @@ namespace Mansi_Flowers
 
                 }
             }
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void Delete_Owner_Load(object sender, EventArgs e)
         {
-            if (textBox1.Text.Length < 1)
-            {
-                textBox1.Text = "Search by Owner, Contact or Address";
-            }
+            try{
             dataGridView1.DataSource = null;
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
@@ -79,16 +81,26 @@ namespace Mansi_Flowers
             adapter.Fill(dt);
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                if (dt.Rows[i][1].Equals("1") && dt.Rows[i][1].Equals("2") && dt.Rows[i][3].Equals("")) { }
-                else
-                {
                     dataGridView1.Rows.Add(dt.Rows[i][0], dt.Rows[i][1], dt.Rows[i][2], dt.Rows[i][3]);
-                }
+             
+                dataGridView1.Rows[i].Cells[0].ReadOnly = true;
+            }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            //String searchText = ;
+            //BindingSource bs = new BindingSource();
+            //bs.DataSource = dataGridView1.DataSource;
+            //bs.Filter = "OwnerName like '%" + textBox1.Text + "%'";// OR Contact_Number LIKE '%" + searchText + "%' OR Address LIKE '%" + searchText + "%')";
+            //dataGridView1.DataSource = bs;
+
+            try{
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
             String searchText = textBox1.Text;
@@ -103,6 +115,11 @@ namespace Mansi_Flowers
 
                 dataGridView1.Rows.Add(dt.Rows[i][0], dt.Rows[i][1], dt.Rows[i][2], dt.Rows[i][3]);
 
+            }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
 
         }
@@ -120,6 +137,34 @@ namespace Mansi_Flowers
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+          
+            try
+            {
+                int count = dataGridView1.Rows.Count;
+                
+                for (int i = 0; i < count; i++)
+                {
+                 
+                    
+                    cmd.Connection = conn;
+                    conn.Open();
+                    cmd.CommandText = ("UPDATE owner_master SET OwnerName='" + dataGridView1.Rows[i].Cells[1].Value + "',Contact_Number='" + dataGridView1.Rows[i].Cells[2].Value + "',Address='" + dataGridView1.Rows[i].Cells[3].Value + "' WHERE Owner_ID=" + dataGridView1.Rows[i].Cells[0].Value + "");//Owner_ID=" + dataGridView1.Rows[i].Cells[0].Value + " 
+                    cmd.ExecuteNonQuery();
+                    
+
+                    conn.Close();
+                }
+                
+                MessageBox.Show("Data updated", "Owner Details", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.ToString());
+            }
         }
     }
 }

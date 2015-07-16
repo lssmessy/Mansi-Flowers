@@ -18,6 +18,7 @@ namespace Mansi_Flowers
         private OleDbConnection conn;
         private OleDbCommand cmd = new OleDbCommand();
         private String connectionString = Global_Connection.conn;
+        DataSet ds = new DataSet();
         //public Bill()
         //{
         //    conn = new OleDbConnection(connectionString);
@@ -37,58 +38,162 @@ namespace Mansi_Flowers
 
         private void Bill_Load(object sender, EventArgs e)
         {
+            try{
+            int total_lilis = 0;
+            double amount = 0.0;
+            label2.Text = owner;
             String month = dateTimePicker1.Value.ToString("MM-yyyy");
+            DataSet ds = new DataSet();
             DataTable dtbl = new DataTable();
-            //dtbl.Columns.Add("Owner_ID");
-            dtbl.Columns.Add("OwnerName");
+            
             dtbl.Columns.Add("Lilie_Date");
             dtbl.Columns.Add("Lilies");
             dtbl.Columns.Add("Rate");
-            dtbl.Columns.Add("Owner_ID");
-            //dtbl.Columns["Owner_ID"].ReadOnly = true;
-            dtbl.Columns["OwnerName"].ReadOnly = true;
+            dtbl.Columns.Add("Amount");
+            
             dtbl.Columns["Lilie_Date"].ReadOnly = true;
+            dtbl.Columns["Lilies"].ReadOnly = true;
+            dtbl.Columns["Rate"].ReadOnly = true;
+            
 
             dataGridView1.DataSource = dtbl;
             dataGridView1.Refresh();
 
-            String query1 = "SELECT OwnerName,Lilie_Date,Lilies,Rate,Owner_ID FROM lilie_master WHERE (Owner_ID =" + oid + " AND OwnerName='" + owner + "' AND Lilie_Date LIKE '%"+month+"%') ORDER BY Lilie_Date ASC";// OwnerName,Lilie_Date,Lilies,Rate,Owner_ID 
+            String query1 = "SELECT Lilie_Date,Lilies,Rate FROM lilie_master WHERE (Owner_ID =" + oid + " AND OwnerName='" + owner + "'AND Lilie_Date LIKE '%" + month + "%' ) ORDER BY Lilie_Date ASC";// OwnerName,Lilie_Date,Lilies,Rate,Owner_ID // 
             OleDbDataAdapter adapter = new OleDbDataAdapter(query1, conn);
             OleDbCommandBuilder cmdBuilder = new OleDbCommandBuilder(adapter);
             DataTable tbl = new DataTable();
 
             adapter.Fill(dtbl);
-            for (int i = 0; i < tbl.Rows.Count; i++)
+            int rates = 0;
+            int lilis = 0;
+            double total_amount = 0.0d;
+            double rent = 0.0d;
+            double commission = 0.0d;
+            double final_amount = 0.0d;
+            for (int i = 0; i < dataGridView1.Rows.Count; i++) { 
+
+                 if (int.TryParse(dataGridView1.Rows[i].Cells[2].Value.ToString(), out rates))
+                 if (int.TryParse(dataGridView1.Rows[i].Cells[1].Value.ToString(), out lilis))
+                 
+                 amount = (lilis * rates) / 1000.0;
+                 dataGridView1.Rows[i].Cells[3].Value=amount;
+                 total_lilis += lilis;
+                 total_amount +=(double)amount;
+            }
+            
+            ds.Tables.Add(dtbl);
+            ds.WriteXmlSchema("Sample.xml");
+            rent = (total_lilis * 5) / 1000.0;
+            commission = (total_amount * 15) / 100.0;
+            final_amount = total_amount - rent - commission;
+
+            var round_final = Math.Round(final_amount, 0);
+            label13.Text = round_final.ToString();
+            label11.Text = final_amount.ToString();
+            label9.Text = commission.ToString();
+            label7.Text = rent.ToString();
+                label3.Text = total_lilis.ToString();
+                label5.Text = total_amount.ToString();
+                //ds.Tables.Add(dtbl);
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            try{
+            int total_lilis = 0;
+            double amount = 0.0;
+            label2.Text = owner;
+            String month = dateTimePicker1.Value.ToString("MM-yyyy");
+            DataTable dtbl = new DataTable();
+            
+            
+            dtbl.Columns.Add("Lilie_Date");
+            dtbl.Columns.Add("Lilies");
+            dtbl.Columns.Add("Rate");
+            dtbl.Columns.Add("Amount");
+            
+            dtbl.Columns["Lilie_Date"].ReadOnly = true;
+            dtbl.Columns["Lilies"].ReadOnly = true;
+            dtbl.Columns["Rate"].ReadOnly = true;
+            
+
+            dataGridView1.DataSource = dtbl;
+            dataGridView1.Refresh();
+
+            String query1 = "SELECT Lilie_Date,Lilies,Rate FROM lilie_master WHERE (Owner_ID =" + oid + " AND OwnerName='" + owner + "'AND Lilie_Date LIKE '%" + month + "%' ) ORDER BY Lilie_Date ASC";// OwnerName,Lilie_Date,Lilies,Rate,Owner_ID // 
+            OleDbDataAdapter adapter = new OleDbDataAdapter(query1, conn);
+            OleDbCommandBuilder cmdBuilder = new OleDbCommandBuilder(adapter);
+            DataTable tbl = new DataTable();
+
+            adapter.Fill(dtbl);
+            int rates = 0;
+            int lilis = 0;
+            double total_amount = 0.0d;
+            double rent = 0.0d;
+            double commission = 0.0d;
+            double final_amount = 0.0d;
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
 
+                if (int.TryParse(dataGridView1.Rows[i].Cells[2].Value.ToString(), out rates))
+                    if (int.TryParse(dataGridView1.Rows[i].Cells[1].Value.ToString(), out lilis))
 
-                dataGridView1.Rows.Add(dtbl.Rows[i][0], dtbl.Rows[i][1], dtbl.Rows[i][2], dtbl.Rows[i][3], dtbl.Rows[i][4]);
-
-
+                        amount = (lilis * rates) / 1000.0;
+                dataGridView1.Rows[i].Cells[3].Value = amount;
+                total_lilis += lilis;
+                total_amount += (double)amount;
             }
+            rent = (total_lilis * 5) / 1000.0;
+            commission = (total_amount * 15) / 100.0;
+            final_amount = total_amount - rent - commission;
+            label11.Text = final_amount.ToString();
+            label9.Text = commission.ToString();
+            label7.Text = rent.ToString();
+            label3.Text = total_lilis.ToString();
+            label5.Text = total_amount.ToString();
+            ds.Tables.Add(dtbl);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
 
-            //DataTable dt = new DataTable();
-            //dt.Columns.Add("OwnerName");
-            //dt.Columns.Add("Lilie_Date");
-            //dt.Columns.Add("Lilies");
-            //dt.Columns.Add("Rate");
-
-            //dataGridView1.Rows.Clear();
-            //dataGridView1.Refresh();
-            //dataGridView1.DataSource = dt;
-            //String query = "SELECT * FROM lilie_master";
-            ////String query = "SELECT OwnerName,Lilie_Date,Lilies,Rate FROM lilie_master WHERE (Owner_ID=" + oid + " AND OwnerName='" + owner + "')";
-            //OleDbDataAdapter adapter = new OleDbDataAdapter(query, conn);
-            ////OleDbCommandBuilder commnder = new OleDbCommandBuilder(adapter);
-                        
-            //DataSet ds = new DataSet();
-            //adapter.Fill(dt);
-            //for (int i = 0; i < dt.Rows.Count; i++)
-            //{
-
-            //    dataGridView1.Rows.Add(dt.Rows[i][0], dt.Rows[i][1], dt.Rows[i][2], dt.Rows[i][3]);
-                
-            //}
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+            
+            //new Report().ShowDialog();
             
         }
     }
