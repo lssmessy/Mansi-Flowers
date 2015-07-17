@@ -91,10 +91,11 @@ namespace Mansi_Flowers
 
                     dataGridView1.Rows.Add(dtbl.Rows[i][0], dtbl.Rows[i][1], dtbl.Rows[i][2]);
 
-
+                    
                 }
-                dataGridView1.Rows[0].Cells[0].Selected = false;
-                dataGridView1.Rows[0].Cells[2].Selected = true;
+                dataGridView1.Columns[1].Width = 170;
+                //dataGridView1.Rows[0].Cells[0].Selected = false;
+                //dataGridView1.Rows[0].Cells[2].Selected = true;
                 dataGridView1.KeyPress += OnDataGirdView1_KeyPress;
 
             }

@@ -127,6 +127,7 @@ namespace Mansi_Flowers
         {
             DataRow row = dtbl.NewRow();
             dtbl.Rows.Add(row);
+            dataGridView1.Columns["OwnerName"].Width = 170;
             dataGridView1.Refresh();
         }
 

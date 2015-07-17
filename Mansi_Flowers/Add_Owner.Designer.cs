@@ -44,7 +44,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(1, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(348, 246);
+            this.dataGridView1.Size = new System.Drawing.Size(481, 319);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dataGridView1_ColumnAdded);
             this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
@@ -53,7 +53,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.DodgerBlue;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(355, 94);
+            this.button1.Location = new System.Drawing.Point(488, 100);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(164, 42);
             this.button1.TabIndex = 3;
@@ -65,7 +65,7 @@
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(355, 142);
+            this.button2.Location = new System.Drawing.Point(488, 148);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(164, 43);
             this.button2.TabIndex = 4;
@@ -77,7 +77,7 @@
             // 
             this.button3.BackColor = System.Drawing.Color.GreenYellow;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(355, 0);
+            this.button3.Location = new System.Drawing.Point(488, 6);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(164, 42);
             this.button3.TabIndex = 1;
@@ -89,7 +89,7 @@
             // 
             this.button4.BackColor = System.Drawing.Color.Red;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(355, 45);
+            this.button4.Location = new System.Drawing.Point(488, 51);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(164, 43);
             this.button4.TabIndex = 2;
@@ -103,12 +103,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.button2;
-            this.ClientSize = new System.Drawing.Size(526, 246);
+            this.ClientSize = new System.Drawing.Size(664, 331);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Add_Owner";

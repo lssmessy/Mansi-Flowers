@@ -80,6 +80,8 @@ namespace Mansi_Flowers
                  dataGridView1.Rows[i].Cells[3].Value=amount;
                  total_lilis += lilis;
                  total_amount +=(double)amount;
+                 dataGridView1.Rows[i].Cells["Amount"].ReadOnly = true;
+
             }
             
             ds.Tables.Add(dtbl);
@@ -89,12 +91,19 @@ namespace Mansi_Flowers
             final_amount = total_amount - rent - commission;
 
             var round_final = Math.Round(final_amount, 0);
+
+            cmd.Connection = conn;
+            conn.Open();
+            cmd.CommandText = ("UPDATE lilie_master SET Amount='" + round_final + "' WHERE (Owner_ID =" + oid + " AND OwnerName='" + owner + "'AND Lilie_Date LIKE '%" + month + "%' ) ");
+            cmd.ExecuteNonQuery();
+            conn.Close();
             label13.Text = round_final.ToString();
             label11.Text = final_amount.ToString();
             label9.Text = commission.ToString();
             label7.Text = rent.ToString();
                 label3.Text = total_lilis.ToString();
                 label5.Text = total_amount.ToString();
+                
                 //ds.Tables.Add(dtbl);
             }
             catch (Exception ex) {
@@ -176,6 +185,16 @@ namespace Mansi_Flowers
             rent = (total_lilis * 5) / 1000.0;
             commission = (total_amount * 15) / 100.0;
             final_amount = total_amount - rent - commission;
+            var round_final = Math.Round(final_amount, 0);
+
+            cmd.Connection = conn;
+            conn.Open();
+            cmd.CommandText = ("UPDATE lilie_master SET Amount='" + round_final + "' WHERE (Owner_ID =" + oid + " AND OwnerName='" + owner + "'AND Lilie_Date LIKE '%" + month + "%' ) ");
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+            label13.Text = round_final.ToString();
+
             label11.Text = final_amount.ToString();
             label9.Text = commission.ToString();
             label7.Text = rent.ToString();

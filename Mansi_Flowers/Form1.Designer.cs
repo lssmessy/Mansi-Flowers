@@ -38,6 +38,7 @@
             this.liliRatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addEditRateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.billPrintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateOwnerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.daysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.betweenDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monthkyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,7 +46,6 @@
             this.betweenDatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monthlyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.updateOwnerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,7 +98,7 @@
             // addOwnerToolStripMenuItem
             // 
             this.addOwnerToolStripMenuItem.Name = "addOwnerToolStripMenuItem";
-            this.addOwnerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addOwnerToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.addOwnerToolStripMenuItem.Text = "Add Owner";
             this.addOwnerToolStripMenuItem.Click += new System.EventHandler(this.addOwnerToolStripMenuItem_Click);
             // 
@@ -120,7 +120,7 @@
             // addEditRateToolStripMenuItem
             // 
             this.addEditRateToolStripMenuItem.Name = "addEditRateToolStripMenuItem";
-            this.addEditRateToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.addEditRateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addEditRateToolStripMenuItem.Text = "Add/Edit rate";
             this.addEditRateToolStripMenuItem.Click += new System.EventHandler(this.addEditRateToolStripMenuItem_Click);
             // 
@@ -134,6 +134,13 @@
             this.billPrintToolStripMenuItem.Name = "billPrintToolStripMenuItem";
             this.billPrintToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.billPrintToolStripMenuItem.Text = "Bill Print";
+            // 
+            // updateOwnerToolStripMenuItem
+            // 
+            this.updateOwnerToolStripMenuItem.Name = "updateOwnerToolStripMenuItem";
+            this.updateOwnerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.updateOwnerToolStripMenuItem.Text = "View Owner";
+            this.updateOwnerToolStripMenuItem.Click += new System.EventHandler(this.updateOwnerToolStripMenuItem_Click_1);
             // 
             // daysToolStripMenuItem
             // 
@@ -184,17 +191,11 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 1;
             // 
-            // updateOwnerToolStripMenuItem
-            // 
-            this.updateOwnerToolStripMenuItem.Name = "updateOwnerToolStripMenuItem";
-            this.updateOwnerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.updateOwnerToolStripMenuItem.Text = "View Owner";
-            this.updateOwnerToolStripMenuItem.Click += new System.EventHandler(this.updateOwnerToolStripMenuItem_Click_1);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PaleTurquoise;
             this.ClientSize = new System.Drawing.Size(676, 262);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.menuStrip1);

@@ -154,6 +154,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Delete_Owner";
             this.Text = "Delete / Update Owners";
             this.Load += new System.EventHandler(this.Delete_Owner_Load);

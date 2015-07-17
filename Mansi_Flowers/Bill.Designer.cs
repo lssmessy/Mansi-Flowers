@@ -235,11 +235,11 @@
             this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label13.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Fuchsia;
-            this.label13.Location = new System.Drawing.Point(531, 386);
+            this.label13.Location = new System.Drawing.Point(549, 386);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(96, 27);
+            this.label13.Size = new System.Drawing.Size(28, 27);
             this.label13.TabIndex = 22;
-            this.label13.Text = "label13";
+            this.label13.Text = "0";
             // 
             // label14
             // 
