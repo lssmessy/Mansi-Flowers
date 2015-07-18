@@ -70,20 +70,20 @@
             this.exitToolStripMenuItem1});
             this.liliEntryToolStripMenuItem.Name = "liliEntryToolStripMenuItem";
             this.liliEntryToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.liliEntryToolStripMenuItem.Text = "Lili Entry";
+            this.liliEntryToolStripMenuItem.Text = "Lili &Entry";
             // 
             // addUpdateLilisToolStripMenuItem
             // 
             this.addUpdateLilisToolStripMenuItem.Name = "addUpdateLilisToolStripMenuItem";
             this.addUpdateLilisToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.addUpdateLilisToolStripMenuItem.Text = "Add/Update Lilis";
+            this.addUpdateLilisToolStripMenuItem.Text = "&Add/Update Lilis";
             this.addUpdateLilisToolStripMenuItem.Click += new System.EventHandler(this.addUpdateLilisToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem1
             // 
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
             this.exitToolStripMenuItem1.Size = new System.Drawing.Size(162, 22);
-            this.exitToolStripMenuItem1.Text = "Exit";
+            this.exitToolStripMenuItem1.Text = "E&xit";
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
             // 
             // liliOwnersToolStripMenuItem
@@ -93,20 +93,20 @@
             this.deleteOwnerToolStripMenuItem});
             this.liliOwnersToolStripMenuItem.Name = "liliOwnersToolStripMenuItem";
             this.liliOwnersToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
-            this.liliOwnersToolStripMenuItem.Text = "Lili owners";
+            this.liliOwnersToolStripMenuItem.Text = "Lili &owners";
             // 
             // addOwnerToolStripMenuItem
             // 
             this.addOwnerToolStripMenuItem.Name = "addOwnerToolStripMenuItem";
             this.addOwnerToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.addOwnerToolStripMenuItem.Text = "Add Owner";
+            this.addOwnerToolStripMenuItem.Text = "Add &Owner";
             this.addOwnerToolStripMenuItem.Click += new System.EventHandler(this.addOwnerToolStripMenuItem_Click);
             // 
             // deleteOwnerToolStripMenuItem
             // 
             this.deleteOwnerToolStripMenuItem.Name = "deleteOwnerToolStripMenuItem";
             this.deleteOwnerToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.deleteOwnerToolStripMenuItem.Text = "Delete / Update Owner";
+            this.deleteOwnerToolStripMenuItem.Text = "&Delete / Update Owner";
             this.deleteOwnerToolStripMenuItem.Click += new System.EventHandler(this.deleteOwnerToolStripMenuItem_Click);
             // 
             // liliRatesToolStripMenuItem
@@ -115,13 +115,13 @@
             this.addEditRateToolStripMenuItem});
             this.liliRatesToolStripMenuItem.Name = "liliRatesToolStripMenuItem";
             this.liliRatesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.liliRatesToolStripMenuItem.Text = "Lili Rates";
+            this.liliRatesToolStripMenuItem.Text = "Lili &Rates";
             // 
             // addEditRateToolStripMenuItem
             // 
             this.addEditRateToolStripMenuItem.Name = "addEditRateToolStripMenuItem";
             this.addEditRateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.addEditRateToolStripMenuItem.Text = "Add/Edit rate";
+            this.addEditRateToolStripMenuItem.Text = "Add/&Edit rate";
             this.addEditRateToolStripMenuItem.Click += new System.EventHandler(this.addEditRateToolStripMenuItem_Click);
             // 
             // billPrintToolStripMenuItem
@@ -133,13 +133,13 @@
             this.monthkyToolStripMenuItem});
             this.billPrintToolStripMenuItem.Name = "billPrintToolStripMenuItem";
             this.billPrintToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.billPrintToolStripMenuItem.Text = "Bill Print";
+            this.billPrintToolStripMenuItem.Text = "&Bill Print";
             // 
             // updateOwnerToolStripMenuItem
             // 
             this.updateOwnerToolStripMenuItem.Name = "updateOwnerToolStripMenuItem";
             this.updateOwnerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.updateOwnerToolStripMenuItem.Text = "View Owner";
+            this.updateOwnerToolStripMenuItem.Text = "&View Owner";
             this.updateOwnerToolStripMenuItem.Click += new System.EventHandler(this.updateOwnerToolStripMenuItem_Click_1);
             // 
             // daysToolStripMenuItem
@@ -196,6 +196,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.BackgroundImage = global::Mansi_Flowers.Properties.Resources._22262_white_lily_1920x1080_flower_wallpaper;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(676, 262);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.menuStrip1);

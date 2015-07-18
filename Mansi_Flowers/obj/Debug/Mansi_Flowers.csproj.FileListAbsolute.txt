@@ -41,3 +41,6 @@ H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.csproj.GenerateResource.C
 D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Lilie_Rates.resources
 D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Bill.resources
 D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Report.resources
+H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Bill.resources
+H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Lilie_Rates.resources
+H:\Mansi-Flowers\Mansi_Flowers\bin\Debug\Lilies.sdf

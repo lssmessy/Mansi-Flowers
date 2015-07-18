@@ -16,6 +16,7 @@ namespace Mansi_Flowers
         //public static String path = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location); 
         public static String path=Environment.CurrentDirectory;
         public static String conn = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + path + "\\Lili_Master.accdb";
+        //public static String conn = "Provider=SQLOLEDB;Data Source=" + path + "\\Lilies.sdf";
        
     }
 }

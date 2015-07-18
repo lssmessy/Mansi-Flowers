@@ -119,6 +119,8 @@ namespace Mansi_Flowers
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Enabled = false;
+            this.Cursor = Cursors.WaitCursor;
             int total = 0;
             try
             {
@@ -141,6 +143,8 @@ namespace Mansi_Flowers
                 }
                 label2.Text = total.ToString();
                 MessageBox.Show("Data updated","Lilies",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                this.Cursor = Cursors.Default;
+                this.Enabled = true;
             }
             catch (Exception exp) {
                 MessageBox.Show(exp.ToString());
@@ -288,6 +292,11 @@ namespace Mansi_Flowers
                 e.Handled = true;
             }
 
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
         }
 
         //private void dataGridView1_EditingControlShowing_1(object sender, DataGridViewEditingControlShowingEventArgs e)
