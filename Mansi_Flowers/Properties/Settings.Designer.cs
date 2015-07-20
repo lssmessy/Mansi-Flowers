@@ -43,5 +43,15 @@ namespace Mansi_Flowers.Properties {
                 return ((string)(this["LiliesConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=|DataDirectory|\\bin\\Debug\\Lilies.sdf")]
+        public string LiliesConnectionString1 {
+            get {
+                return ((string)(this["LiliesConnectionString1"]));
+            }
+        }
     }
 }

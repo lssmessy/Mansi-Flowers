@@ -85,6 +85,24 @@
     <Compile Include="Bill.Designer.cs">
       <DependentUpon>Bill.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bill_Between_Dates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bill_Between_Dates.Designer.cs">
+      <DependentUpon>Bill_Between_Dates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bill_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bill_View.Designer.cs">
+      <DependentUpon>Bill_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReport2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DateRatePair.cs" />
     <Compile Include="Delete_Owner.cs">
       <SubType>Form</SubType>
@@ -104,11 +122,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LiliesDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Bill_per_User.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Bill_per_User.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Lilie_Rates.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Lilie_Rates.Designer.cs">
       <DependentUpon>Lilie_Rates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lili_Data.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lili_Data.xsd</DependentUpon>
     </Compile>
     <Compile Include="Lili_MasterDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -123,12 +152,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report_View.Designer.cs">
+      <DependentUpon>Report_View.cs</DependentUpon>
+    </Compile>
     <Compile Include="StringValue.cs" />
     <Compile Include="View_Owners.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View_Owners.Designer.cs">
       <DependentUpon>View_Owners.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View_Owners_Monthly.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_Owners_Monthly.Designer.cs">
+      <DependentUpon>View_Owners_Monthly.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Add_Lilies.resx">
       <DependentUpon>Add_Lilies.cs</DependentUpon>
@@ -139,11 +180,25 @@
     <EmbeddedResource Include="Bill.resx">
       <DependentUpon>Bill.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Bill_Between_Dates.resx">
+      <DependentUpon>Bill_Between_Dates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bill_View.resx">
+      <DependentUpon>Bill_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport2.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Delete_Owner.resx">
       <DependentUpon>Delete_Owner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bill_per_User.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Bill_per_User.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Lilie_Rates.resx">
       <DependentUpon>Lilie_Rates.cs</DependentUpon>
@@ -161,8 +216,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report_View.resx">
+      <DependentUpon>Report_View.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View_Owners.resx">
       <DependentUpon>View_Owners.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View_Owners_Monthly.resx">
+      <DependentUpon>View_Owners_Monthly.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="LiliesDataSet.xsc">
       <DependentUpon>LiliesDataSet.xsd</DependentUpon>
@@ -174,6 +235,17 @@
     </None>
     <None Include="LiliesDataSet.xss">
       <DependentUpon>LiliesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Lili_Data.xsc">
+      <DependentUpon>Lili_Data.xsd</DependentUpon>
+    </None>
+    <None Include="Lili_Data.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Lili_Data.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Lili_Data.xss">
+      <DependentUpon>Lili_Data.xsd</DependentUpon>
     </None>
     <None Include="Lili_MasterDataSet.xsc">
       <DependentUpon>Lili_MasterDataSet.xsd</DependentUpon>
@@ -202,7 +274,7 @@
   <ItemGroup>
     <None Include="bin\Debug\22262-white-lily-1920x1080-flower-wallpaper.jpg" />
     <Content Include="Lilies.sdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Lili_Master.accdb" />
   </ItemGroup>

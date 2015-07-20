@@ -22,7 +22,7 @@ namespace Mansi_Flowers
 
         private void monthkyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            new View_Owners_Monthly().ShowDialog();
         }
 
         private void addOwnerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -49,9 +49,15 @@ namespace Mansi_Flowers
 
         private void addUpdateLilisToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Add_Lilies add_lilies = new Add_Lilies();
+            
             //add_lilies.MdiParent=this;
-            add_lilies.ShowDialog();
+            Add_Lilies newMDIChild = new Add_Lilies();
+            //Form1 newMDIChild = new Form1();
+            //newMDIChild.MdiParent = this;
+            newMDIChild.ShowDialog();
+            //this.LayoutMdi(MdiLayout.Cascade);
+            //newMDIChild.Dock = DockStyle.Fill;
+            //add_lilies.ShowDialog();
             
         }
 
@@ -74,6 +80,21 @@ namespace Mansi_Flowers
         {
             View_Owners owner = new View_Owners();
             owner.ShowDialog();
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void betweenDateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new View_Owners().ShowDialog();
+        }
+
+        private void liliEntryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
         }
     }

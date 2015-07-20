@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
+using System.Data.SqlServerCe;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,12 +14,18 @@ namespace Mansi_Flowers
 {
     public partial class Delete_Owner : Form
     {
-        private OleDbConnection conn;
-        private OleDbCommand cmd = new OleDbCommand();
-        private String connectionString = Global_Connection.conn;
+        //private OleDbConnection conn;
+        //private OleDbCommand cmd = new OleDbCommand();
+        //private String connectionString = Global_Connection.conn;
+
+        private static String connectionString = Global_Connection.conn;
+        //private DataTable dtbl;
+
+        SqlCeConnection conn = new SqlCeConnection(connectionString);
+        SqlCeCommand cmd = new SqlCeCommand();
         public Delete_Owner()
         {
-            conn = new OleDbConnection(connectionString);
+            //conn = new OleDbConnection(connectionString);
             InitializeComponent();
         }
 
@@ -74,8 +81,10 @@ namespace Mansi_Flowers
             dataGridView1.Refresh();
 
             String query = "SELECT * FROM owner_master";
-            OleDbDataAdapter adapter = new OleDbDataAdapter(query, conn);
-            OleDbCommandBuilder commnder = new OleDbCommandBuilder(adapter);
+            SqlCeDataAdapter adapter = new SqlCeDataAdapter(query, conn);
+            //OleDbDataAdapter adapter = new OleDbDataAdapter(query, conn);
+            SqlCeCommandBuilder commnder = new SqlCeCommandBuilder(adapter);
+            //OleDbCommandBuilder commnder = new OleDbCommandBuilder(adapter);
             DataTable dt = new DataTable();
             DataSet ds = new DataSet();
             adapter.Fill(dt);
@@ -105,8 +114,10 @@ namespace Mansi_Flowers
             dataGridView1.Refresh();
             String searchText = textBox1.Text;
             String query = "SELECT * FROM owner_master WHERE OwnerName LIKE '%" + searchText + "%' OR Contact_Number LIKE '%" + searchText + "%' OR Address LIKE '%" + searchText + "%'";
-            OleDbDataAdapter adapter = new OleDbDataAdapter(query, conn);
-            OleDbCommandBuilder commnder = new OleDbCommandBuilder(adapter);
+            SqlCeDataAdapter adapter = new SqlCeDataAdapter(query, conn);
+            //OleDbDataAdapter adapter = new OleDbDataAdapter(query, conn);
+            //OleDbCommandBuilder commnder = new OleDbCommandBuilder(adapter);
+            SqlCeCommandBuilder commnder = new SqlCeCommandBuilder(adapter);
             DataTable dt = new DataTable();
             DataSet ds = new DataSet();
             adapter.Fill(dt);

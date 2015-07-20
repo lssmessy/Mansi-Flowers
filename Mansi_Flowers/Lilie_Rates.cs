@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
+using System.Data.SqlServerCe;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,14 +14,20 @@ namespace Mansi_Flowers
 {
     public partial class Lilie_Rates : Form
     {
-        private OleDbConnection conn;
-        private OleDbCommand cmd = new OleDbCommand();
-        private String connectionString = Global_Connection.conn;
+        //private OleDbConnection conn;
+        //private OleDbCommand cmd = new OleDbCommand();
+        //private String connectionString = Global_Connection.conn;
+        DataTable dt;
+        private static String connectionString = Global_Connection.conn;
+        //private DataTable dtbl;
+
+        SqlCeConnection conn = new SqlCeConnection(connectionString);
+        SqlCeCommand cmd = new SqlCeCommand();
         //private DataTable dtbl;
         //int i = 0;
         public Lilie_Rates()
         {
-            conn = new OleDbConnection(connectionString);
+            //conn = new OleDbConnection(connectionString);
             InitializeComponent();
         }
 
@@ -34,7 +41,8 @@ namespace Mansi_Flowers
             cmd.Connection = conn;
             conn.Open();
             cmd.CommandText = ("SELECT Lilie_Date,Rate FROM lilie_master WHERE Lilie_Date LIKE '%" + month + "%' ORDER BY Lilie_Date DESC");
-            OleDbDataReader rd = cmd.ExecuteReader();
+            //OleDbDataReader rd = cmd.ExecuteReader();
+            SqlCeDataReader rd = cmd.ExecuteReader();
             while (rd.Read())
             {
 
@@ -76,7 +84,8 @@ namespace Mansi_Flowers
             cmd.Connection = conn;
             conn.Open();
             cmd.CommandText = ("SELECT Lilie_Date,Rate FROM lilie_master WHERE Lilie_Date LIKE '%" + month + "%' ORDER BY Lilie_Date DESC");
-            OleDbDataReader rd = cmd.ExecuteReader();
+            //OleDbDataReader rd = cmd.ExecuteReader();
+            SqlCeDataReader rd = cmd.ExecuteReader();
             while (rd.Read())
             {
 
@@ -98,7 +107,7 @@ namespace Mansi_Flowers
 
             conn.Close();
 
-            DataTable dt = ListToDataTable(lstPairs);
+            dt = ListToDataTable(lstPairs);
             dataGridView1.DataSource = dt;
             dataGridView1.Refresh();
             }
@@ -134,6 +143,8 @@ namespace Mansi_Flowers
         private void button1_Click(object sender, EventArgs e)
         {
             try{
+                this.Enabled = false;
+                this.Cursor = Cursors.WaitCursor;
 
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
@@ -149,6 +160,8 @@ namespace Mansi_Flowers
                 conn.Close();
             }
             MessageBox.Show("Rates updated", "Rates", MessageBoxButtons.OK,MessageBoxIcon.Information);
+            this.Cursor = Cursors.Default;
+            this.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -180,6 +193,12 @@ namespace Mansi_Flowers
                 e.Handled = true;
             }
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+            
         }
 
 

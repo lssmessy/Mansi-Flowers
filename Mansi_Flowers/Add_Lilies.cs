@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
+using System.Data.SqlServerCe;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,15 +14,19 @@ namespace Mansi_Flowers
 {
     public partial class Add_Lilies : Form
     {
-        private OleDbConnection conn;
-        private OleDbCommand cmd = new OleDbCommand();
-        private String connectionString = Global_Connection.conn;
+        //private OleDbConnection conn;
+        //private OleDbCommand cmd = new OleDbCommand();
+        private static String connectionString = Global_Connection.conn;
         private DataTable dtbl;
+        DataSet ds;
+        SqlCeConnection conn = new SqlCeConnection(connectionString);
+        SqlCeCommand cmd = new SqlCeCommand();
+
         List<String> ownernames = new List<string>();
         List<String> lili = new List<string>();
         public Add_Lilies()
         {
-            conn = new OleDbConnection(connectionString);
+            //conn = new OleDbConnection(connectionString);
             
             InitializeComponent();
         }
@@ -41,9 +46,10 @@ namespace Mansi_Flowers
                 cmd.Connection = conn;
                 conn.Open();
                 String query = "SELECT Owner_ID,OwnerName FROM owner_master";
-                OleDbDataAdapter adp = new OleDbDataAdapter(query, conn);
+                SqlCeDataAdapter adp = new SqlCeDataAdapter(query, conn);
+                //OleDbDataAdapter adp = new OleDbDataAdapter(query, conn);
                 //OleDbCommandBuilder builder = new OleDbCommandBuilder(adp);
-                DataSet ds = new DataSet();
+                ds = new DataSet();
                 adp.Fill(ds);
 
                 
@@ -60,6 +66,7 @@ namespace Mansi_Flowers
 
                  
                 }
+                ds.WriteXmlSchema("Lilies_By_Day.xml");
                 conn.Close();
                 //MessageBox.Show("inserted");
 
@@ -80,8 +87,10 @@ namespace Mansi_Flowers
                 dataGridView1.DataSource = dtbl;
                 dataGridView1.Refresh();
                 String query1 = "SELECT Owner_ID,OwnerName,Lilies FROM lilie_master WHERE Lilie_Date='" + theDate + "' ORDER BY Owner_ID ASC";
-                OleDbDataAdapter adapter = new OleDbDataAdapter(query1, conn);
-                OleDbCommandBuilder cmdBuilder = new OleDbCommandBuilder(adapter);
+                //OleDbDataAdapter adapter = new OleDbDataAdapter(query1, conn);
+                SqlCeDataAdapter adapter = new SqlCeDataAdapter(query1, conn);
+                //OleDbCommandBuilder cmdBuilder = new OleDbCommandBuilder(adapter);
+                SqlCeCommandBuilder cmdBuilder = new SqlCeCommandBuilder(adapter);
                 DataTable tbl = new DataTable();
                 
                 adapter.Fill(dtbl);
@@ -163,7 +172,8 @@ namespace Mansi_Flowers
                 cmd.Connection = conn;
                 conn.Open();
                 String query = "SELECT Owner_ID,OwnerName FROM owner_master";
-                OleDbDataAdapter adp = new OleDbDataAdapter(query, conn);
+                //OleDbDataAdapter adp = new OleDbDataAdapter(query, conn);
+                SqlCeDataAdapter adp = new SqlCeDataAdapter(query, conn);
                 //OleDbCommandBuilder builder = new OleDbCommandBuilder(adp);
                 DataSet ds = new DataSet();
                 adp.Fill(ds);
@@ -205,8 +215,10 @@ namespace Mansi_Flowers
                 
                 dataGridView1.Refresh();
                 String query1 = "SELECT Owner_ID,OwnerName,Lilies FROM lilie_master WHERE Lilie_Date='" + theDate + "'";
-                OleDbDataAdapter adapter = new OleDbDataAdapter(query1, conn);
-                OleDbCommandBuilder cmdBuilder = new OleDbCommandBuilder(adapter);
+                //OleDbDataAdapter adapter = new OleDbDataAdapter(query1, conn);
+                SqlCeDataAdapter adapter = new SqlCeDataAdapter(query1, conn);
+                SqlCeCommandBuilder cmdBuilder = new SqlCeCommandBuilder(adapter);
+                //OleDbCommandBuilder cmdBuilder = new OleDbCommandBuilder(adapter);
                 DataTable tbl = new DataTable();
                 
                 adapter.Fill(dtbl);

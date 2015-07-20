@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
+using System.Data.SqlServerCe;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,10 +16,14 @@ namespace Mansi_Flowers
     {
         private string owner;
         private int oid;
-        private OleDbConnection conn;
-        private OleDbCommand cmd = new OleDbCommand();
-        private String connectionString = Global_Connection.conn;
-        DataSet ds = new DataSet();
+        
+        private static String connectionString = Global_Connection.conn;
+        
+
+        SqlCeConnection conn = new SqlCeConnection(connectionString);
+        SqlCeCommand cmd = new SqlCeCommand();
+
+        DataSet ds;
         //public Bill()
         //{
         //    conn = new OleDbConnection(connectionString);
@@ -29,7 +34,7 @@ namespace Mansi_Flowers
         public Bill(string owner, int oid)
         {
             // TODO: Complete member initialization
-            conn = new OleDbConnection(connectionString);
+            //conn = new OleDbConnection(connectionString);
             InitializeComponent();
             this.owner = owner;
             this.oid = oid;
@@ -43,7 +48,7 @@ namespace Mansi_Flowers
             double amount = 0.0;
             label2.Text = owner;
             String month = dateTimePicker1.Value.ToString("MM-yyyy");
-            DataSet ds = new DataSet();
+            ds = new DataSet();
             DataTable dtbl = new DataTable();
             
             dtbl.Columns.Add("Lilie_Date");
@@ -60,10 +65,13 @@ namespace Mansi_Flowers
             dataGridView1.Refresh();
 
             String query1 = "SELECT Lilie_Date,Lilies,Rate FROM lilie_master WHERE (Owner_ID =" + oid + " AND OwnerName='" + owner + "'AND Lilie_Date LIKE '%" + month + "%' ) ORDER BY Lilie_Date ASC";// OwnerName,Lilie_Date,Lilies,Rate,Owner_ID // 
-            OleDbDataAdapter adapter = new OleDbDataAdapter(query1, conn);
-            OleDbCommandBuilder cmdBuilder = new OleDbCommandBuilder(adapter);
-            DataTable tbl = new DataTable();
+            //OleDbDataAdapter adapter = new OleDbDataAdapter(query1, conn);
+            //OleDbCommandBuilder cmdBuilder = new OleDbCommandBuilder(adapter);
 
+            SqlCeDataAdapter adapter = new SqlCeDataAdapter(query1, conn);
+            SqlCeCommandBuilder cmdBuilder = new SqlCeCommandBuilder(adapter);
+            DataTable tbl = new DataTable();
+            
             adapter.Fill(dtbl);
             int rates = 0;
             int lilis = 0;
@@ -71,6 +79,7 @@ namespace Mansi_Flowers
             double rent = 0.0d;
             double commission = 0.0d;
             double final_amount = 0.0d;
+            
             for (int i = 0; i < dataGridView1.Rows.Count; i++) { 
 
                  if (int.TryParse(dataGridView1.Rows[i].Cells[2].Value.ToString(), out rates))
@@ -81,11 +90,12 @@ namespace Mansi_Flowers
                  total_lilis += lilis;
                  total_amount +=(double)amount;
                  dataGridView1.Rows[i].Cells["Amount"].ReadOnly = true;
+                 
 
             }
             
             ds.Tables.Add(dtbl);
-            ds.WriteXmlSchema("Sample.xml");
+            ds.WriteXmlSchema("Bill.xml");
             rent = (total_lilis * 5) / 1000.0;
             commission = (total_amount * 15) / 100.0;
             final_amount = total_amount - rent - commission;
@@ -160,8 +170,11 @@ namespace Mansi_Flowers
             dataGridView1.Refresh();
 
             String query1 = "SELECT Lilie_Date,Lilies,Rate FROM lilie_master WHERE (Owner_ID =" + oid + " AND OwnerName='" + owner + "'AND Lilie_Date LIKE '%" + month + "%' ) ORDER BY Lilie_Date ASC";// OwnerName,Lilie_Date,Lilies,Rate,Owner_ID // 
-            OleDbDataAdapter adapter = new OleDbDataAdapter(query1, conn);
-            OleDbCommandBuilder cmdBuilder = new OleDbCommandBuilder(adapter);
+            //OleDbDataAdapter adapter = new OleDbDataAdapter(query1, conn);
+            //OleDbCommandBuilder cmdBuilder = new OleDbCommandBuilder(adapter);
+
+            SqlCeDataAdapter adapter = new SqlCeDataAdapter(query1, conn);
+            SqlCeCommandBuilder cmdBuilder = new SqlCeCommandBuilder(adapter);
             DataTable tbl = new DataTable();
 
             adapter.Fill(dtbl);
@@ -171,6 +184,7 @@ namespace Mansi_Flowers
             double rent = 0.0d;
             double commission = 0.0d;
             double final_amount = 0.0d;
+            
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
 
@@ -181,6 +195,7 @@ namespace Mansi_Flowers
                 dataGridView1.Rows[i].Cells[3].Value = amount;
                 total_lilis += lilis;
                 total_amount += (double)amount;
+                
             }
             rent = (total_lilis * 5) / 1000.0;
             commission = (total_amount * 15) / 100.0;
@@ -210,8 +225,8 @@ namespace Mansi_Flowers
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
-            
+
+            new Bill_View(ds).ShowDialog();
             //new Report().ShowDialog();
             
         }

@@ -40,7 +40,11 @@ H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.View_Owners.resources
 H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.csproj.GenerateResource.Cache
 D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Lilie_Rates.resources
 D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Bill.resources
-D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Report.resources
 H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Bill.resources
 H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Lilie_Rates.resources
 H:\Mansi-Flowers\Mansi_Flowers\bin\Debug\Lilies.sdf
+D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\bin\Debug\Lilies.sdf
+D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Bill_Between_Dates.resources
+D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.View_Owners_Monthly.resources
+D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Report_View.resources
+D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Bill_View.resources

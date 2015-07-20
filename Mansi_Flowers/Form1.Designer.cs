@@ -38,10 +38,8 @@
             this.liliRatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addEditRateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.billPrintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateOwnerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.daysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.betweenDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monthkyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.betweenDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.betweenDatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monthlyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,6 +69,7 @@
             this.liliEntryToolStripMenuItem.Name = "liliEntryToolStripMenuItem";
             this.liliEntryToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.liliEntryToolStripMenuItem.Text = "Lili &Entry";
+            this.liliEntryToolStripMenuItem.Click += new System.EventHandler(this.liliEntryToolStripMenuItem_Click);
             // 
             // addUpdateLilisToolStripMenuItem
             // 
@@ -120,47 +119,32 @@
             // addEditRateToolStripMenuItem
             // 
             this.addEditRateToolStripMenuItem.Name = "addEditRateToolStripMenuItem";
-            this.addEditRateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addEditRateToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.addEditRateToolStripMenuItem.Text = "Add/&Edit rate";
             this.addEditRateToolStripMenuItem.Click += new System.EventHandler(this.addEditRateToolStripMenuItem_Click);
             // 
             // billPrintToolStripMenuItem
             // 
             this.billPrintToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.updateOwnerToolStripMenuItem,
-            this.daysToolStripMenuItem,
-            this.betweenDateToolStripMenuItem,
-            this.monthkyToolStripMenuItem});
+            this.monthkyToolStripMenuItem,
+            this.betweenDateToolStripMenuItem});
             this.billPrintToolStripMenuItem.Name = "billPrintToolStripMenuItem";
             this.billPrintToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.billPrintToolStripMenuItem.Text = "&Bill Print";
             // 
-            // updateOwnerToolStripMenuItem
+            // monthkyToolStripMenuItem
             // 
-            this.updateOwnerToolStripMenuItem.Name = "updateOwnerToolStripMenuItem";
-            this.updateOwnerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.updateOwnerToolStripMenuItem.Text = "&View Owner";
-            this.updateOwnerToolStripMenuItem.Click += new System.EventHandler(this.updateOwnerToolStripMenuItem_Click_1);
-            // 
-            // daysToolStripMenuItem
-            // 
-            this.daysToolStripMenuItem.Name = "daysToolStripMenuItem";
-            this.daysToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.daysToolStripMenuItem.Text = "15 Days";
-            this.daysToolStripMenuItem.Click += new System.EventHandler(this.daysToolStripMenuItem_Click);
+            this.monthkyToolStripMenuItem.Name = "monthkyToolStripMenuItem";
+            this.monthkyToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.monthkyToolStripMenuItem.Text = "Monthly";
+            this.monthkyToolStripMenuItem.Click += new System.EventHandler(this.monthkyToolStripMenuItem_Click);
             // 
             // betweenDateToolStripMenuItem
             // 
             this.betweenDateToolStripMenuItem.Name = "betweenDateToolStripMenuItem";
-            this.betweenDateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.betweenDateToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.betweenDateToolStripMenuItem.Text = "Between Dates";
-            // 
-            // monthkyToolStripMenuItem
-            // 
-            this.monthkyToolStripMenuItem.Name = "monthkyToolStripMenuItem";
-            this.monthkyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.monthkyToolStripMenuItem.Text = "Monthly";
-            this.monthkyToolStripMenuItem.Click += new System.EventHandler(this.monthkyToolStripMenuItem_Click);
+            this.betweenDateToolStripMenuItem.Click += new System.EventHandler(this.betweenDateToolStripMenuItem_Click);
             // 
             // reportsToolStripMenuItem
             // 
@@ -186,7 +170,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Location = new System.Drawing.Point(519, 27);
+            this.dateTimePicker1.Location = new System.Drawing.Point(12, 41);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 1;
@@ -201,9 +185,11 @@
             this.ClientSize = new System.Drawing.Size(676, 262);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Mansi Flowers Home";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -229,8 +215,6 @@
         private System.Windows.Forms.ToolStripMenuItem liliEntryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addUpdateLilisToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem daysToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem updateOwnerToolStripMenuItem;
     }
 }
 

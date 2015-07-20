@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.OleDb;
 using System.Data.SqlServerCe;
 using System.Drawing;
-using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,25 +11,19 @@ using System.Windows.Forms;
 
 namespace Mansi_Flowers
 {
-    public partial class View_Owners : Form
+    public partial class View_Owners_Monthly : Form
     {
-        //private OleDbConnection conn;
-        //private OleDbCommand cmd = new OleDbCommand();
-        //private String connectionString = Global_Connection.conn;
-
         private static String connectionString = Global_Connection.conn;
         //private DataTable dtbl;
 
         SqlCeConnection conn = new SqlCeConnection(connectionString);
         SqlCeCommand cmd = new SqlCeCommand();
-        DataSet ds;
-        public View_Owners()
+        public View_Owners_Monthly()
         {
-            //conn = new OleDbConnection(connectionString);
             InitializeComponent();
         }
 
-        private void View_Owners_Load(object sender, EventArgs e)
+        private void View_Owners_Monthly_Load(object sender, EventArgs e)
         {
             try
             {
@@ -43,13 +35,13 @@ namespace Mansi_Flowers
                 dataGridView1.Rows.Clear();
                 dataGridView1.Refresh();
 
-                String query = "SELECT * FROM owner_master ORDER BY Owner_ID ASC";
+                String query = "SELECT * FROM owner_master";
                 //OleDbDataAdapter adapter = new OleDbDataAdapter(query, conn);
                 SqlCeDataAdapter adapter = new SqlCeDataAdapter(query, conn);
                 SqlCeCommandBuilder commnder = new SqlCeCommandBuilder(adapter);
                 //OleDbCommandBuilder commnder = new OleDbCommandBuilder(adapter);
                 DataTable dt = new DataTable();
-                ds = new DataSet();
+                DataSet ds = new DataSet();
                 adapter.Fill(dt);
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
@@ -59,8 +51,6 @@ namespace Mansi_Flowers
                         dataGridView1.Rows.Add(dt.Rows[i][0], dt.Rows[i][1], dt.Rows[i][2], dt.Rows[i][3]);
                     }
                 }
-                ds.Tables.Add(dt);
-                ds.WriteXmlSchema("View_Owners.xml");
                 DataGridViewButtonColumn view_owner = new DataGridViewButtonColumn();
                 view_owner.Name = "View Owner";
                 view_owner.Text = "View Bill";
@@ -81,50 +71,6 @@ namespace Mansi_Flowers
         {
             dataGridView1.Rows[1].Cells["View Bill"] = new DataGridViewTextBoxCell();
         }
-        
-    
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            new Report_View(ds).ShowDialog();
-            
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            try{
-            dataGridView1.DataSource = null;
-            dataGridView1.Rows.Clear();
-            dataGridView1.Refresh();
-            
-            String searchText = textBox1.Text;
-            String query = "SELECT * FROM owner_master WHERE OwnerName LIKE '%" + searchText + "%'";
-            //OleDbDataAdapter adapter = new OleDbDataAdapter(query, conn);
-            //OleDbCommandBuilder commnder = new OleDbCommandBuilder(adapter);
-            SqlCeDataAdapter adapter = new SqlCeDataAdapter(query, conn);
-            SqlCeCommandBuilder commnder = new SqlCeCommandBuilder(adapter);
-            DataTable dt = new DataTable();
-            ds = new DataSet();
-                
-            adapter.Fill(dt);
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                    dataGridView1.Rows.Add(dt.Rows[i][0], dt.Rows[i][1], dt.Rows[i][2], dt.Rows[i][3]);
-                         
-                
-               
-            }
-            //for (int i = 0; i < dataGridView1.Rows.Count; i++) {
-            //    dataGridView1.Rows[i].Cells[0].Value = ReadOnlyAttribute.Yes;
-            //}
-                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-
-        }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -140,7 +86,7 @@ namespace Mansi_Flowers
                 SqlCeDataAdapter adapter = new SqlCeDataAdapter(query, conn);
                 SqlCeCommandBuilder commnder = new SqlCeCommandBuilder(adapter);
                 DataTable dt = new DataTable();
-                 ds = new DataSet();
+                DataSet ds = new DataSet();
                 adapter.Fill(dt);
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
@@ -149,64 +95,42 @@ namespace Mansi_Flowers
 
                 }
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.ToString());
             }
         }
 
         private void textBox1_Enter(object sender, EventArgs e)
         {
-                textBox1.Text = "";
-            
-        }
-
-        private void textBox1_Move(object sender, EventArgs e)
-        {
-            if (textBox1.Text.Length < 1)
-            {
-                
-            }
-        }
-
-        private void textBox1_ControlRemoved(object sender, ControlEventArgs e)
-        {
-            
-        }
-
-        private void textBox1_Leave(object sender, EventArgs e)
-        {
-            
+            textBox1.Text = "";
         }
         private void SettingsGrid_MouseEnter(object sender, EventArgs e)
         {
             dataGridView1.Focus();
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-        }
-
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            try{
-            if (dataGridView1.Columns[e.ColumnIndex].Name == "View Owner" )
+            try
             {
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                
-                //MessageBox.Show("You clicked me " +dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
-                String owner = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                int oid = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-                //Bill bill = new Bill(owner,oid);
-                Bill_Between_Dates bill = new Bill_Between_Dates(owner, oid);
-                bill.ShowDialog();
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "View Owner")
+                {
+                    DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
 
-            }
+                    //MessageBox.Show("You clicked me " +dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
+                    String owner = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    int oid = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    //Bill bill = new Bill(owner,oid);
+                    Bill bill = new Bill(owner, oid);
+                    bill.ShowDialog();
+
+                }
             }
             catch (Exception ex)
             {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
+using System.Data.SqlServerCe;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,13 +14,21 @@ namespace Mansi_Flowers
 {
     public partial class Add_Owner : Form
     {
-        private OleDbConnection conn;
-        private OleDbCommand cmd = new OleDbCommand();
-        private String connectionString = Global_Connection.conn;
+        //private OleDbConnection conn;
+        //private OleDbCommand cmd = new OleDbCommand();
+        //private String connectionString = Global_Connection.conn;
+
+        private static String connectionString = Global_Connection.conn;
         private DataTable dtbl;
+
+        SqlCeConnection conn = new SqlCeConnection(connectionString);
+        SqlCeCommand cmd = new SqlCeCommand();
+
+       // private DataTable dtbl;
         public Add_Owner()
         {
-            conn = new OleDbConnection(connectionString);
+            //conn = new OleDbConnection(connectionString);
+            //cmd.Connection=co
             InitializeComponent();
         }
 
@@ -30,6 +39,8 @@ namespace Mansi_Flowers
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Enabled = false;
+            this.Cursor = Cursors.WaitCursor;
             try{
             Boolean success = false;
 
@@ -38,7 +49,11 @@ namespace Mansi_Flowers
                 if (isempty()==false) {
                     cmd.Connection = conn;
                     conn.Open();
-                    cmd.CommandText = ("INSERT INTO owner_master(OwnerName,Contact_Number,Address) VALUES ('" + dataGridView1.Rows[i].Cells["OwnerName"].Value + "','" + dataGridView1.Rows[i].Cells["Contact_Number"].Value + "','" + dataGridView1.Rows[i].Cells["Address"].Value + "')");
+                    cmd.CommandText = ("INSERT INTO owner_master(OwnerName,Contact_Number,Address) VALUES (@owner_name,@contact,@address)");
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@owner_name", dataGridView1.Rows[i].Cells["OwnerName"].Value);
+                    cmd.Parameters.AddWithValue("@contact", dataGridView1.Rows[i].Cells["Contact_Number"].Value);
+                    cmd.Parameters.AddWithValue("@address", dataGridView1.Rows[i].Cells["Address"].Value);
                     cmd.ExecuteNonQuery();
                     //cmd.CommandText=("SELECT `Owner_ID` FROM owner_master WHERE `OwnerName`='" + dataGridView1.Rows[i].Cells["OwnerName"].Value + "'");
                     //int oid=(int)cmd.ExecuteScalar();
@@ -61,8 +76,11 @@ namespace Mansi_Flowers
             if (success == true)
             {
                 MessageBox.Show("Your data has been saved successfully","Success",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
+                this.Cursor = Cursors.Default;
+                this.Enabled = true;
                 this.Close();
             }
+            
             }
             catch (Exception ex)
             {
