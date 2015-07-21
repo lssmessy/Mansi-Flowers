@@ -22,7 +22,7 @@ namespace Mansi_Flowers
         SqlCeConnection conn = new SqlCeConnection(connectionString);
         SqlCeCommand cmd = new SqlCeCommand();
 
-        DataSet ds = new DataSet();
+        DataSet ds; 
         public Bill_Between_Dates()
         {
             
@@ -39,6 +39,7 @@ namespace Mansi_Flowers
 
         private void button1_Click(object sender, EventArgs e)
         {
+            button3.Enabled = true;
             this.Enabled = false;
             this.Cursor = Cursors.WaitCursor;
             try
@@ -49,7 +50,7 @@ namespace Mansi_Flowers
                 String month = dateTimePicker1.Value.ToString("MM-yyyy");
                 String month1 = dateTimePicker1.Value.ToString("dd-MM-yyyy");
                 String month2 = dateTimePicker2.Value.ToString("dd-MM-yyyy");
-                DataSet ds = new DataSet();
+                ds = new DataSet();
                 DataTable dtbl = new DataTable();
 
                 dtbl.Columns.Add("Lilie_Date");
@@ -97,18 +98,18 @@ namespace Mansi_Flowers
                 }
 
                 ds.Tables.Add(dtbl);
-                ds.WriteXmlSchema("Sample.xml");
+                ds.WriteXmlSchema("Bill.xml");
                 rent = (total_lilis * 5) / 1000.0;
                 commission = (total_amount * 15) / 100.0;
                 final_amount = total_amount - rent - commission;
 
-                var round_final = Math.Round(final_amount, 0);
+                var round_final = Math.Round(final_amount, MidpointRounding.AwayFromZero);
 
-                //cmd.Connection = conn;
-                //conn.Open();
-                //cmd.CommandText = ("UPDATE lilie_master SET Amount='" + round_final + "' WHERE (Owner_ID =" + oid + " AND OwnerName='" + owner + "'AND Lilie_Date LIKE '%" + month + "%' ) ");
-                //cmd.ExecuteNonQuery();
-                //conn.Close();
+                cmd.Connection = conn;
+                conn.Open();
+                cmd.CommandText = ("UPDATE lilie_master SET Amount='" + round_final + "' WHERE (Owner_ID =" + oid + " AND OwnerName='" + owner + "'AND Lilie_Date LIKE '%" + month + "%' ) ");
+                cmd.ExecuteNonQuery();
+                conn.Close();
                 label13.Text = round_final.ToString();
                 label11.Text = final_amount.ToString();
                 label9.Text = commission.ToString();
@@ -126,11 +127,23 @@ namespace Mansi_Flowers
         private void Bill_Between_Dates_Load(object sender, EventArgs e)
         {
             label2.Text = owner;
+            button3.Enabled = false;
+            dateTimePicker2.Enabled = false;
+            button1.Enabled = false;
+            dateTimePicker1.MaxDate = DateTime.Today;
+            dateTimePicker2.MaxDate = DateTime.Today;
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
+            dateTimePicker2.Enabled = true;
+            button1.Enabled = true;
+        }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            String month = dateTimePicker1.Value.ToString("MMMM-yyyy");
+            new Bill_View(ds, label2.Text, label3.Text, label5.Text, label7.Text, label9.Text, label11.Text, label13.Text, month).ShowDialog();
         }
     }
 }

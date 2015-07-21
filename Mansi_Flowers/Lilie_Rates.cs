@@ -33,6 +33,7 @@ namespace Mansi_Flowers
 
         private void Lilie_Rates_Load(object sender, EventArgs e)
         {
+            dateTimePicker1.MaxDate = DateTime.Today;
             try{
             String month = dateTimePicker1.Value.ToString("MM-yyyy");
             List<String> dates = new List<string>();
@@ -63,10 +64,26 @@ namespace Mansi_Flowers
             }
 
             conn.Close();
+                           
 
             DataTable dt = ListToDataTable(lstPairs);
             dataGridView1.DataSource = dt;
             dataGridView1.Refresh();
+            
+            for (int i = 0; i <= dataGridView1.Rows.Count-1 ; i++)
+            {
+                if (dataGridView1.Rows[i].Cells[1].Value.ToString() == "")
+                {
+                    String dts=dataGridView1.Rows[i].Cells[0].Value.ToString();
+                    cmd.Connection = conn;
+                    conn.Open();
+                    int s = 0;
+                    cmd.CommandText = ("UPDATE lilie_master SET Rate='" + s + "' WHERE Lilie_Date='" + dataGridView1.Rows[i].Cells[0].Value.ToString() + "'");
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                }
+            }
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.ToString());
@@ -110,6 +127,22 @@ namespace Mansi_Flowers
             dt = ListToDataTable(lstPairs);
             dataGridView1.DataSource = dt;
             dataGridView1.Refresh();
+
+            for (int i = 0; i <=dataGridView1.Rows.Count-1; i++) {
+
+                
+                if (dataGridView1.Rows[i].Cells[1].Value.ToString() == "") {
+                    
+                    cmd.Connection = conn;
+                    conn.Open();
+                    int s=0;
+                    cmd.CommandText = ("UPDATE lilie_master SET Rate='" + s + "' WHERE Lilie_Date='" + dataGridView1.Rows[i].Cells[0].Value.ToString()+ "'");
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    
+                }
+            }
+
             }
             catch (Exception ex)
             {

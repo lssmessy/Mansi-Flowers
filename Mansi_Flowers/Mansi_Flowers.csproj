@@ -103,6 +103,18 @@
       <DependentUpon>CrystalReport2.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CrystalReport3.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport3.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Daily_Total.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Daily_Total.Designer.cs">
+      <DependentUpon>Daily_Total.cs</DependentUpon>
+    </Compile>
     <Compile Include="DateRatePair.cs" />
     <Compile Include="Delete_Owner.cs">
       <SubType>Form</SubType>
@@ -189,6 +201,13 @@
     <EmbeddedResource Include="CrystalReport2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport3.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Daily_Total.resx">
+      <DependentUpon>Daily_Total.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Delete_Owner.resx">
       <DependentUpon>Delete_Owner.cs</DependentUpon>

@@ -198,6 +198,7 @@
             this.button3.TabIndex = 29;
             this.button3.Text = "P&rint";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -282,6 +283,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.button2;
             this.ClientSize = new System.Drawing.Size(665, 584);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
@@ -305,6 +307,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Bill_Between_Dates";
             this.Text = "Bill_Between_Dates";
             this.Load += new System.EventHandler(this.Bill_Between_Dates_Load);

@@ -76,10 +76,10 @@ namespace Mansi_Flowers
             if (success == true)
             {
                 MessageBox.Show("Your data has been saved successfully","Success",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
-                this.Cursor = Cursors.Default;
-                this.Enabled = true;
-                this.Close();
+                this.Close();    
             }
+            this.Cursor = Cursors.Default;
+            this.Enabled = true;
             
             }
             catch (Exception ex)
@@ -98,6 +98,11 @@ namespace Mansi_Flowers
 
         private void Add_Owner_Load(object sender, EventArgs e)
         {
+            if (dataGridView1.Rows.Count == 0)
+            {
+                button1.Enabled = false;
+                button4.Enabled = false;
+            }
             try
             {
                 dtbl = new DataTable();
@@ -147,6 +152,8 @@ namespace Mansi_Flowers
             dtbl.Rows.Add(row);
             dataGridView1.Columns["OwnerName"].Width = 170;
             dataGridView1.Refresh();
+            button1.Enabled = true;
+            button4.Enabled = true;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -167,6 +174,15 @@ namespace Mansi_Flowers
         private void SettingsGrid_MouseEnter(object sender, EventArgs e)
         {
             dataGridView1.Focus();
+        }
+
+        private void dataGridView1_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            if (dataGridView1.Rows.Count == 0)
+            {
+                button1.Enabled = false;
+                button4.Enabled = false;
+            }
         }
     }
 }

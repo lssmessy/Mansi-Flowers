@@ -23,7 +23,7 @@ namespace Mansi_Flowers
         SqlCeConnection conn = new SqlCeConnection(connectionString);
         SqlCeCommand cmd = new SqlCeCommand();
 
-        DataSet ds;
+        DataSet ds=new DataSet();
         //public Bill()
         //{
         //    conn = new OleDbConnection(connectionString);
@@ -43,12 +43,13 @@ namespace Mansi_Flowers
 
         private void Bill_Load(object sender, EventArgs e)
         {
+            dateTimePicker1.MaxDate = DateTime.Today;
             try{
             int total_lilis = 0;
             double amount = 0.0;
             label2.Text = owner;
             String month = dateTimePicker1.Value.ToString("MM-yyyy");
-            ds = new DataSet();
+            //ds = new DataSet();
             DataTable dtbl = new DataTable();
             
             dtbl.Columns.Add("Lilie_Date");
@@ -93,26 +94,26 @@ namespace Mansi_Flowers
                  
 
             }
-            
-            ds.Tables.Add(dtbl);
-            ds.WriteXmlSchema("Bill.xml");
+
+            this.ds.Tables.Add(dtbl);
+            this.ds.WriteXmlSchema("Bill.xml");
             rent = (total_lilis * 5) / 1000.0;
             commission = (total_amount * 15) / 100.0;
             final_amount = total_amount - rent - commission;
 
-            var round_final = Math.Round(final_amount, 0);
+            var round_final = Math.Round(final_amount, MidpointRounding.AwayFromZero);
 
             cmd.Connection = conn;
             conn.Open();
             cmd.CommandText = ("UPDATE lilie_master SET Amount='" + round_final + "' WHERE (Owner_ID =" + oid + " AND OwnerName='" + owner + "'AND Lilie_Date LIKE '%" + month + "%' ) ");
             cmd.ExecuteNonQuery();
             conn.Close();
-            label13.Text = round_final.ToString();
-            label11.Text = final_amount.ToString();
-            label9.Text = commission.ToString();
-            label7.Text = rent.ToString();
-                label3.Text = total_lilis.ToString();
-                label5.Text = total_amount.ToString();
+            this.label13.Text = round_final.ToString();
+            this.label11.Text = final_amount.ToString();
+            this.label9.Text = commission.ToString();
+            this.label7.Text = rent.ToString();
+            this.label3.Text = total_lilis.ToString();
+            this.label5.Text = total_amount.ToString();
                 
                 //ds.Tables.Add(dtbl);
             }
@@ -121,37 +122,13 @@ namespace Mansi_Flowers
             }
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             try{
             int total_lilis = 0;
             double amount = 0.0;
-            label2.Text = owner;
+            this.label2.Text = owner;
             String month = dateTimePicker1.Value.ToString("MM-yyyy");
             DataTable dtbl = new DataTable();
             
@@ -200,22 +177,24 @@ namespace Mansi_Flowers
             rent = (total_lilis * 5) / 1000.0;
             commission = (total_amount * 15) / 100.0;
             final_amount = total_amount - rent - commission;
-            var round_final = Math.Round(final_amount, 0);
-
+            var round_final = Math.Round(final_amount, MidpointRounding.AwayFromZero);
+            ds.Reset();
+            ds.Tables.Add(dtbl);
+            ds.WriteXmlSchema("Bill.xml");
             cmd.Connection = conn;
             conn.Open();
             cmd.CommandText = ("UPDATE lilie_master SET Amount='" + round_final + "' WHERE (Owner_ID =" + oid + " AND OwnerName='" + owner + "'AND Lilie_Date LIKE '%" + month + "%' ) ");
             cmd.ExecuteNonQuery();
             conn.Close();
 
-            label13.Text = round_final.ToString();
+            this.label13.Text = round_final.ToString();
 
-            label11.Text = final_amount.ToString();
-            label9.Text = commission.ToString();
-            label7.Text = rent.ToString();
-            label3.Text = total_lilis.ToString();
-            label5.Text = total_amount.ToString();
-            ds.Tables.Add(dtbl);
+            this.label11.Text = final_amount.ToString();
+            this.label9.Text = commission.ToString();
+            this.label7.Text = rent.ToString();
+            this.label3.Text = total_lilis.ToString();
+            this.label5.Text = total_amount.ToString();
+            
             }
             catch (Exception ex)
             {
@@ -225,8 +204,8 @@ namespace Mansi_Flowers
 
         private void button3_Click(object sender, EventArgs e)
         {
-
-            new Bill_View(ds).ShowDialog();
+            String month = dateTimePicker1.Value.ToString("MMMM-yyyy");
+            new Bill_View(ds, label2.Text,label3.Text, label5.Text, label7.Text, label9.Text, label11.Text, label13.Text,month).ShowDialog();
             //new Report().ShowDialog();
             
         }

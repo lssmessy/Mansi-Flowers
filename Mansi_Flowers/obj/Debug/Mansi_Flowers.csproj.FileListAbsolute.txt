@@ -48,3 +48,4 @@ D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Bill_Betwee
 D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.View_Owners_Monthly.resources
 D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Report_View.resources
 D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Bill_View.resources
+D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Daily_Total.resources

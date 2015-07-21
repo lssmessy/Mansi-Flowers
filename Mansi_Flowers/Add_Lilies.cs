@@ -40,7 +40,7 @@ namespace Mansi_Flowers
         {
             string theDate = dateTimePicker1.Value.ToString("dd-MM-yyyy");
             dateTimePicker1.MaxDate = DateTime.Today;
-            
+            int rate = 0;
             try {
                 
                 cmd.Connection = conn;
@@ -59,14 +59,14 @@ namespace Mansi_Flowers
                     cmd.CommandText = ("SELECT COUNT(*) FROM lilie_master WHERE Owner_ID=" + ds.Tables[0].Rows[i].ItemArray[0].ToString() + "AND Lilie_Date LIKE '%" + theDate + "%'");
                     int cnt = (int)cmd.ExecuteScalar();
                     if (cnt != 1 && cnt==0) {
-                    
-                    cmd.CommandText = ("INSERT INTO lilie_master(Owner_ID,Lilie_Date,OwnerName) VALUES(" + ds.Tables[0].Rows[i].ItemArray[0].ToString() + ",'" + theDate + "','" + ds.Tables[0].Rows[i].ItemArray[1].ToString() + "')");
+                       
+                    cmd.CommandText = ("INSERT INTO lilie_master(Owner_ID,Lilie_Date,OwnerName,Rate) VALUES(" + ds.Tables[0].Rows[i].ItemArray[0].ToString() + ",'" + theDate + "','" + ds.Tables[0].Rows[i].ItemArray[1].ToString() + "','"+rate+"')");
                     cmd.ExecuteNonQuery();
                     }
 
                  
                 }
-                ds.WriteXmlSchema("Lilies_By_Day.xml");
+                
                 conn.Close();
                 //MessageBox.Show("inserted");
 
@@ -102,6 +102,8 @@ namespace Mansi_Flowers
 
                     
                 }
+                ds.Tables.Add(dtbl);
+                ds.WriteXmlSchema("Lilies_By_Day.xml");
                 dataGridView1.Columns[1].Width = 170;
                 //dataGridView1.Rows[0].Cells[0].Selected = false;
                 //dataGridView1.Rows[0].Cells[2].Selected = true;
@@ -175,7 +177,7 @@ namespace Mansi_Flowers
                 //OleDbDataAdapter adp = new OleDbDataAdapter(query, conn);
                 SqlCeDataAdapter adp = new SqlCeDataAdapter(query, conn);
                 //OleDbCommandBuilder builder = new OleDbCommandBuilder(adp);
-                DataSet ds = new DataSet();
+                ds = new DataSet();
                 adp.Fill(ds);
 
 
@@ -193,6 +195,7 @@ namespace Mansi_Flowers
                     
 
                 }
+                
                 conn.Close();
                 //MessageBox.Show("After that");
 
@@ -233,6 +236,8 @@ namespace Mansi_Flowers
 
 
                 }
+                ds.Tables.Add(dtbl);
+                ds.WriteXmlSchema("Lilies_By_Day.xml");
                 int lls = 0;
                 
                 for (int i = 0; i < count; i++)
@@ -263,7 +268,8 @@ namespace Mansi_Flowers
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
+            string month = dateTimePicker1.Value.ToString("dd-MMMM-yyyy");
+            new Daily_Total(ds, month, label2.Text).ShowDialog();
             
             
             
@@ -311,10 +317,25 @@ namespace Mansi_Flowers
             textBox1.Text = "";
         }
 
-        //private void dataGridView1_EditingControlShowing_1(object sender, DataGridViewEditingControlShowingEventArgs e)
-        //{
+        private void dataGridView1_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            
+        }
 
-        //}
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            int total = 0;
+            int count = dataGridView1.Rows.Count;
+            int lls = 0;
+            for (int i = 0; i < count; i++)
+            {
+                if (int.TryParse(dataGridView1.Rows[i].Cells[2].Value.ToString(), out lls))
+                    total += lls;
+            }
+            label2.Text = total.ToString();
+        }
+
+        
 
         
     }
