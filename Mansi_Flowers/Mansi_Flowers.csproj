@@ -91,19 +91,37 @@
     <Compile Include="Bill_Between_Dates.Designer.cs">
       <DependentUpon>Bill_Between_Dates.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bill_per_User.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bill_per_User1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Bill_per_User.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Bill_View.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Bill_View.Designer.cs">
       <DependentUpon>Bill_View.cs</DependentUpon>
     </Compile>
+    <Compile Include="CrystalReport1.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CrystalReport2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport21.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReport2.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CrystalReport3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport31.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReport3.rpt</DependentUpon>
@@ -133,12 +151,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LiliesDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Bill_per_User.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Bill_per_User.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Lilie_Rates.cs">
       <SubType>Form</SubType>
@@ -195,16 +207,20 @@
     <EmbeddedResource Include="Bill_Between_Dates.resx">
       <DependentUpon>Bill_Between_Dates.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Bill_per_User.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Bill_per_User1.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bill_View.resx">
       <DependentUpon>Bill_View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CrystalReport2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport2.cs</LastGenOutput>
+      <LastGenOutput>CrystalReport21.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CrystalReport3.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport3.cs</LastGenOutput>
+      <LastGenOutput>CrystalReport31.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Daily_Total.resx">
       <DependentUpon>Daily_Total.cs</DependentUpon>
@@ -214,10 +230,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Bill_per_User.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Bill_per_User.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Lilie_Rates.resx">
       <DependentUpon>Lilie_Rates.cs</DependentUpon>

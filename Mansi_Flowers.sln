@@ -5,14 +5,23 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mansi_Flowers", "Mansi_Flow
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CD_ROM|Any CPU = CD_ROM|Any CPU
 		Debug|Any CPU = Debug|Any CPU
+		DVD-5|Any CPU = DVD-5|Any CPU
 		Release|Any CPU = Release|Any CPU
+		SingleImage|Any CPU = SingleImage|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D9F4938-29AA-4889-B47B-E368BA4D203B}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{1D9F4938-29AA-4889-B47B-E368BA4D203B}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
 		{1D9F4938-29AA-4889-B47B-E368BA4D203B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1D9F4938-29AA-4889-B47B-E368BA4D203B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D9F4938-29AA-4889-B47B-E368BA4D203B}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D9F4938-29AA-4889-B47B-E368BA4D203B}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
 		{1D9F4938-29AA-4889-B47B-E368BA4D203B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D9F4938-29AA-4889-B47B-E368BA4D203B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D9F4938-29AA-4889-B47B-E368BA4D203B}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{1D9F4938-29AA-4889-B47B-E368BA4D203B}.SingleImage|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

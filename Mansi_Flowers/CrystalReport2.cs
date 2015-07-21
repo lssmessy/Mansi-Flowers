@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Mansi_Flowers {
+namespace Mansi_Flowers.crystal_reports {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace Mansi_Flowers {
         
         public override string FullResourceName {
             get {
-                return "Mansi_Flowers.CrystalReport2.rpt";
+                return "Mansi_Flowers.crystal reports.CrystalReport2.rpt";
             }
             set {
                 // Do nothing

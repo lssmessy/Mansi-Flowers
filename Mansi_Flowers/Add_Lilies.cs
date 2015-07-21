@@ -331,8 +331,21 @@ namespace Mansi_Flowers
             {
                 if (int.TryParse(dataGridView1.Rows[i].Cells[2].Value.ToString(), out lls))
                     total += lls;
+
+                
+                
             }
             label2.Text = total.ToString();
+            string theDate = dateTimePicker1.Value.ToString("dd-MM-yyyy");
+            cmd.Connection = conn;
+            conn.Open();
+            cmd.CommandText = ("UPDATE lilie_master SET Lilies='" + dataGridView1.CurrentRow.Cells[2].Value + "' WHERE (Lilie_Date ='" + theDate + "' AND Owner_ID=" + dataGridView1.CurrentRow.Cells[0].Value + ")");
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            //int rowIndex = dataGridView1.CurrentCell.RowIndex;
+
+            //MessageBox.Show(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            
         }
 
         

@@ -24,28 +24,32 @@ D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.View_Owners
 D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.csproj.GenerateResource.Cache
 D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Delete_Owner.resources
 D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Add_Lilies.resources
-H:\Mansi-Flowers\Mansi_Flowers\bin\Debug\Mansi_Flowers.exe.config
-H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.exe
-H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.pdb
-H:\Mansi-Flowers\Mansi_Flowers\bin\Debug\Mansi_Flowers.exe
-H:\Mansi-Flowers\Mansi_Flowers\bin\Debug\Mansi_Flowers.pdb
-H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.csprojResolveAssemblyReference.cache
-H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Add_Lilies.resources
-H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Add_Owner.resources
-H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Delete_Owner.resources
-H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Form1.resources
-H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.PrintDoc.resources
-H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Properties.Resources.resources
-H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.View_Owners.resources
-H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.csproj.GenerateResource.Cache
 D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Lilie_Rates.resources
 D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Bill.resources
-H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Bill.resources
-H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Lilie_Rates.resources
-H:\Mansi-Flowers\Mansi_Flowers\bin\Debug\Lilies.sdf
 D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\bin\Debug\Lilies.sdf
 D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Bill_Between_Dates.resources
 D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.View_Owners_Monthly.resources
 D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Report_View.resources
 D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Bill_View.resources
 D:\Mansi flowers\Mansi_Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Daily_Total.resources
+H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Add_Lilies.resources
+H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Add_Owner.resources
+H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Bill.resources
+H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Bill_Between_Dates.resources
+H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Bill_View.resources
+H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Daily_Total.resources
+H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Delete_Owner.resources
+H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Form1.resources
+H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Lilie_Rates.resources
+H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.PrintDoc.resources
+H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Properties.Resources.resources
+H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Report_View.resources
+H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.View_Owners.resources
+H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.View_Owners_Monthly.resources
+H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.csproj.GenerateResource.Cache
+H:\Mansi-Flowers\Mansi_Flowers\bin\Debug\Lilies.sdf
+H:\Mansi-Flowers\Mansi_Flowers\bin\Debug\Mansi_Flowers.exe.config
+H:\Mansi-Flowers\Mansi_Flowers\bin\Debug\Mansi_Flowers.exe
+H:\Mansi-Flowers\Mansi_Flowers\bin\Debug\Mansi_Flowers.pdb
+H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.exe
+H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.pdb
