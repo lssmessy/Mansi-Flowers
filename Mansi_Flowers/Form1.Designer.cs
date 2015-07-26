@@ -40,10 +40,6 @@
             this.billPrintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monthkyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.betweenDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.betweenDatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.monthlyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,8 +49,7 @@
             this.liliEntryToolStripMenuItem,
             this.liliOwnersToolStripMenuItem,
             this.liliRatesToolStripMenuItem,
-            this.billPrintToolStripMenuItem,
-            this.reportsToolStripMenuItem});
+            this.billPrintToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(676, 24);
@@ -135,45 +130,16 @@
             // monthkyToolStripMenuItem
             // 
             this.monthkyToolStripMenuItem.Name = "monthkyToolStripMenuItem";
-            this.monthkyToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.monthkyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.monthkyToolStripMenuItem.Text = "Monthly";
             this.monthkyToolStripMenuItem.Click += new System.EventHandler(this.monthkyToolStripMenuItem_Click);
             // 
             // betweenDateToolStripMenuItem
             // 
             this.betweenDateToolStripMenuItem.Name = "betweenDateToolStripMenuItem";
-            this.betweenDateToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.betweenDateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.betweenDateToolStripMenuItem.Text = "Between Dates";
             this.betweenDateToolStripMenuItem.Click += new System.EventHandler(this.betweenDateToolStripMenuItem_Click);
-            // 
-            // reportsToolStripMenuItem
-            // 
-            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.betweenDatesToolStripMenuItem,
-            this.monthlyToolStripMenuItem});
-            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.reportsToolStripMenuItem.Text = "Reports";
-            // 
-            // betweenDatesToolStripMenuItem
-            // 
-            this.betweenDatesToolStripMenuItem.Name = "betweenDatesToolStripMenuItem";
-            this.betweenDatesToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.betweenDatesToolStripMenuItem.Text = "Between Dates";
-            // 
-            // monthlyToolStripMenuItem
-            // 
-            this.monthlyToolStripMenuItem.Name = "monthlyToolStripMenuItem";
-            this.monthlyToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.monthlyToolStripMenuItem.Text = "Monthly";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 41);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 1;
             // 
             // Form1
             // 
@@ -183,7 +149,6 @@
             this.BackgroundImage = global::Mansi_Flowers.Properties.Resources._22262_white_lily_1920x1080_flower_wallpaper;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(676, 262);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -208,10 +173,6 @@
         private System.Windows.Forms.ToolStripMenuItem billPrintToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem betweenDateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem monthkyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem betweenDatesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem monthlyToolStripMenuItem;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ToolStripMenuItem liliEntryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addUpdateLilisToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;

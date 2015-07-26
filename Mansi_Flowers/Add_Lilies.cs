@@ -14,6 +14,7 @@ namespace Mansi_Flowers
 {
     public partial class Add_Lilies : Form
     {
+        
         //private OleDbConnection conn;
         //private OleDbCommand cmd = new OleDbCommand();
         private static String connectionString = Global_Connection.conn;
@@ -40,35 +41,52 @@ namespace Mansi_Flowers
         {
             string theDate = dateTimePicker1.Value.ToString("dd-MM-yyyy");
             dateTimePicker1.MaxDate = DateTime.Today;
-            int rate = 0;
+            
             try {
-                
+
                 cmd.Connection = conn;
                 conn.Open();
                 String query = "SELECT Owner_ID,OwnerName FROM owner_master";
                 SqlCeDataAdapter adp = new SqlCeDataAdapter(query, conn);
-                //OleDbDataAdapter adp = new OleDbDataAdapter(query, conn);
-                //OleDbCommandBuilder builder = new OleDbCommandBuilder(adp);
+                
                 ds = new DataSet();
                 adp.Fill(ds);
 
                 
-                for (int i = 0; i <= ds.Tables[0].Rows.Count - 1; i++)
+                for (int i = 0; i < ds.Tables[0].Rows.Count - 1; i++)
                 {
                     
                     cmd.CommandText = ("SELECT COUNT(*) FROM lilie_master WHERE Owner_ID=" + ds.Tables[0].Rows[i].ItemArray[0].ToString() + "AND Lilie_Date LIKE '%" + theDate + "%'");
                     int cnt = (int)cmd.ExecuteScalar();
-                    if (cnt != 1 && cnt==0) {
-                       
-                    cmd.CommandText = ("INSERT INTO lilie_master(Owner_ID,Lilie_Date,OwnerName,Rate) VALUES(" + ds.Tables[0].Rows[i].ItemArray[0].ToString() + ",'" + theDate + "','" + ds.Tables[0].Rows[i].ItemArray[1].ToString() + "','"+rate+"')");
+
+                    //cmd.CommandText = ("SELECT Rate FROM lilie_master WHERE Lilie_Date = '" + theDate + "'");
+                    ////string rate = (cmd.ExecuteScalar() == null) ? "0" : (string)cmd.ExecuteScalar();
+
+                    //MessageBox.Show(cmd.ExecuteScalar().ToString());
+                    cmd.CommandText = ("SELECT Rate FROM lilie_master WHERE Lilie_Date ='" + theDate + "'");
+                    string rate = (string)cmd.ExecuteScalar();
+
+                    if (rate == "")
+                    {
+                        rate = "0";
+                    }
+
+                    if (cnt != 1 && cnt == 0)
+                    {
+                      //  int lilis = 0;
+                    int s = 0;
+                    cmd.CommandText = ("INSERT INTO lilie_master(Owner_ID,Lilie_Date,OwnerName,Lilies,Rate) VALUES(" + ds.Tables[0].Rows[i].ItemArray[0].ToString() + ",'" + theDate + "','" + ds.Tables[0].Rows[i].ItemArray[1].ToString() + "','"+s+"','"+rate+"')");
                     cmd.ExecuteNonQuery();
                     }
 
-                 
+                    //cmd.CommandText = ("UPDATE lilie_master SET Rate='" + rate + "' WHERE Owner_ID=" + ds.Tables[0].Rows[i].ItemArray[0].ToString() + "AND Lilie_Date LIKE '%" + theDate + "%'");
+                    //cmd.ExecuteNonQuery();
+                    
+                                     
                 }
                 
                 conn.Close();
-                //MessageBox.Show("inserted");
+            
 
             }
             catch (Exception ex) {
@@ -105,8 +123,6 @@ namespace Mansi_Flowers
                 ds.Tables.Add(dtbl);
                 ds.WriteXmlSchema("Lilies_By_Day.xml");
                 dataGridView1.Columns[1].Width = 170;
-                //dataGridView1.Rows[0].Cells[0].Selected = false;
-                //dataGridView1.Rows[0].Cells[2].Selected = true;
                 dataGridView1.KeyPress += OnDataGirdView1_KeyPress;
 
             }
@@ -170,28 +186,42 @@ namespace Mansi_Flowers
             string theDate = dateTimePicker1.Value.ToString("dd-MM-yyyy");
             try
             {
-               
+
+
                 cmd.Connection = conn;
                 conn.Open();
+
                 String query = "SELECT Owner_ID,OwnerName FROM owner_master";
                 //OleDbDataAdapter adp = new OleDbDataAdapter(query, conn);
                 SqlCeDataAdapter adp = new SqlCeDataAdapter(query, conn);
                 //OleDbCommandBuilder builder = new OleDbCommandBuilder(adp);
                 ds = new DataSet();
                 adp.Fill(ds);
-
-
+                
                 for (int i = 0; i <= ds.Tables[0].Rows.Count - 1; i++)
                 {
                     cmd.CommandText = ("SELECT COUNT(*) FROM lilie_master WHERE Owner_ID=" + ds.Tables[0].Rows[i].ItemArray[0].ToString() + "AND Lilie_Date='" + theDate + "'");//
                     int cnt = (int)cmd.ExecuteScalar();
+
+                    
                     if (cnt != 1 & cnt == 0)
                     {
                         int s = 0;
-                        cmd.CommandText = ("INSERT INTO lilie_master(Owner_ID,Lilie_Date,OwnerName,Lilies) VALUES(" + ds.Tables[0].Rows[i].ItemArray[0].ToString() + ",'" + theDate + "','" + ds.Tables[0].Rows[i].ItemArray[1].ToString() + "',"+s+")");
+                        cmd.CommandText = ("INSERT INTO lilie_master(Owner_ID,Lilie_Date,OwnerName,Lilies) VALUES(" + ds.Tables[0].Rows[i].ItemArray[0].ToString() + ",'" + theDate + "','" + ds.Tables[0].Rows[i].ItemArray[1].ToString() + "','"+s+"')");
                         cmd.ExecuteNonQuery();
                         
                     }
+                    cmd.CommandText = ("SELECT Rate FROM lilie_master WHERE Lilie_Date ='" + theDate + "'");
+                    string rate = (string)cmd.ExecuteScalar();
+
+                    if (rate == "")
+                    {
+                        rate = "0";
+                    }
+                    
+                    cmd.CommandText = ("UPDATE lilie_master SET Rate='" + rate + "' WHERE Owner_ID=" + ds.Tables[0].Rows[i].ItemArray[0].ToString() + "AND Lilie_Date LIKE '%" + theDate + "%'");
+                    cmd.ExecuteNonQuery();
+
                     
 
                 }

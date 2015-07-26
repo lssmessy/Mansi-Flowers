@@ -234,6 +234,16 @@ namespace Mansi_Flowers
             
         }
 
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            string theDate = dateTimePicker1.Value.ToString("dd-MM-yyyy");
+            cmd.Connection = conn;
+            conn.Open();
+            cmd.CommandText = ("UPDATE lilie_master SET Rate='" + dataGridView1.CurrentRow.Cells[1].Value + "' WHERE Lilie_Date ='" + dataGridView1.CurrentRow.Cells[0].Value + "'");
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
 
     }
 

@@ -23,11 +23,7 @@ namespace Mansi_Flowers
         SqlCeCommand cmd = new SqlCeCommand();
 
         DataSet ds; 
-        public Bill_Between_Dates()
-        {
-            
-        }
-
+      
         public Bill_Between_Dates(string owner, int oid)
         {
             // TODO: Complete member initialization
@@ -131,19 +127,23 @@ namespace Mansi_Flowers
             dateTimePicker2.Enabled = false;
             button1.Enabled = false;
             dateTimePicker1.MaxDate = DateTime.Today;
-            dateTimePicker2.MaxDate = DateTime.Today;
+            //dateTimePicker2.MaxDate = DateTime.Today;
+        }
+
+        
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            String month = dateTimePicker1.Value.ToString("MMMM-yyyy");
+            new Bill_View(ds, label2.Text, label3.Text, label5.Text, label7.Text, label9.Text, label11.Text, label13.Text, month).ShowDialog();
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             dateTimePicker2.Enabled = true;
             button1.Enabled = true;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            String month = dateTimePicker1.Value.ToString("MMMM-yyyy");
-            new Bill_View(ds, label2.Text, label3.Text, label5.Text, label7.Text, label9.Text, label11.Text, label13.Text, month).ShowDialog();
+            dateTimePicker2.MaxDate = DateTime.Today;
+            dateTimePicker2.MinDate = dateTimePicker1.Value;
         }
     }
 }

@@ -253,6 +253,7 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.CustomFormat = "dd-MMMM-yyyy";
+            this.dateTimePicker2.Enabled = false;
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.Location = new System.Drawing.Point(505, 9);
             this.dateTimePicker2.Name = "dateTimePicker2";
