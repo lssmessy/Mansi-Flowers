@@ -71,6 +71,9 @@ namespace Mansi_Flowers
                     dataGridView1.Columns.Insert(4, view_owner);
 
                 }
+                dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Pixel);
+                dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.PaleVioletRed;
+                dataGridView1.EnableHeadersVisualStyles = false;
             }
             catch (Exception ex)
             {
@@ -133,14 +136,14 @@ namespace Mansi_Flowers
                 dataGridView1.Rows.Clear();
                 dataGridView1.Refresh();
                 String searchText = textBox1.Text;
-                String query = "SELECT * FROM owner_master WHERE OwnerName LIKE '%" + searchText + "%' OR Contact_Number LIKE '%" + searchText + "%' OR Address LIKE '%" + searchText + "%'";
+                String query = "SELECT * FROM owner_master WHERE Owner_ID LIKE '%" + searchText + "%' OR OwnerName LIKE '%" + searchText + "%' OR Contact_Number LIKE '%" + searchText + "%' OR Address LIKE '%" + searchText + "%'";
                 //OleDbDataAdapter adapter = new OleDbDataAdapter(query, conn);
                 //OleDbCommandBuilder commnder = new OleDbCommandBuilder(adapter);
 
                 SqlCeDataAdapter adapter = new SqlCeDataAdapter(query, conn);
                 SqlCeCommandBuilder commnder = new SqlCeCommandBuilder(adapter);
                 DataTable dt = new DataTable();
-                 ds = new DataSet();
+                ds = new DataSet();
                 adapter.Fill(dt);
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
@@ -149,9 +152,15 @@ namespace Mansi_Flowers
 
                 }
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.ToString());
             }
+
+            //BindingSource bs = new BindingSource();
+            //bs.DataSource = dataGridView1.DataSource;
+            //bs.Filter = "OwnerName like '%" + textBox1.Text + "%' or Owner_ID like '%" + textBox1.Text + "%' or Address like '%" + textBox1.Text + "%'";
+            //dataGridView1.DataSource = bs;
         }
 
         private void textBox1_Enter(object sender, EventArgs e)
@@ -195,6 +204,10 @@ namespace Mansi_Flowers
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try{
+                if (e.RowIndex == -1 || e.ColumnIndex != 4)  // ignore header row and any column
+                    return;                                  //  that doesn't have a file name
+
+
             if (dataGridView1.Columns[e.ColumnIndex].Name == "View Owner" )
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
@@ -212,6 +225,11 @@ namespace Mansi_Flowers
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            
         }
     }
 }

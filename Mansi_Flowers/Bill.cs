@@ -114,7 +114,9 @@ namespace Mansi_Flowers
             this.label7.Text = rent.ToString();
             this.label3.Text = total_lilis.ToString();
             this.label5.Text = total_amount.ToString();
-                
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Pixel);
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.PaleVioletRed;
+            dataGridView1.EnableHeadersVisualStyles = false;    
                 //ds.Tables.Add(dtbl);
             }
             catch (Exception ex) {
@@ -194,7 +196,15 @@ namespace Mansi_Flowers
             this.label7.Text = rent.ToString();
             this.label3.Text = total_lilis.ToString();
             this.label5.Text = total_amount.ToString();
-            
+            if (dataGridView1.Rows.Count > 0)
+            {
+                button3.Enabled = true;
+            }
+            else if (dataGridView1.Rows.Count <= 0)
+            {
+                button3.Enabled = false;
+            }
+
             }
             catch (Exception ex)
             {
@@ -206,7 +216,7 @@ namespace Mansi_Flowers
         {
             String month = dateTimePicker1.Value.ToString("MMMM-yyyy");
             new Bill_View(ds, label2.Text,label3.Text, label5.Text, label7.Text, label9.Text, label11.Text, label13.Text,month).ShowDialog();
-            //new Report().ShowDialog();
+            
             
         }
     }

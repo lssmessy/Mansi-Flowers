@@ -14,17 +14,14 @@ namespace Mansi_Flowers
 {
     public partial class Lilie_Rates : Form
     {
-        //private OleDbConnection conn;
-        //private OleDbCommand cmd = new OleDbCommand();
-        //private String connectionString = Global_Connection.conn;
+      
         DataTable dt;
         private static String connectionString = Global_Connection.conn;
-        //private DataTable dtbl;
+      
 
         SqlCeConnection conn = new SqlCeConnection(connectionString);
         SqlCeCommand cmd = new SqlCeCommand();
-        //private DataTable dtbl;
-        //int i = 0;
+        DataSet ds;
         public Lilie_Rates()
         {
             //conn = new OleDbConnection(connectionString);
@@ -41,7 +38,7 @@ namespace Mansi_Flowers
             String date1;
             cmd.Connection = conn;
             conn.Open();
-            cmd.CommandText = ("SELECT Lilie_Date,Rate FROM lilie_master WHERE Lilie_Date LIKE '%" + month + "%' ORDER BY Lilie_Date DESC");
+            cmd.CommandText = ("SELECT Lilie_Date,Rate FROM lilie_master WHERE Lilie_Date LIKE '%" + month + "%' ORDER BY Lilie_Date ASC");
             //OleDbDataReader rd = cmd.ExecuteReader();
             SqlCeDataReader rd = cmd.ExecuteReader();
             while (rd.Read())
@@ -84,6 +81,21 @@ namespace Mansi_Flowers
 
                 }
             }
+            ds = new DataSet();
+            ds.Tables.Add(dt);
+            ds.WriteXmlSchema("Rate_View.xml");
+            if (dataGridView1.Rows.Count > 0)
+            {
+                button3.Enabled = true;
+            }
+            else if (dataGridView1.Rows.Count <= 0)
+            {
+                button3.Enabled = false;
+                MessageBox.Show("Add lili owners first from : \nLilie Owners > Add Owner ", "Add Owners", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Pixel);
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.PaleVioletRed;
+            dataGridView1.EnableHeadersVisualStyles = false;
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.ToString());
@@ -100,7 +112,7 @@ namespace Mansi_Flowers
             String date1;
             cmd.Connection = conn;
             conn.Open();
-            cmd.CommandText = ("SELECT Lilie_Date,Rate FROM lilie_master WHERE Lilie_Date LIKE '%" + month + "%' ORDER BY Lilie_Date DESC");
+            cmd.CommandText = ("SELECT Lilie_Date,Rate FROM lilie_master WHERE Lilie_Date LIKE '%" + month + "%' ORDER BY Lilie_Date ASC");
             //OleDbDataReader rd = cmd.ExecuteReader();
             SqlCeDataReader rd = cmd.ExecuteReader();
             while (rd.Read())
@@ -142,7 +154,9 @@ namespace Mansi_Flowers
                     
                 }
             }
-
+            ds = new DataSet();
+            ds.Tables.Add(dt);
+            ds.WriteXmlSchema("Rate_View.xml");
             }
             catch (Exception ex)
             {
@@ -175,31 +189,31 @@ namespace Mansi_Flowers
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try{
-                this.Enabled = false;
-                this.Cursor = Cursors.WaitCursor;
+            //try{
+            //    this.Enabled = false;
+            //    this.Cursor = Cursors.WaitCursor;
 
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                cmd.Connection = conn;
-                conn.Open();
-                string dts = dataGridView1.Rows[i].Cells[0].Value.ToString();
-                int rates = 0;
-                if (int.TryParse(dataGridView1.Rows[i].Cells[1].Value.ToString(), out rates))
+            //for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            //{
+            //    cmd.Connection = conn;
+            //    conn.Open();
+            //    string dts = dataGridView1.Rows[i].Cells[0].Value.ToString();
+            //    int rates = 0;
+            //    if (int.TryParse(dataGridView1.Rows[i].Cells[1].Value.ToString(), out rates))
 
 
-                cmd.CommandText = ("UPDATE lilie_master SET Rate='" + rates + "' WHERE Lilie_Date ='" + dts + "'");
-                cmd.ExecuteNonQuery();//dataGridView1.Rows[i].Cells["Rate"].Value
-                conn.Close();
-            }
-            MessageBox.Show("Rates updated", "Rates", MessageBoxButtons.OK,MessageBoxIcon.Information);
-            this.Cursor = Cursors.Default;
-            this.Enabled = true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            //    cmd.CommandText = ("UPDATE lilie_master SET Rate='" + rates + "' WHERE Lilie_Date ='" + dts + "'");
+            //    cmd.ExecuteNonQuery();//dataGridView1.Rows[i].Cells["Rate"].Value
+            //    conn.Close();
+            //}
+            //MessageBox.Show("Rates updated", "Rates", MessageBoxButtons.OK,MessageBoxIcon.Information);
+            //this.Cursor = Cursors.Default;
+            //this.Enabled = true;
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.ToString());
+            //}
         }
 
         //private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
@@ -230,7 +244,8 @@ namespace Mansi_Flowers
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
+            String thedate = dateTimePicker1.Value.ToString("MMMM - yyyy");
+            new Rate_View(ds,thedate).ShowDialog();
             
         }
 
@@ -243,6 +258,30 @@ namespace Mansi_Flowers
             cmd.ExecuteNonQuery();
             conn.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                DeleteCellsIfNotInEditMode();
+            }
+        }
+        private void DeleteCellsIfNotInEditMode()
+        {
+            if (!dataGridView1.CurrentCell.IsInEditMode)
+            {
+                foreach (DataGridViewCell selected_cell in dataGridView1.SelectedCells)
+                {
+                    selected_cell.Value = "0";
+                }
+            }
+        }
+        
 
 
     }

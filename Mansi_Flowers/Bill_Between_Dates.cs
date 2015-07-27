@@ -35,7 +35,7 @@ namespace Mansi_Flowers
 
         private void button1_Click(object sender, EventArgs e)
         {
-            button3.Enabled = true;
+           
             this.Enabled = false;
             this.Cursor = Cursors.WaitCursor;
             try
@@ -61,6 +61,7 @@ namespace Mansi_Flowers
 
                 dataGridView1.DataSource = dtbl;
                 dataGridView1.Refresh();
+                
 
                 String query1 = "SELECT Lilie_Date,Lilies,Rate FROM lilie_master WHERE (Owner_ID =" + oid + " AND OwnerName='" + owner + "'AND Lilie_Date >= '" + month1 + "' AND Lilie_Date <= '" + month2 + "' ) AND Lilie_Date LIKE '%"+month+"%' ORDER BY Lilie_Date ASC";// OwnerName,Lilie_Date,Lilies,Rate,Owner_ID // 
                 //OleDbDataAdapter adapter = new OleDbDataAdapter(query1, conn);
@@ -114,6 +115,13 @@ namespace Mansi_Flowers
                 label5.Text = total_amount.ToString();
                 this.Cursor = Cursors.Default;
                 this.Enabled = true;
+                if (dataGridView1.Rows.Count > 0)
+                {
+                    button3.Enabled = true;
+                }
+                else if (dataGridView1.Rows.Count <= 0) {
+                    button3.Enabled = false;
+                }
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.ToString());
@@ -127,6 +135,9 @@ namespace Mansi_Flowers
             dateTimePicker2.Enabled = false;
             button1.Enabled = false;
             dateTimePicker1.MaxDate = DateTime.Today;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Pixel);
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.PaleVioletRed;
+            dataGridView1.EnableHeadersVisualStyles = false;
             //dateTimePicker2.MaxDate = DateTime.Today;
         }
 

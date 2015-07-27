@@ -14,10 +14,11 @@ namespace Mansi_Flowers
     public partial class View_Owners_Monthly : Form
     {
         private static String connectionString = Global_Connection.conn;
-        //private DataTable dtbl;
+        
 
         SqlCeConnection conn = new SqlCeConnection(connectionString);
         SqlCeCommand cmd = new SqlCeCommand();
+        DataSet ds;
         public View_Owners_Monthly()
         {
             InitializeComponent();
@@ -36,12 +37,12 @@ namespace Mansi_Flowers
                 dataGridView1.Refresh();
 
                 String query = "SELECT * FROM owner_master";
-                //OleDbDataAdapter adapter = new OleDbDataAdapter(query, conn);
+                
                 SqlCeDataAdapter adapter = new SqlCeDataAdapter(query, conn);
                 SqlCeCommandBuilder commnder = new SqlCeCommandBuilder(adapter);
-                //OleDbCommandBuilder commnder = new OleDbCommandBuilder(adapter);
+                
                 DataTable dt = new DataTable();
-                DataSet ds = new DataSet();
+                ds = new DataSet();
                 adapter.Fill(dt);
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
@@ -51,16 +52,21 @@ namespace Mansi_Flowers
                         dataGridView1.Rows.Add(dt.Rows[i][0], dt.Rows[i][1], dt.Rows[i][2], dt.Rows[i][3]);
                     }
                 }
+                ds.Tables.Add(dt);
+                ds.WriteXmlSchema("View_Owners.xml");
                 DataGridViewButtonColumn view_owner = new DataGridViewButtonColumn();
                 view_owner.Name = "View Owner";
                 view_owner.Text = "View Bill";
-                //view_owner.HeaderText = "View";
+                
                 view_owner.UseColumnTextForButtonValue = true;
                 if (dataGridView1.Columns["View Owner"] == null)
                 {
                     dataGridView1.Columns.Insert(4, view_owner);
 
                 }
+                dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Pixel);
+                dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.PaleVioletRed;
+                dataGridView1.EnableHeadersVisualStyles = false;
             }
             catch (Exception ex)
             {
@@ -79,14 +85,14 @@ namespace Mansi_Flowers
                 dataGridView1.Rows.Clear();
                 dataGridView1.Refresh();
                 String searchText = textBox1.Text;
-                String query = "SELECT * FROM owner_master WHERE OwnerName LIKE '%" + searchText + "%' OR Contact_Number LIKE '%" + searchText + "%' OR Address LIKE '%" + searchText + "%'";
+                String query = "SELECT * FROM owner_master WHERE Owner_ID LIKE '%" + searchText + "%' OR OwnerName LIKE '%" + searchText + "%' OR Contact_Number LIKE '%" + searchText + "%' OR Address LIKE '%" + searchText + "%'";
                 //OleDbDataAdapter adapter = new OleDbDataAdapter(query, conn);
                 //OleDbCommandBuilder commnder = new OleDbCommandBuilder(adapter);
 
                 SqlCeDataAdapter adapter = new SqlCeDataAdapter(query, conn);
                 SqlCeCommandBuilder commnder = new SqlCeCommandBuilder(adapter);
                 DataTable dt = new DataTable();
-                DataSet ds = new DataSet();
+                ds = new DataSet();
                 adapter.Fill(dt);
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
@@ -119,6 +125,8 @@ namespace Mansi_Flowers
         {
             try
             {
+                if (e.RowIndex == -1 || e.ColumnIndex != 4)  // ignore header row and any column
+                    return;                                 
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "View Owner")
                 {
                     DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
@@ -140,7 +148,7 @@ namespace Mansi_Flowers
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            new Report_View(ds).ShowDialog();
         }
     }
 }

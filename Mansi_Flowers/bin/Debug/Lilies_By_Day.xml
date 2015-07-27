@@ -20,15 +20,6 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Table2">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Owner_ID" msdata:ReadOnly="true" type="xs:string" minOccurs="0" />
-              <xs:element name="OwnerName" msdata:ReadOnly="true" type="xs:string" minOccurs="0" />
-              <xs:element name="Lilies" type="xs:string" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

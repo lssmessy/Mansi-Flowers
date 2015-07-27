@@ -109,6 +109,9 @@ namespace Mansi_Flowers
                 dtbl.Columns.Add("OwnerName");
                 dtbl.Columns.Add("Contact_Number");
                 dtbl.Columns.Add("Address");
+                dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Pixel);
+                dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.PaleVioletRed;
+                dataGridView1.EnableHeadersVisualStyles = false;
                 dataGridView1.DataSource = dtbl;
             }
             catch (Exception ex)
@@ -151,6 +154,7 @@ namespace Mansi_Flowers
             DataRow row = dtbl.NewRow();
             dtbl.Rows.Add(row);
             dataGridView1.Columns["OwnerName"].Width = 170;
+            dataGridView1.Columns["Contact_Number"].Width = 130;
             dataGridView1.Refresh();
             button1.Enabled = true;
             button4.Enabled = true;
@@ -165,6 +169,10 @@ namespace Mansi_Flowers
                     dataGridView1.Rows.Remove(row);
                 
             }
+            
+                    
+                
+            
         }
 
         private void dataGridView1_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
@@ -178,10 +186,46 @@ namespace Mansi_Flowers
 
         private void dataGridView1_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
-            if (dataGridView1.Rows.Count == 0)
+            if (dataGridView1.Rows.Count <= 0)
             {
                 button1.Enabled = false;
                 button4.Enabled = false;
+            }
+        }
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+
+            String s = dataGridView1.CurrentCell.Value.ToString();
+
+            dataGridView1.CurrentCell.Value = (s.ToUpper()).ToString();
+            
+        }
+
+        private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (dataGridView1.Rows.Count > 0) {
+                button1.Enabled = true;
+                button4.Enabled = true;
+            }
+        }
+
+        
+        private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                DeleteCellsIfNotInEditMode();
+            }
+        }
+        private void DeleteCellsIfNotInEditMode()
+        {
+            if (!dataGridView1.CurrentCell.IsInEditMode)
+            {
+                foreach (DataGridViewCell selected_cell in dataGridView1.SelectedCells)
+                {
+                    selected_cell.Value = "";
+                }
             }
         }
     }

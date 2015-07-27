@@ -1,6 +1,6 @@
 ﻿namespace Mansi_Flowers
 {
-    partial class Bill_View
+    partial class Rate_View
     {
         /// <summary>
         /// Required designer variable.
@@ -39,18 +39,18 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(425, 262);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(284, 262);
             this.crystalReportViewer1.TabIndex = 0;
             // 
-            // Bill_View
+            // Rate_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 262);
+            this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "Bill_View";
-            this.Text = "Bill_View";
-            this.Load += new System.EventHandler(this.Bill_View_Load);
+            this.Name = "Rate_View";
+            this.Text = "Rate_View";
+            this.Load += new System.EventHandler(this.Rate_View_Load);
             this.ResumeLayout(false);
 
         }

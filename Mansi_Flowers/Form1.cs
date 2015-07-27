@@ -16,6 +16,7 @@ namespace Mansi_Flowers
         {
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             WindowState = FormWindowState.Maximized;
+            
             InitializeComponent();
             
         }
@@ -44,7 +45,9 @@ namespace Mansi_Flowers
 
         private void deleteOwnerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Delete_Owner().ShowDialog();
+            Delete_Owner owner = new Delete_Owner();
+            owner.ShowDialog();
+            
         }
 
         private void addUpdateLilisToolStripMenuItem_Click(object sender, EventArgs e)

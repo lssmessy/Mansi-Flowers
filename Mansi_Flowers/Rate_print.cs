@@ -16,14 +16,14 @@ namespace Mansi_Flowers {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Bill_per_User : ReportClass {
+    public class Rate_print : ReportClass {
         
-        public Bill_per_User() {
+        public Rate_print() {
         }
         
         public override string ResourceName {
             get {
-                return "Bill_per_User.rpt";
+                return "Rate_print.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Mansi_Flowers {
         
         public override string FullResourceName {
             get {
-                return "Mansi_Flowers.Bill_per_User.rpt";
+                return "Mansi_Flowers.Rate_print.rpt";
             }
             set {
                 // Do nothing
@@ -90,73 +90,17 @@ namespace Mansi_Flowers {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Total_Lilies {
+        public CrystalDecisions.Shared.IParameterField Parameter_Date {
             get {
                 return this.DataDefinition.ParameterFields[0];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Name {
-            get {
-                return this.DataDefinition.ParameterFields[1];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Amount {
-            get {
-                return this.DataDefinition.ParameterFields[2];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Rent {
-            get {
-                return this.DataDefinition.ParameterFields[3];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Commission {
-            get {
-                return this.DataDefinition.ParameterFields[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Total_Amount {
-            get {
-                return this.DataDefinition.ParameterFields[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Roundoff_Amount {
-            get {
-                return this.DataDefinition.ParameterFields[6];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Month {
-            get {
-                return this.DataDefinition.ParameterFields[7];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedBill_per_User : Component, ICachedReport {
+    public class CachedRate_print : Component, ICachedReport {
         
-        public CachedBill_per_User() {
+        public CachedRate_print() {
         }
         
         [Browsable(false)]
@@ -193,7 +137,7 @@ namespace Mansi_Flowers {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Bill_per_User rpt = new Bill_per_User();
+            Rate_print rpt = new Rate_print();
             rpt.Site = this.Site;
             return rpt;
         }

@@ -54,7 +54,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(28, 12);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 0;
@@ -65,7 +65,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Blue;
-            this.label2.Location = new System.Drawing.Point(87, 12);
+            this.label2.Location = new System.Drawing.Point(65, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 1;
@@ -82,10 +82,11 @@
             // 
             // button3
             // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(519, 32);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(125, 61);
-            this.button3.TabIndex = 9;
+            this.button3.TabIndex = 1;
             this.button3.Text = "P&rint";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -93,10 +94,11 @@
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(519, 105);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(125, 62);
-            this.button2.TabIndex = 8;
+            this.button2.TabIndex = 2;
             this.button2.Text = "&Cancel";
             this.button2.UseVisualStyleBackColor = true;
             // 
@@ -108,7 +110,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.ShowUpDown = true;
             this.dateTimePicker1.Size = new System.Drawing.Size(139, 20);
-            this.dateTimePicker1.TabIndex = 10;
+            this.dateTimePicker1.TabIndex = 3;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label3
@@ -149,9 +151,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(267, 343);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 13);
+            this.label6.Size = new System.Drawing.Size(57, 13);
             this.label6.TabIndex = 13;
-            this.label6.Text = "Total Amount :";
+            this.label6.Text = "Amount :";
             // 
             // label7
             // 
@@ -212,9 +214,9 @@
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(267, 430);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(92, 13);
+            this.label12.Size = new System.Drawing.Size(94, 13);
             this.label12.TabIndex = 19;
-            this.label12.Text = "Final Amount : ";
+            this.label12.Text = "Total Amount : ";
             // 
             // label13
             // 
@@ -234,9 +236,9 @@
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(519, 365);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(117, 13);
+            this.label14.Size = new System.Drawing.Size(92, 13);
             this.label14.TabIndex = 21;
-            this.label14.Text = "Roundoff Amount : ";
+            this.label14.Text = "Final Amount : ";
             // 
             // label15
             // 
@@ -252,6 +254,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PaleTurquoise;
             this.CancelButton = this.button2;
             this.ClientSize = new System.Drawing.Size(667, 471);
             this.Controls.Add(this.label15);
