@@ -59,7 +59,6 @@ D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.exe
 D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.pdb
 D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\bin\Debug\Mansi_Flowers.exe
 D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\bin\Debug\Mansi_Flowers.pdb
-D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.csprojResolveAssemblyReference.cache
 D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Add_Lilies.resources
 D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Add_Owner.resources
 D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Bill.resources

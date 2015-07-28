@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -63,19 +64,42 @@ namespace Mansi_Flowers
 
         private void Bill_View_Load(object sender, EventArgs e)
         {
-            Bill_per_User rp1 = new Bill_per_User();
-            rp1.SetDataSource(ds);
-            rp1.SetParameterValue("Name", p1);
-            rp1.SetParameterValue("Total_Lilies", p2);
-            rp1.SetParameterValue("Amount", p3);
-            rp1.SetParameterValue("Rent", p4);
-            rp1.SetParameterValue("Commission", p5);
-            rp1.SetParameterValue("Total_Amount", p6);
-            rp1.SetParameterValue("Roundoff_Amount", p7);
-            rp1.SetParameterValue("Month", month);
-            crystalReportViewer1.ReportSource = rp1;
-            crystalReportViewer1.Refresh();
+            //Bill_per_User rp1 = new Bill_per_User();
+            //rp1.SetDataSource(ds);
+            //rp1.SetParameterValue("Name", p1);
+            //rp1.SetParameterValue("Total_Lilies", p2);
+            //rp1.SetParameterValue("Amount", p3);
+            //rp1.SetParameterValue("Rent", p4);
+            //rp1.SetParameterValue("Commission", p5);
+            //rp1.SetParameterValue("Total_Amount", p6);
+            //rp1.SetParameterValue("Roundoff_Amount", p7);
+            //rp1.SetParameterValue("Month", month);
+            //crystalReportViewer1.ReportSource = rp1;
+            //crystalReportViewer1.Refresh();
 
+            ReportParameter nme = new ReportParameter("Name", p1);
+            ReportParameter ttl = new ReportParameter("Total_Lilies", p2);
+            ReportParameter amt = new ReportParameter("Amount", p3);
+            ReportParameter rnt = new ReportParameter("Rent", p4);
+            ReportParameter commission = new ReportParameter("Commission", p5);
+            ReportParameter ttl_amt = new ReportParameter("Total_Amount", p6);
+            ReportParameter final = new ReportParameter("Final_Amount", p7);
+            ReportParameter mnth = new ReportParameter("Month", month);
+            this.NewDataSetBindingSource.DataSource = ds;
+            reportViewer1.LocalReport.SetParameters(nme);
+            reportViewer1.LocalReport.SetParameters(ttl);
+            reportViewer1.LocalReport.SetParameters(amt);
+            reportViewer1.LocalReport.SetParameters(rnt);
+            reportViewer1.LocalReport.SetParameters(commission);
+            reportViewer1.LocalReport.SetParameters(ttl_amt);
+            reportViewer1.LocalReport.SetParameters(final);
+            reportViewer1.LocalReport.SetParameters(mnth);
+            reportViewer1.RefreshReport();
+
+
+
+
+            this.reportViewer1.RefreshReport();
         }
     }
 }

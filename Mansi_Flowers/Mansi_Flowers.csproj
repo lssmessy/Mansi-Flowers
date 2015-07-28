@@ -93,6 +93,11 @@
     <Compile Include="Bill_Between_Dates.Designer.cs">
       <DependentUpon>Bill_Between_Dates.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bill_Gen.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Bill_Gen.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Bill_per_User.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -236,6 +241,7 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Bill_per_User1.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="bill_rp.rdlc" />
     <EmbeddedResource Include="Bill_View.resx">
       <DependentUpon>Bill_View.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,6 +295,17 @@
     <EmbeddedResource Include="View_Owners_Monthly.resx">
       <DependentUpon>View_Owners_Monthly.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Bill_Gen.xsc">
+      <DependentUpon>Bill_Gen.xsd</DependentUpon>
+    </None>
+    <None Include="Bill_Gen.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Bill_Gen.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Bill_Gen.xss">
+      <DependentUpon>Bill_Gen.xsd</DependentUpon>
+    </None>
     <None Include="LiliesDataSet.xsc">
       <DependentUpon>LiliesDataSet.xsd</DependentUpon>
     </None>
@@ -347,6 +364,8 @@
     <None Include="Lili_MasterDataSet.xss">
       <DependentUpon>Lili_MasterDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\Bill.datasource" />
+    <None Include="Properties\DataSources\NewDataSet.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

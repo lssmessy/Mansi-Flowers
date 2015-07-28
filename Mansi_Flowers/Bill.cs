@@ -96,7 +96,8 @@ namespace Mansi_Flowers
             }
 
             this.ds.Tables.Add(dtbl);
-            this.ds.WriteXmlSchema("Bill.xml");
+            //this.ds.WriteXmlSchema("Bill.xml");
+            this.ds.WriteXmlSchema("Bill_Gen.xsd");
             rent = (total_lilis * 5) / 1000.0;
             commission = (total_amount * 15) / 100.0;
             final_amount = total_amount - rent - commission;
@@ -182,7 +183,8 @@ namespace Mansi_Flowers
             var round_final = Math.Round(final_amount, MidpointRounding.AwayFromZero);
             ds.Reset();
             ds.Tables.Add(dtbl);
-            ds.WriteXmlSchema("Bill.xml");
+            //ds.WriteXmlSchema("Bill.xml");
+            ds.WriteXmlSchema("Bill_Gen.xsd");
             cmd.Connection = conn;
             conn.Open();
             cmd.CommandText = ("UPDATE lilie_master SET Amount='" + round_final + "' WHERE (Owner_ID =" + oid + " AND OwnerName='" + owner + "'AND Lilie_Date LIKE '%" + month + "%' ) ");

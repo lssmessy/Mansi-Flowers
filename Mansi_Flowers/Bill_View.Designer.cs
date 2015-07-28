@@ -28,35 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.NewDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.NewDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // crystalReportViewer1
+            // reportViewer1
             // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(425, 262);
-            this.crystalReportViewer1.TabIndex = 0;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "Bill_Gen_Dataset";
+            reportDataSource1.Value = this.NewDataSetBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Mansi_Flowers.bill_rp.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(425, 262);
+            this.reportViewer1.TabIndex = 0;
+            // 
+            // NewDataSetBindingSource
+            // 
+            this.NewDataSetBindingSource.DataMember = "Table1";
+            this.NewDataSetBindingSource.DataSource = typeof(Mansi_Flowers.NewDataSet);
             // 
             // Bill_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(425, 262);
-            this.Controls.Add(this.crystalReportViewer1);
+            this.Controls.Add(this.reportViewer1);
             this.Name = "Bill_View";
             this.Text = "Bill_View";
             this.Load += new System.EventHandler(this.Bill_View_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.NewDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource NewDataSetBindingSource;
+
     }
 }
