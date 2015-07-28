@@ -99,6 +99,13 @@ namespace Mansi_Flowers
             dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Pixel);
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.PaleVioletRed;
             dataGridView1.EnableHeadersVisualStyles = false;
+            if (dataGridView1.Rows.Count > 0) {
+                button1.Enabled = true;
+            }
+            else if (dataGridView1.Rows.Count <= 0)
+            {
+                button1.Enabled = false;
+            }
             }
             catch (Exception ex)
             {
@@ -157,33 +164,35 @@ namespace Mansi_Flowers
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Enabled = false;
-            this.Cursor = Cursors.WaitCursor;
-            try
-            {
-                int count = dataGridView1.Rows.Count;
+            //this.Enabled = false;
+            //this.Cursor = Cursors.WaitCursor;
+            //try
+            //{
+            //    int count = dataGridView1.Rows.Count;
                 
-                for (int i = 0; i < count; i++)
-                {
+            //    for (int i = 0; i < count; i++)
+            //    {
                  
                     
-                    cmd.Connection = conn;
-                    conn.Open();
-                    cmd.CommandText = ("UPDATE owner_master SET OwnerName='" + dataGridView1.Rows[i].Cells[1].Value + "',Contact_Number='" + dataGridView1.Rows[i].Cells[2].Value + "',Address='" + dataGridView1.Rows[i].Cells[3].Value + "' WHERE Owner_ID=" + dataGridView1.Rows[i].Cells[0].Value + "");
-                    cmd.ExecuteNonQuery();
+            //        cmd.Connection = conn;
+            //        conn.Open();
+            //        cmd.CommandText = ("UPDATE owner_master SET OwnerName='" + dataGridView1.Rows[i].Cells[1].Value + "',Contact_Number='" + dataGridView1.Rows[i].Cells[2].Value + "',Address='" + dataGridView1.Rows[i].Cells[3].Value + "' WHERE Owner_ID=" + dataGridView1.Rows[i].Cells[0].Value + "");
+            //        cmd.ExecuteNonQuery();
+            //        cmd.CommandText = ("UPDATE lilie_master SET OwnerName='" + dataGridView1.CurrentRow.Cells[1].Value + "'WHERE Owner_ID=" + dataGridView1.CurrentRow.Cells[0].Value + "");
+            //        cmd.ExecuteNonQuery();
                     
 
-                    conn.Close();
-                }
+            //        conn.Close();
+            //    }
                 
-                MessageBox.Show("Data updated", "Owner Details", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Cursor = Cursors.Default;
-                this.Enabled = true;
-            }
-            catch (Exception exp)
-            {
-                MessageBox.Show(exp.ToString());
-            }
+            //    MessageBox.Show("Data updated", "Owner Details", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    this.Cursor = Cursors.Default;
+            //    this.Enabled = true;
+            //}
+            //catch (Exception exp)
+            //{
+            //    MessageBox.Show(exp.ToString());
+            //}
         }
 
         
@@ -220,6 +229,10 @@ namespace Mansi_Flowers
                 conn.Open();
                 cmd.CommandText = ("UPDATE owner_master SET OwnerName='" + dataGridView1.CurrentRow.Cells[1].Value + "',Contact_Number='" + dataGridView1.CurrentRow.Cells[2].Value + "',Address='" + dataGridView1.CurrentRow.Cells[3].Value + "' WHERE Owner_ID=" + dataGridView1.CurrentRow.Cells[0].Value + "");
                 cmd.ExecuteNonQuery();
+                //conn.Close();
+                //conn.Open();
+                cmd.CommandText = ("UPDATE lilie_master SET OwnerName='" + dataGridView1.CurrentRow.Cells[1].Value + "'WHERE Owner_ID=" + dataGridView1.CurrentRow.Cells[0].Value + "");
+                cmd.ExecuteNonQuery();
                 conn.Close();
             }
             
@@ -249,6 +262,9 @@ namespace Mansi_Flowers
                 foreach (DataGridViewCell selected_cell in dataGridView1.SelectedCells)
                 {
                     selected_cell.Value = "";
+                    //dataGridView1.BeginEdit(true);
+                    
+                    
                 }
             }
         }

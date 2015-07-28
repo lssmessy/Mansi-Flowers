@@ -30,6 +30,7 @@ namespace Mansi_Flowers
             //conn = new OleDbConnection(connectionString);
             
             InitializeComponent();
+            //MessageBox.Show(connectionString);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -439,6 +440,11 @@ namespace Mansi_Flowers
                     selected_cell.Value = "0";
                 }
             }
+        }
+
+        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            //dataGridView1.BeginEdit(true);
         }
 
         

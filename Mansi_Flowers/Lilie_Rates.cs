@@ -157,6 +157,15 @@ namespace Mansi_Flowers
             ds = new DataSet();
             ds.Tables.Add(dt);
             ds.WriteXmlSchema("Rate_View.xml");
+            if (dataGridView1.Rows.Count > 0)
+            {
+                button3.Enabled = true;
+            }
+            else if (dataGridView1.Rows.Count <= 0)
+            {
+                button3.Enabled = false;
+             //   MessageBox.Show("Add lili owners first from : \nLilie Owners > Add Owner ", "Add Owners", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             }
             catch (Exception ex)
             {

@@ -43,7 +43,7 @@ namespace Mansi_Flowers
             this.Cursor = Cursors.WaitCursor;
             try{
             Boolean success = false;
-
+    
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 if (isempty()==false) {
@@ -92,6 +92,9 @@ namespace Mansi_Flowers
                 if (dataGridView1.Rows[i].Cells["Address"].Value.ToString() == "" && dataGridView1.Rows[i].Cells["Contact_Number"].Value.ToString() == "" && dataGridView1.Rows[i].Cells["OwnerName"].Value.ToString() == "") {
                     return true;
                     }
+                if (dataGridView1.Rows[i].Cells["OwnerName"].Value.ToString().Trim().Length==0) {
+                    return true;
+                }
             }
             return false;
         }
@@ -227,6 +230,12 @@ namespace Mansi_Flowers
                     selected_cell.Value = "";
                 }
             }
+        }
+
+        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dataGridView1.CurrentCell.ColumnIndex==2)
+            dataGridView1.BeginEdit(true);
         }
     }
 }

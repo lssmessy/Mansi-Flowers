@@ -71,9 +71,9 @@
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(531, 486);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(117, 13);
+            this.label14.Size = new System.Drawing.Size(92, 13);
             this.label14.TabIndex = 41;
-            this.label14.Text = "Roundoff Amount : ";
+            this.label14.Text = "Final Amount : ";
             // 
             // label11
             // 
@@ -92,9 +92,9 @@
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(279, 551);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(92, 13);
+            this.label12.Size = new System.Drawing.Size(94, 13);
             this.label12.TabIndex = 39;
-            this.label12.Text = "Final Amount : ";
+            this.label12.Text = "Total Amount : ";
             // 
             // label9
             // 
@@ -155,9 +155,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(279, 464);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 13);
+            this.label6.Size = new System.Drawing.Size(57, 13);
             this.label6.TabIndex = 33;
-            this.label6.Text = "Total Amount :";
+            this.label6.Text = "Amount :";
             // 
             // label3
             // 

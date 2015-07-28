@@ -52,6 +52,8 @@
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
@@ -152,6 +154,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LiliesDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="LiliesDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LiliesDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Lilies_MasterDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lilies_MasterDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Lilie_Rates.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +247,7 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport31.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="daily_reports.rdlc" />
     <EmbeddedResource Include="Daily_Total.resx">
       <DependentUpon>Daily_Total.cs</DependentUpon>
     </EmbeddedResource>
@@ -286,6 +300,31 @@
     <None Include="LiliesDataSet.xss">
       <DependentUpon>LiliesDataSet.xsd</DependentUpon>
     </None>
+    <None Include="LiliesDataSet1.xsc">
+      <DependentUpon>LiliesDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="LiliesDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LiliesDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LiliesDataSet1.xss">
+      <DependentUpon>LiliesDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Lilies_MasterDataSet.xsc">
+      <DependentUpon>Lilies_MasterDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Lilies_MasterDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Lilies_MasterDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Lilies_MasterDataSet.xss">
+      <DependentUpon>Lilies_MasterDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Lili_Data.xsc">
       <DependentUpon>Lili_Data.xsd</DependentUpon>
     </None>
@@ -327,6 +366,9 @@
     <Content Include="Lilies.sdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Lilies_Master.sdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Lili_Master.accdb" />
   </ItemGroup>
   <ItemGroup>
@@ -353,6 +395,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

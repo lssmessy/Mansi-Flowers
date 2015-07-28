@@ -13,16 +13,6 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Table2">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Lilie_Date" msdata:ReadOnly="true" type="xs:string" minOccurs="0" />
-              <xs:element name="Lilies" msdata:ReadOnly="true" type="xs:string" minOccurs="0" />
-              <xs:element name="Rate" msdata:ReadOnly="true" type="xs:string" minOccurs="0" />
-              <xs:element name="Amount" type="xs:string" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>
