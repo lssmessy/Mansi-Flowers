@@ -28,35 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.rate_dataset = new Mansi_Flowers.rate_dataset();
+            this.Rate_tblBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.rate_dataset)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Rate_tblBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // crystalReportViewer1
+            // reportViewer1
             // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(284, 262);
-            this.crystalReportViewer1.TabIndex = 0;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.Rate_tblBindingSource;
+            reportDataSource2.Name = "DataSet2";
+            reportDataSource2.Value = this.Rate_tblBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Mansi_Flowers.Rate_rp.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(284, 262);
+            this.reportViewer1.TabIndex = 0;
+            // 
+            // rate_dataset
+            // 
+            this.rate_dataset.DataSetName = "rate_dataset";
+            this.rate_dataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // Rate_tblBindingSource
+            // 
+            this.Rate_tblBindingSource.DataMember = "Rate_tbl";
+            this.Rate_tblBindingSource.DataSource = this.rate_dataset;
             // 
             // Rate_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.crystalReportViewer1);
+            this.Controls.Add(this.reportViewer1);
             this.Name = "Rate_View";
             this.Text = "Rate_View";
             this.Load += new System.EventHandler(this.Rate_View_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.rate_dataset)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Rate_tblBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource Rate_tblBindingSource;
+        private rate_dataset rate_dataset;
+        //private XSDs.rate_dataset rate_dataset;
     }
 }

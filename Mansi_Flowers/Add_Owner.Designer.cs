@@ -45,6 +45,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(1, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(487, 319);
+            this.dataGridView1.StandardTab = true;
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
@@ -61,7 +62,7 @@
             this.button1.Location = new System.Drawing.Point(494, 221);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(134, 42);
-            this.button1.TabIndex = 3;
+            this.button1.TabIndex = 2;
             this.button1.Text = "&Save Data";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -86,7 +87,7 @@
             this.button4.Location = new System.Drawing.Point(494, 47);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(134, 43);
-            this.button4.TabIndex = 2;
+            this.button4.TabIndex = 3;
             this.button4.Text = "&Delete Row";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -122,6 +123,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Add_Owner";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add_Owner";
             this.Load += new System.EventHandler(this.Add_Owner_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

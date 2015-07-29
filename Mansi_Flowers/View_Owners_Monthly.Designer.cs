@@ -55,8 +55,10 @@
             this.dataGridView1.Location = new System.Drawing.Point(14, 41);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(583, 402);
-            this.dataGridView1.TabIndex = 7;
+            this.dataGridView1.StandardTab = true;
+            this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
             // 
             // ID
             // 
@@ -84,8 +86,8 @@
             this.button1.Location = new System.Drawing.Point(365, 444);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 34);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Print";
+            this.button1.TabIndex = 3;
+            this.button1.Text = "&Print";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -100,8 +102,8 @@
             this.button2.Location = new System.Drawing.Point(489, 444);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(99, 34);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Close";
+            this.button2.TabIndex = 4;
+            this.button2.Text = "&Close";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -111,7 +113,7 @@
             this.textBox1.Location = new System.Drawing.Point(107, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(271, 20);
-            this.textBox1.TabIndex = 9;
+            this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
             // 
@@ -142,6 +144,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "View_Owners_Monthly";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View_Owners_Monthly";
             this.Load += new System.EventHandler(this.View_Owners_Monthly_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

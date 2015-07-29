@@ -21,7 +21,7 @@ namespace Mansi_Flowers
 
         SqlCeConnection conn = new SqlCeConnection(connectionString);
         SqlCeCommand cmd = new SqlCeCommand();
-        DataSet ds;
+        DataSet ds=new DataSet("rate_dataset");
         public Lilie_Rates()
         {
             //conn = new OleDbConnection(connectionString);
@@ -81,9 +81,14 @@ namespace Mansi_Flowers
 
                 }
             }
-            ds = new DataSet();
+
+
+
+            ds.Namespace = "rate_dataset";
+            dt.TableName = "Rate_tbl";
             ds.Tables.Add(dt);
-            ds.WriteXmlSchema("Rate_View.xml");
+            //ds.WriteXmlSchema("Rate_View.xml");
+            ds.WriteXmlSchema("Rates.xsd");
             if (dataGridView1.Rows.Count > 0)
             {
                 button3.Enabled = true;
@@ -154,9 +159,12 @@ namespace Mansi_Flowers
                     
                 }
             }
-            ds = new DataSet();
+
+            ds.Namespace = "rate_dataset";  
+            dt.TableName = "Rate_tbl";
             ds.Tables.Add(dt);
-            ds.WriteXmlSchema("Rate_View.xml");
+            ds.WriteXmlSchema("Rates.xsd");
+           
             if (dataGridView1.Rows.Count > 0)
             {
                 button3.Enabled = true;

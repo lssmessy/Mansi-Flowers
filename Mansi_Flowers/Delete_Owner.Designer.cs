@@ -57,7 +57,8 @@
             this.dataGridView1.Location = new System.Drawing.Point(14, 38);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(523, 336);
-            this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.StandardTab = true;
+            this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
@@ -93,7 +94,7 @@
             this.textBox1.Location = new System.Drawing.Point(91, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(271, 20);
-            this.textBox1.TabIndex = 8;
+            this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter_1);
             // 
@@ -104,7 +105,7 @@
             this.button1.Location = new System.Drawing.Point(544, 38);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(182, 51);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 3;
             this.button1.Text = "&Delete ";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -150,6 +151,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Delete_Owner";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Delete / Update Owners";
             this.Load += new System.EventHandler(this.Delete_Owner_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

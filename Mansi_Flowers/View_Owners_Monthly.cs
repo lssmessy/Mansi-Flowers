@@ -150,5 +150,16 @@ namespace Mansi_Flowers
         {
             new Report_View(ds).ShowDialog();
         }
+
+        private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            DataGridViewCellEventArgs e1 = new DataGridViewCellEventArgs(dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex);
+
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                dataGridView1_CellContentClick(sender, e1);
+            }
+        }
     }
 }

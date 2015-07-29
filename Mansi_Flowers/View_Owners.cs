@@ -196,13 +196,11 @@ namespace Mansi_Flowers
             this.Close();
         }
 
-        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+       
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
+           
             try{
                 if (e.RowIndex == -1 || e.ColumnIndex != 4)  // ignore header row and any column
                     return;                                  //  that doesn't have a file name
@@ -230,6 +228,17 @@ namespace Mansi_Flowers
         private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             
+        }
+
+        private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            DataGridViewCellEventArgs e1 = new DataGridViewCellEventArgs(dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex);
+
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                dataGridView1_CellContentClick_1(sender, e1);
+            }
         }
     }
 }

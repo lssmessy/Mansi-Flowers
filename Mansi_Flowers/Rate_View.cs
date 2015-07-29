@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,29 +16,22 @@ namespace Mansi_Flowers
         private DataSet ds;
         private string thedate;
 
-        
-
-        
-
         public Rate_View(DataSet ds, string thedate)
         {
             // TODO: Complete member initialization
-            this.ds = ds;
-            this.thedate = thedate;
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             WindowState = FormWindowState.Maximized;
             InitializeComponent();
             this.ds = ds;
+            this.thedate = thedate;
         }
 
         private void Rate_View_Load(object sender, EventArgs e)
         {
-            Rate_print rp = new Rate_print();
-
-            rp.SetDataSource(ds);
-            rp.SetParameterValue("Date", thedate);
-            crystalReportViewer1.ReportSource = rp;
-            crystalReportViewer1.Refresh();
+            this.Rate_tblBindingSource.DataSource = ds;
+            ReportParameter month = new ReportParameter("Month", thedate);
+            reportViewer1.LocalReport.SetParameters(month);
+            this.reportViewer1.RefreshReport();
         }
     }
 }

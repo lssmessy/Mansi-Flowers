@@ -69,6 +69,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About_US.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About_US.Designer.cs">
+      <DependentUpon>About_US.cs</DependentUpon>
+    </Compile>
     <Compile Include="Add_Lilies.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Global_Connection.cs" />
+    <Compile Include="Howtouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Howtouse.Designer.cs">
+      <DependentUpon>Howtouse.cs</DependentUpon>
+    </Compile>
     <Compile Include="LiliesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -194,17 +206,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rate_View.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Rate_View.Designer.cs">
-      <DependentUpon>Rate_View.cs</DependentUpon>
+    <Compile Include="Rates.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rates.xsd</DependentUpon>
     </Compile>
     <Compile Include="Rate_print.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Rate_print.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rate_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rate_View.Designer.cs">
+      <DependentUpon>Rate_View.cs</DependentUpon>
     </Compile>
     <Compile Include="Report_View.cs">
       <SubType>Form</SubType>
@@ -225,6 +242,14 @@
     <Compile Include="View_Owners_Monthly.Designer.cs">
       <DependentUpon>View_Owners_Monthly.cs</DependentUpon>
     </Compile>
+    <Compile Include="XSDs\Lilies_By_Day.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lilies_By_Day.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="About_US.resx">
+      <DependentUpon>About_US.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Add_Lilies.resx">
       <DependentUpon>Add_Lilies.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,6 +279,7 @@
       <LastGenOutput>CrystalReport31.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="daily_reports.rdlc" />
+    <EmbeddedResource Include="Daily_rp.rdlc" />
     <EmbeddedResource Include="Daily_Total.resx">
       <DependentUpon>Daily_Total.cs</DependentUpon>
     </EmbeddedResource>
@@ -262,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Howtouse.resx">
+      <DependentUpon>Howtouse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lilie_Rates.resx">
       <DependentUpon>Lilie_Rates.cs</DependentUpon>
@@ -279,12 +308,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Rate_View.resx">
-      <DependentUpon>Rate_View.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Rate_rp.rdlc" />
     <EmbeddedResource Include="Rate_print.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Rate_print.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rate_View.resx">
+      <DependentUpon>Rate_View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report_View.resx">
       <DependentUpon>Report_View.cs</DependentUpon>
@@ -364,7 +394,6 @@
     <None Include="Lili_MasterDataSet.xss">
       <DependentUpon>Lili_MasterDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Properties\DataSources\Bill.datasource" />
     <None Include="Properties\DataSources\NewDataSet.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -375,6 +404,29 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Rates.xsc">
+      <DependentUpon>Rates.xsd</DependentUpon>
+    </None>
+    <None Include="Rates.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Rates.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Rates.xss">
+      <DependentUpon>Rates.xsd</DependentUpon>
+    </None>
+    <None Include="XSDs\Lilies_By_Day.xsc">
+      <DependentUpon>Lilies_By_Day.xsd</DependentUpon>
+    </None>
+    <None Include="XSDs\Lilies_By_Day.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Lilies_By_Day.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSDs\Lilies_By_Day.xss">
+      <DependentUpon>Lilies_By_Day.xsd</DependentUpon>
+    </None>
+    <None Include="XSDs\Rates.xsd" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -418,6 +470,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

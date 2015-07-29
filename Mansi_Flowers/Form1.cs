@@ -100,5 +100,15 @@ namespace Mansi_Flowers
         {
 
         }
+
+        private void howToUseWithKeyboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Howtouse().ShowDialog();
+        }
+
+        private void aboutUSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new About_US().ShowDialog();
+        }
     }
 }

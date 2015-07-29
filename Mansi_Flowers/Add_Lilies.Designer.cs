@@ -60,6 +60,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(14, 37);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(458, 380);
+            this.dataGridView1.StandardTab = true;
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridView1_CellBeginEdit);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -90,7 +91,7 @@
             this.button3.Location = new System.Drawing.Point(490, 36);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(146, 55);
-            this.button3.TabIndex = 6;
+            this.button3.TabIndex = 2;
             this.button3.Text = "P&rint";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -166,6 +167,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.Name = "Add_Lilies";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add_Lilies";
             this.Load += new System.EventHandler(this.Add_Lilies_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

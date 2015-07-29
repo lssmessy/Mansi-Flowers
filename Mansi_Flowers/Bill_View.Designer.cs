@@ -30,10 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.NewDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.NewDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // NewDataSetBindingSource
+            // 
+            this.NewDataSetBindingSource.DataMember = "Table1";
+            this.NewDataSetBindingSource.DataSource = typeof(Mansi_Flowers.NewDataSet);
             // 
             // reportViewer1
             // 
@@ -47,17 +52,13 @@
             this.reportViewer1.Size = new System.Drawing.Size(425, 262);
             this.reportViewer1.TabIndex = 0;
             // 
-            // NewDataSetBindingSource
-            // 
-            this.NewDataSetBindingSource.DataMember = "Table1";
-            this.NewDataSetBindingSource.DataSource = typeof(Mansi_Flowers.NewDataSet);
-            // 
             // Bill_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(425, 262);
             this.Controls.Add(this.reportViewer1);
+            this.MinimizeBox = false;
             this.Name = "Bill_View";
             this.Text = "Bill_View";
             this.Load += new System.EventHandler(this.Bill_View_Load);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.liliEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addUpdateLilisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,8 +39,11 @@
             this.liliRatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addEditRateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.billPrintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.monthkyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.betweenDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.monthkyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.howToUseWithKeyboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutUSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,10 +53,11 @@
             this.liliEntryToolStripMenuItem,
             this.liliOwnersToolStripMenuItem,
             this.liliRatesToolStripMenuItem,
-            this.billPrintToolStripMenuItem});
+            this.billPrintToolStripMenuItem,
+            this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(676, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(844, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -121,35 +126,61 @@
             // billPrintToolStripMenuItem
             // 
             this.billPrintToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.monthkyToolStripMenuItem,
-            this.betweenDateToolStripMenuItem});
+            this.betweenDateToolStripMenuItem,
+            this.monthkyToolStripMenuItem});
             this.billPrintToolStripMenuItem.Name = "billPrintToolStripMenuItem";
             this.billPrintToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.billPrintToolStripMenuItem.Text = "&Bill Print";
-            // 
-            // monthkyToolStripMenuItem
-            // 
-            this.monthkyToolStripMenuItem.Name = "monthkyToolStripMenuItem";
-            this.monthkyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.monthkyToolStripMenuItem.Text = "Monthly";
-            this.monthkyToolStripMenuItem.Click += new System.EventHandler(this.monthkyToolStripMenuItem_Click);
             // 
             // betweenDateToolStripMenuItem
             // 
             this.betweenDateToolStripMenuItem.Name = "betweenDateToolStripMenuItem";
             this.betweenDateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.betweenDateToolStripMenuItem.Text = "Between Dates";
+            this.betweenDateToolStripMenuItem.Text = "&Between Dates";
             this.betweenDateToolStripMenuItem.Click += new System.EventHandler(this.betweenDateToolStripMenuItem_Click);
+            // 
+            // monthkyToolStripMenuItem
+            // 
+            this.monthkyToolStripMenuItem.Name = "monthkyToolStripMenuItem";
+            this.monthkyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.monthkyToolStripMenuItem.Text = "&Monthly";
+            this.monthkyToolStripMenuItem.Click += new System.EventHandler(this.monthkyToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.howToUseWithKeyboardToolStripMenuItem,
+            this.aboutUSToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "&Help";
+            // 
+            // howToUseWithKeyboardToolStripMenuItem
+            // 
+            this.howToUseWithKeyboardToolStripMenuItem.Name = "howToUseWithKeyboardToolStripMenuItem";
+            this.howToUseWithKeyboardToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+            this.howToUseWithKeyboardToolStripMenuItem.Text = "&How to Use with Keyboard?";
+            this.howToUseWithKeyboardToolStripMenuItem.Click += new System.EventHandler(this.howToUseWithKeyboardToolStripMenuItem_Click);
+            // 
+            // aboutUSToolStripMenuItem
+            // 
+            this.aboutUSToolStripMenuItem.Name = "aboutUSToolStripMenuItem";
+            this.aboutUSToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+            this.aboutUSToolStripMenuItem.Text = "&About US";
+            this.aboutUSToolStripMenuItem.Click += new System.EventHandler(this.aboutUSToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
             this.BackgroundImage = global::Mansi_Flowers.Properties.Resources._22262_white_lily_1920x1080_flower_wallpaper;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(676, 262);
+            this.ClientSize = new System.Drawing.Size(844, 311);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -176,6 +207,9 @@
         private System.Windows.Forms.ToolStripMenuItem liliEntryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addUpdateLilisToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem howToUseWithKeyboardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutUSToolStripMenuItem;
     }
 }
 

@@ -121,7 +121,8 @@ namespace Mansi_Flowers
                     
                 }
                 ds.Tables.Add(dtbl);
-                ds.WriteXmlSchema("Lilies_By_Day.xml");
+                //ds.WriteXmlSchema("Lilies_By_Day.xml");
+                ds.WriteXmlSchema("Lilies_By_Day.xsd");
                 dataGridView1.Columns[1].Width = 170;
                 dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Pixel);
                 dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.PaleVioletRed;
@@ -281,7 +282,8 @@ namespace Mansi_Flowers
 
                 }
                 ds.Tables.Add(dtbl);
-                ds.WriteXmlSchema("Lilies_By_Day.xml");
+                //ds.WriteXmlSchema("Lilies_By_Day.xml");
+                ds.WriteXmlSchema("Lilies_By_Day.xsd");
                 int lls = 0;
                 
                 for (int i = 0; i < count; i++)

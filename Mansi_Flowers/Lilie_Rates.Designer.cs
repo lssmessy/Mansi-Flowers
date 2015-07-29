@@ -42,8 +42,8 @@
             this.button3.Location = new System.Drawing.Point(277, 40);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(125, 62);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "P&rint";
+            this.button3.TabIndex = 2;
+            this.button3.Text = "&Print";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -54,7 +54,7 @@
             this.button2.Location = new System.Drawing.Point(277, 108);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(125, 62);
-            this.button2.TabIndex = 10;
+            this.button2.TabIndex = 3;
             this.button2.Text = "&Cancel";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -66,7 +66,8 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 40);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(259, 303);
-            this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.StandardTab = true;
+            this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
@@ -78,7 +79,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(82, 12);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(139, 20);
-            this.dateTimePicker1.TabIndex = 7;
+            this.dateTimePicker1.TabIndex = 4;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label1
@@ -105,6 +106,8 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Lilie_Rates";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lilie_Rates";
             this.Load += new System.EventHandler(this.Lilie_Rates_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
