@@ -29,35 +29,35 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.NewDataSet = new Mansi_Flowers.NewDataSet();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.Table1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.NewDataSet)).BeginInit();
+            this.NewDataSet = new Mansi_Flowers.NewDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.Table1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NewDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // Table1BindingSource
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "Daily_Rp";
-            reportDataSource1.Value = this.Table1BindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Mansi_Flowers.Daily_rp.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(284, 262);
-            this.reportViewer1.TabIndex = 0;
+            this.Table1BindingSource.DataMember = "Table1";
+            this.Table1BindingSource.DataSource = this.NewDataSet;
             // 
             // NewDataSet
             // 
             this.NewDataSet.DataSetName = "NewDataSet";
             this.NewDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // Table1BindingSource
+            // reportViewer1
             // 
-            this.Table1BindingSource.DataMember = "Table1";
-            this.Table1BindingSource.DataSource = this.NewDataSet;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource2.Name = "Daily_Rp";
+            reportDataSource2.Value = this.Table1BindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Mansi_Flowers.Daily_rp.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(284, 262);
+            this.reportViewer1.TabIndex = 0;
             // 
             // Daily_Total
             // 
@@ -68,8 +68,10 @@
             this.Name = "Daily_Total";
             this.Text = "Daily_Total";
             this.Load += new System.EventHandler(this.Daily_Total_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.NewDataSet)).EndInit();
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Daily_Total_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Daily_Total_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.Table1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NewDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

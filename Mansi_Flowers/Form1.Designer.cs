@@ -135,14 +135,14 @@
             // betweenDateToolStripMenuItem
             // 
             this.betweenDateToolStripMenuItem.Name = "betweenDateToolStripMenuItem";
-            this.betweenDateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.betweenDateToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.betweenDateToolStripMenuItem.Text = "&Between Dates";
             this.betweenDateToolStripMenuItem.Click += new System.EventHandler(this.betweenDateToolStripMenuItem_Click);
             // 
             // monthkyToolStripMenuItem
             // 
             this.monthkyToolStripMenuItem.Name = "monthkyToolStripMenuItem";
-            this.monthkyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.monthkyToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.monthkyToolStripMenuItem.Text = "&Monthly";
             this.monthkyToolStripMenuItem.Click += new System.EventHandler(this.monthkyToolStripMenuItem_Click);
             // 

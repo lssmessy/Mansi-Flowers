@@ -18,7 +18,7 @@ namespace Mansi_Flowers
 
         SqlCeConnection conn = new SqlCeConnection(connectionString);
         SqlCeCommand cmd = new SqlCeCommand();
-        DataSet ds;
+        DataSet ds = new DataSet("Owners_Dataset");
         public View_Owners_Monthly()
         {
             InitializeComponent();
@@ -42,7 +42,7 @@ namespace Mansi_Flowers
                 SqlCeCommandBuilder commnder = new SqlCeCommandBuilder(adapter);
                 
                 DataTable dt = new DataTable();
-                ds = new DataSet();
+                
                 adapter.Fill(dt);
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
@@ -52,8 +52,9 @@ namespace Mansi_Flowers
                         dataGridView1.Rows.Add(dt.Rows[i][0], dt.Rows[i][1], dt.Rows[i][2], dt.Rows[i][3]);
                     }
                 }
+                dt.TableName = "owner_tbl";
                 ds.Tables.Add(dt);
-                ds.WriteXmlSchema("View_Owners.xml");
+                ds.WriteXmlSchema("Owners_view.xsd");
                 DataGridViewButtonColumn view_owner = new DataGridViewButtonColumn();
                 view_owner.Name = "View Owner";
                 view_owner.Text = "View Bill";
@@ -64,9 +65,11 @@ namespace Mansi_Flowers
                     dataGridView1.Columns.Insert(4, view_owner);
 
                 }
+                dataGridView1.Columns["OwnerName"].Width = 150;
                 dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Pixel);
                 dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.PaleVioletRed;
                 dataGridView1.EnableHeadersVisualStyles = false;
+                label3.Text = dataGridView1.RowCount.ToString();
             }
             catch (Exception ex)
             {
@@ -92,7 +95,7 @@ namespace Mansi_Flowers
                 SqlCeDataAdapter adapter = new SqlCeDataAdapter(query, conn);
                 SqlCeCommandBuilder commnder = new SqlCeCommandBuilder(adapter);
                 DataTable dt = new DataTable();
-                ds = new DataSet();
+                //ds = new DataSet();
                 adapter.Fill(dt);
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
@@ -148,7 +151,7 @@ namespace Mansi_Flowers
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new Report_View(ds).ShowDialog();
+            new Report_View(ds,label3.Text).ShowDialog();
         }
 
         private void dataGridView1_KeyDown(object sender, KeyEventArgs e)

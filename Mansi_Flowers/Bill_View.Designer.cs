@@ -62,6 +62,8 @@
             this.Name = "Bill_View";
             this.Text = "Bill_View";
             this.Load += new System.EventHandler(this.Bill_View_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Bill_View_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Bill_View_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.NewDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 

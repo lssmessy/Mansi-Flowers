@@ -63,6 +63,7 @@ D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\bin\Debug\Lilies_MasterDataSet.xss
 D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\bin\Debug\Mansi_Flowers.exe.config
 D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\bin\Debug\Mansi_Flowers.exe
 D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\bin\Debug\Mansi_Flowers.pdb
+D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.About_US.resources
 D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Add_Lilies.resources
 D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Add_Owner.resources
 D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Bill.resources
@@ -71,6 +72,7 @@ D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Bill_View.r
 D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Daily_Total.resources
 D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Delete_Owner.resources
 D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Form1.resources
+D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Howtouse.resources
 D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Lilie_Rates.resources
 D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.PrintDoc.resources
 D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Properties.Resources.resources
@@ -83,6 +85,4 @@ D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\RdlCompile.cache
 D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\RdlCompile.compiled
 D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.exe
 D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.pdb
-D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.Howtouse.resources
-D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.About_US.resources
 D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.csprojResolveAssemblyReference.cache

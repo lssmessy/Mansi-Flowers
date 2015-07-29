@@ -247,6 +247,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Lilies_By_Day.xsd</DependentUpon>
     </Compile>
+    <Compile Include="XSDs\Owners_view.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Owners_view.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="About_US.resx">
       <DependentUpon>About_US.cs</DependentUpon>
     </EmbeddedResource>
@@ -295,6 +300,7 @@
     <EmbeddedResource Include="Lilie_Rates.resx">
       <DependentUpon>Lilie_Rates.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Owners_view_rp.rdlc" />
     <EmbeddedResource Include="PrintDoc.resx">
       <DependentUpon>PrintDoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -426,12 +432,25 @@
     <None Include="XSDs\Lilies_By_Day.xss">
       <DependentUpon>Lilies_By_Day.xsd</DependentUpon>
     </None>
+    <None Include="XSDs\Owners_view.xsc">
+      <DependentUpon>Owners_view.xsd</DependentUpon>
+    </None>
+    <None Include="XSDs\Owners_view.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Owners_view.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSDs\Owners_view.xss">
+      <DependentUpon>Owners_view.xsd</DependentUpon>
+    </None>
     <None Include="XSDs\Rates.xsd" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\skew_cube1.png" />
+    <None Include="Resources\skew_cube.png" />
     <None Include="bin\Debug\22262-white-lily-1920x1080-flower-wallpaper.jpg" />
     <None Include="icons\plus.png" />
     <Content Include="Lilies.sdf">

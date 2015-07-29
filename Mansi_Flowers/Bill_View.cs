@@ -101,5 +101,21 @@ namespace Mansi_Flowers
 
             this.reportViewer1.RefreshReport();
         }
+
+        private void Bill_View_KeyUp(object sender, KeyEventArgs e)
+        {
+            //if (e.KeyCode == Keys.Escape)
+            //{
+            //    this.Close();
+            //}
+        }
+
+        private void Bill_View_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
     }
 }

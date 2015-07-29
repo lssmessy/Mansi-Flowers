@@ -33,5 +33,13 @@ namespace Mansi_Flowers
             reportViewer1.LocalReport.SetParameters(month);
             this.reportViewer1.RefreshReport();
         }
+
+        private void Rate_View_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
     }
 }

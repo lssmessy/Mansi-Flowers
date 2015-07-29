@@ -21,8 +21,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Total_Lilies</rd:DefaultName>
-        <Top>0.70708in</Top>
-        <Left>4.86333in</Left>
+        <Top>0.5868in</Top>
+        <Left>4.40152in</Left>
         <Height>0.25in</Height>
         <Width>1in</Width>
         <Style>
@@ -42,7 +42,7 @@
               <Width>1in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.60417in</Width>
+              <Width>2.08334in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1in</Width>
@@ -286,10 +286,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Daily_Rp</DataSetName>
-        <Top>0.06944in</Top>
-        <Left>2.25917in</Left>
+        <Top>0.01736in</Top>
+        <Left>1.31818in</Left>
         <Height>0.5in</Height>
-        <Width>3.60417in</Width>
+        <Width>4.08334in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -329,8 +329,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>0.70708in</Top>
-        <Left>4.00917in</Left>
+        <Top>0.5868in</Top>
+        <Left>3.54736in</Left>
         <Height>0.25in</Height>
         <Width>0.60417in</Width>
         <ZIndex>2</ZIndex>
@@ -348,7 +348,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>8.30208in</Width>
   <Page>
     <PageHeader>
       <Height>1.03in</Height>
@@ -385,8 +385,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox9</rd:DefaultName>
-          <Top>0.375in</Top>
-          <Left>3.25917in</Left>
+          <Top>0.23736in</Top>
+          <Left>2.73832in</Left>
           <Height>0.25in</Height>
           <Width>1.22223in</Width>
           <Style>
@@ -418,8 +418,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Month</rd:DefaultName>
-          <Top>0.73833in</Top>
-          <Left>2.87723in</Left>
+          <Top>0.72791in</Top>
+          <Left>1.93624in</Left>
           <Height>0.25in</Height>
           <Width>1.60417in</Width>
           <ZIndex>1</ZIndex>
@@ -465,8 +465,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox9</rd:DefaultName>
-          <Top>0.73833in</Top>
-          <Left>2.25917in</Left>
+          <Top>0.72791in</Top>
+          <Left>1.31818in</Left>
           <Height>0.25in</Height>
           <Width>0.60417in</Width>
           <ZIndex>2</ZIndex>
@@ -484,8 +484,8 @@
           <Source>Embedded</Source>
           <Value>flower1</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.18278in</Top>
-          <Left>2.68972in</Left>
+          <Top>0.04514in</Top>
+          <Left>2.16887in</Left>
           <Height>0.5in</Height>
           <Width>0.5in</Width>
           <ZIndex>3</ZIndex>
@@ -499,8 +499,8 @@
           <Source>Embedded</Source>
           <Value>flower2</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.18278in</Top>
-          <Left>4.53695in</Left>
+          <Top>0.04514in</Top>
+          <Left>4.0161in</Left>
           <Height>0.5in</Height>
           <Width>0.5in</Width>
           <ZIndex>4</ZIndex>
@@ -510,6 +510,38 @@
             </Border>
           </Style>
         </Image>
+        <Line Name="Line1">
+          <Top>0.61458in</Top>
+          <Left>1.31819in</Left>
+          <Height>0in</Height>
+          <Width>4.08333in</Width>
+          <ZIndex>5</ZIndex>
+          <Style>
+            <Border>
+              <Style>Dotted</Style>
+            </Border>
+            <TopBorder>
+              <Color>Black</Color>
+              <Style>Dotted</Style>
+              <Width>1pt</Width>
+            </TopBorder>
+            <BottomBorder>
+              <Color>Black</Color>
+              <Style>Dotted</Style>
+              <Width>1pt</Width>
+            </BottomBorder>
+            <LeftBorder>
+              <Color>Black</Color>
+              <Style>Dotted</Style>
+              <Width>1pt</Width>
+            </LeftBorder>
+            <RightBorder>
+              <Color>Black</Color>
+              <Style>Dotted</Style>
+              <Width>1pt</Width>
+            </RightBorder>
+          </Style>
+        </Line>
       </ReportItems>
       <Style>
         <Border>

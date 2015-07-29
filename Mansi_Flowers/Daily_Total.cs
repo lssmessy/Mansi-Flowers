@@ -44,6 +44,7 @@ namespace Mansi_Flowers
             //rp3.SetParameterValue("Month", month);
             //crystalReportViewer1.ReportSource = rp3;
             //crystalReportViewer1.Refresh();
+            
             ReportParameter total_liles = new ReportParameter("Total_Lilies", p);
             ReportParameter mnth = new ReportParameter("Month", month);
             this.Table1BindingSource.DataSource = ds;
@@ -51,6 +52,19 @@ namespace Mansi_Flowers
             reportViewer1.LocalReport.SetParameters(mnth);
             reportViewer1.RefreshReport();
                         
+        }
+
+        private void Daily_Total_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
+
+        private void Daily_Total_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
         }
     }
 }

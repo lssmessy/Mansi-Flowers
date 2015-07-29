@@ -31,12 +31,22 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.rate_dataset = new Mansi_Flowers.rate_dataset();
             this.Rate_tblBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.rate_dataset)).BeginInit();
+            this.rate_dataset = new Mansi_Flowers.rate_dataset();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.Rate_tblBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rate_dataset)).BeginInit();
             this.SuspendLayout();
+            // 
+            // Rate_tblBindingSource
+            // 
+            this.Rate_tblBindingSource.DataMember = "Rate_tbl";
+            this.Rate_tblBindingSource.DataSource = this.rate_dataset;
+            // 
+            // rate_dataset
+            // 
+            this.rate_dataset.DataSetName = "rate_dataset";
+            this.rate_dataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -53,16 +63,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(284, 262);
             this.reportViewer1.TabIndex = 0;
             // 
-            // rate_dataset
-            // 
-            this.rate_dataset.DataSetName = "rate_dataset";
-            this.rate_dataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // Rate_tblBindingSource
-            // 
-            this.Rate_tblBindingSource.DataMember = "Rate_tbl";
-            this.Rate_tblBindingSource.DataSource = this.rate_dataset;
-            // 
             // Rate_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -72,8 +72,9 @@
             this.Name = "Rate_View";
             this.Text = "Rate_View";
             this.Load += new System.EventHandler(this.Rate_View_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.rate_dataset)).EndInit();
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Rate_View_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.Rate_tblBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rate_dataset)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -96,6 +96,7 @@ namespace Mansi_Flowers
                 
             }
             dataGridView1.Columns["Contact_Number"].Width = 130;
+            dataGridView1.Columns["OwnerName"].Width = 150;
             dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Pixel);
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.PaleVioletRed;
             dataGridView1.EnableHeadersVisualStyles = false;

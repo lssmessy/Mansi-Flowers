@@ -30,16 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OwnerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contact_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OwnerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contact_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,18 +56,38 @@
             this.Address});
             this.dataGridView1.Location = new System.Drawing.Point(1, 44);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(576, 378);
+            this.dataGridView1.Size = new System.Drawing.Size(652, 378);
             this.dataGridView1.StandardTab = true;
             this.dataGridView1.TabIndex = 2;
-            //this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick_1);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             this.dataGridView1.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_ColumnHeaderMouseClick);
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
             // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            // 
+            // OwnerName
+            // 
+            this.OwnerName.HeaderText = "OwnerName";
+            this.OwnerName.Name = "OwnerName";
+            // 
+            // Contact_Number
+            // 
+            this.Contact_Number.HeaderText = "Contact_Number";
+            this.Contact_Number.MinimumWidth = 10;
+            this.Contact_Number.Name = "Contact_Number";
+            // 
+            // Address
+            // 
+            this.Address.HeaderText = "Address";
+            this.Address.Name = "Address";
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.button1.Location = new System.Drawing.Point(311, 428);
+            this.button1.Location = new System.Drawing.Point(387, 429);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 37);
             this.button1.TabIndex = 3;
@@ -94,7 +116,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.Firebrick;
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(454, 428);
+            this.button2.Location = new System.Drawing.Point(530, 429);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(106, 38);
             this.button2.TabIndex = 4;
@@ -112,26 +134,24 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Search :";
             // 
-            // ID
+            // label2
             // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(24, 440);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Total Members :";
             // 
-            // OwnerName
+            // label3
             // 
-            this.OwnerName.HeaderText = "OwnerName";
-            this.OwnerName.Name = "OwnerName";
-            // 
-            // Contact_Number
-            // 
-            this.Contact_Number.HeaderText = "Contact_Number";
-            this.Contact_Number.MinimumWidth = 10;
-            this.Contact_Number.Name = "Contact_Number";
-            // 
-            // Address
-            // 
-            this.Address.HeaderText = "Address";
-            this.Address.Name = "Address";
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label3.Location = new System.Drawing.Point(128, 440);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(14, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "0";
             // 
             // View_Owners
             // 
@@ -139,7 +159,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
             this.CancelButton = this.button2;
-            this.ClientSize = new System.Drawing.Size(584, 478);
+            this.ClientSize = new System.Drawing.Size(665, 478);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
@@ -173,6 +195,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn OwnerName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Contact_Number;
         private System.Windows.Forms.DataGridViewTextBoxColumn Address;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
 
     }
 }

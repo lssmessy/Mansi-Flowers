@@ -62,7 +62,7 @@
             this.button1.Location = new System.Drawing.Point(494, 221);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(134, 42);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 1;
             this.button1.Text = "&Save Data";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -99,7 +99,7 @@
             this.button3.Location = new System.Drawing.Point(494, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(134, 42);
-            this.button3.TabIndex = 1;
+            this.button3.TabIndex = 2;
             this.button3.Text = "&Add Row";
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseVisualStyleBackColor = false;

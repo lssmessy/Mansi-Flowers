@@ -185,9 +185,9 @@
             // 
             this.dateTimePicker1.CustomFormat = "dd-MMMM-yyyy";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(304, 3);
+            this.dateTimePicker1.Location = new System.Drawing.Point(342, 5);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(139, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(131, 20);
             this.dateTimePicker1.TabIndex = 0;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -260,18 +260,18 @@
             this.dateTimePicker2.CustomFormat = "dd-MMMM-yyyy";
             this.dateTimePicker2.Enabled = false;
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(495, 3);
+            this.dateTimePicker2.Location = new System.Drawing.Point(515, 5);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(139, 20);
+            this.dateTimePicker2.Size = new System.Drawing.Size(130, 20);
             this.dateTimePicker2.TabIndex = 1;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(256, 9);
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(288, 7);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(42, 13);
+            this.label15.Size = new System.Drawing.Size(48, 15);
             this.label15.TabIndex = 44;
             this.label15.Text = "From :";
             // 
@@ -279,7 +279,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(459, 9);
+            this.label16.Location = new System.Drawing.Point(479, 9);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(30, 13);
             this.label16.TabIndex = 45;
