@@ -63,9 +63,9 @@ namespace Mansi_Flowers.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _22262_white_lily_1920x1080_flower_wallpaper {
+        internal static System.Drawing.Bitmap lili2 {
             get {
-                object obj = ResourceManager.GetObject("22262-white-lily-1920x1080-flower-wallpaper", resourceCulture);
+                object obj = ResourceManager.GetObject("lili2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

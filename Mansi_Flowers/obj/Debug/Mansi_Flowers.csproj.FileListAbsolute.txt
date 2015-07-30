@@ -85,4 +85,3 @@ D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\RdlCompile.cache
 D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\RdlCompile.compiled
 D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.exe
 D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.pdb
-D:\Mansi flowers\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.csprojResolveAssemblyReference.cache

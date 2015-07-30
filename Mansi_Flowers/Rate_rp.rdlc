@@ -191,7 +191,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>0.58334in</Height>
     <Style />
   </Body>
   <Width>6.5in</Width>
@@ -496,6 +496,7 @@ IiACIiACRoAz4N9FY3CFOgFJdQIOkPeLgAiIgAiIwKxtgqSj1QlofyeAEZ/XsfOScnsREAEREAERmEOA
 Kb8hVxEBERABERCBVhMYP378InQC9ie9qI7AmJtgsEyrDS7lREAEREAERKA/Aa4bfi+dgENpAF9JtCNw2IgRI94irxABERABERCBJAlwzv1SdASOI72eSEfgCnT+VJLGltIiIAIiIAIiMJAAIwIfpQNwalvvF6CDc5su9ZHfi4AIiIAIiMAgBDj+dhSdgHPbMBpAo/9y1qlZA3WHy+giIAIiIAIiIAJdCLAyfiyN5+kRTg1MRubzSZsh/0IytAiIgAiIgAiIQAkCfX19H6Ix/RWN6QuBjApMQ567kOVqa+j5PYm0L8P7X+F3yRIq6hUREAEREAEREIHBCGTHC4+3S3I8pzGykgiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIQOgE/g/suDcRfZH7YgAAAABJRU5ErkJggg==</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>318af69e-0539-4d94-b11e-fa2e37d60b46</rd:ReportID>
 </Report>

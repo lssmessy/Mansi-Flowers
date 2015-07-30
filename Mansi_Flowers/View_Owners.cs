@@ -77,6 +77,14 @@ namespace Mansi_Flowers
                 dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.PaleVioletRed;
                 dataGridView1.EnableHeadersVisualStyles = false;
                 label3.Text = dataGridView1.RowCount.ToString();
+                if (dataGridView1.Rows.Count > 0)
+            {
+                button1.Enabled = true;
+            }
+                else if (dataGridView1.Rows.Count <= 0)
+                {
+                    button1.Enabled = false;
+                }
             }
             catch (Exception ex)
             {

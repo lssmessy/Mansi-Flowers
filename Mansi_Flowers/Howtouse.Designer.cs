@@ -63,7 +63,7 @@
             this.Name = "Howtouse";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Howtouse";
+            this.Text = "How to use?";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Howtouse_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();

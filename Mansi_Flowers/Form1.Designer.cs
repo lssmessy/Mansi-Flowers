@@ -91,8 +91,8 @@
             this.addOwnerToolStripMenuItem,
             this.deleteOwnerToolStripMenuItem});
             this.liliOwnersToolStripMenuItem.Name = "liliOwnersToolStripMenuItem";
-            this.liliOwnersToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
-            this.liliOwnersToolStripMenuItem.Text = "Lili &owners";
+            this.liliOwnersToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.liliOwnersToolStripMenuItem.Text = "Lili &Owners";
             // 
             // addOwnerToolStripMenuItem
             // 
@@ -175,8 +175,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.BackgroundImage = global::Mansi_Flowers.Properties.Resources._22262_white_lily_1920x1080_flower_wallpaper;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BackgroundImage = global::Mansi_Flowers.Properties.Resources.lili2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(844, 311);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;

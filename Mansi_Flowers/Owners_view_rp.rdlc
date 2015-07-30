@@ -325,7 +325,7 @@
         <Top>0.01389in</Top>
         <Left>1.22792in</Left>
         <Height>0.5in</Height>
-        <Width>5.27208in</Width>
+        <Width>5.27209in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -397,7 +397,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>0.91666in</Height>
     <Style />
   </Body>
   <Width>7.95833in</Width>
@@ -577,36 +577,6 @@
             </RightBorder>
           </Style>
         </Line>
-        <Textbox Name="ExecutionTime">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=Globals!ExecutionTime</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>ExecutionTime</rd:DefaultName>
-          <Top>0.75222in</Top>
-          <Left>5.39583in</Left>
-          <Height>0.25in</Height>
-          <Width>1in</Width>
-          <ZIndex>6</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
       </ReportItems>
       <Style>
         <Border>
@@ -748,6 +718,7 @@ IwBmkzs5O4A11sPADr75W925AJhNzpsC2TAWAttIOi87iNlMPAVgNoWIuBr4q+wc1hh3AVtLuiw7iFk/
 iE0pDp5ZNTtLC1wK7CPpsuwgZm3hEQCzMZF0KfDh7BwNdzfwbuDVvvmblcsjAGZj5q2Ch7IEOBr4hKT7ssOYtZELgFkFIuIA4MDsHA3h4X6zCngKwKwCkg4CPpKdo+buwsP9ZpXxCIBZhSJid+AoYM3sLDXyAHA48AVJC7PDmHWFC4BZxSJiQ+Ak4KXZWZItAr4EHCrp3uwwZl3jAmCWICJWp/jWu092lgSPAl8DPitpfnYYs65yATBLFBGbAf8KvDY7SwUWA8cDB0m6OTuMWde5AJjVQO8Qoc8BG2VnGYMJ4BTgAEnXZYcxs4ILgFlNRMRTgK2BdwA7AGvkJirFGcAnJV2RHcTMluUCYFZDEbEW8Fbgb4FNgD/NTTSQxcBpwGGSfp4dxswm5wJg1gARsT4QwCuA9YF1gLV7/3w28PS8dH/wEPB14AhJN2aHMbPpuQCYNVxEvIJ6HDj0G2/ba9YcLgBmZmYd5K2AzczMOuh/AR2MLSdfLp9vAAAAAElFTkSuQmCC</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>1f8445b4-f141-490c-8a8d-56c3d5d9d565</rd:ReportID>
 </Report>

@@ -449,10 +449,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\lili2.jpg" />
     <None Include="Resources\skew_cube1.png" />
     <None Include="Resources\skew_cube.png" />
-    <None Include="bin\Debug\22262-white-lily-1920x1080-flower-wallpaper.jpg" />
     <None Include="icons\plus.png" />
+    <Content Include="bin\Debug\lili_wd.jpg" />
     <Content Include="Lilies.sdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

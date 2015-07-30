@@ -345,7 +345,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>0.95834in</Height>
     <Style />
   </Body>
   <Width>8.30208in</Width>
@@ -707,6 +707,7 @@ IwBmkzs5O4A11sPADr75W925AJhNzpsC2TAWAttIOi87iNlMPAVgNoWIuBr4q+wc1hh3AVtLuiw7iFk/
 iE0pDp5ZNTtLC1wK7CPpsuwgZm3hEQCzMZF0KfDh7BwNdzfwbuDVvvmblcsjAGZj5q2Ch7IEOBr4hKT7ssOYtZELgFkFIuIA4MDsHA3h4X6zCngKwKwCkg4CPpKdo+buwsP9ZpXxCIBZhSJid+AoYM3sLDXyAHA48AVJC7PDmHWFC4BZxSJiQ+Ak4KXZWZItAr4EHCrp3uwwZl3jAmCWICJWp/jWu092lgSPAl8DPitpfnYYs65yATBLFBGbAf8KvDY7SwUWA8cDB0m6OTuMWde5AJjVQO8Qoc8BG2VnGYMJ4BTgAEnXZYcxs4ILgFlNRMRTgK2BdwA7AGvkJirFGcAnJV2RHcTMluUCYFZDEbEW8Fbgb4FNgD/NTTSQxcBpwGGSfp4dxswm5wJg1gARsT4QwCuA9YF1gLV7/3w28PS8dH/wEPB14AhJN2aHMbPpuQCYNVxEvIJ6HDj0G2/ba9YcLgBmZmYd5K2AzczMOuh/AR2MLSdfLp9vAAAAAElFTkSuQmCC</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>2392e40f-8c94-4cfd-a01d-bf725d0cd609</rd:ReportID>
 </Report>
