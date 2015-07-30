@@ -85,6 +85,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -351,7 +352,7 @@
   <Width>8.30208in</Width>
   <Page>
     <PageHeader>
-      <Height>1.03in</Height>
+      <Height>1.06125in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
