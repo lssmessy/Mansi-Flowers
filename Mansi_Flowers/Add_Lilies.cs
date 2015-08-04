@@ -159,36 +159,7 @@ namespace Mansi_Flowers
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //this.Enabled = false;
-            //this.Cursor = Cursors.WaitCursor;
-            //int total = 0;
-            //try
-            //{
-            //    int count = dataGridView1.Rows.Count;
-            //    string theDate = dateTimePicker1.Value.ToString("dd-MM-yyyy");
-            //    for (int i = 0; i < count; i++)
-            //    {
-            //        //int lls = int.TryParse(dataGridView1.Rows[i].Cells[2].Value.ToString());
-            //        int lls = 0;
-            //        if (int.TryParse(dataGridView1.Rows[i].Cells[2].Value.ToString(), out lls))
-
-            //        cmd.Connection = conn;
-            //        conn.Open();
-            //        cmd.CommandText = ("UPDATE lilie_master SET Lilies='" + lls + "' WHERE (Lilie_Date ='" + theDate + "' AND Owner_ID=" + dataGridView1.Rows[i].Cells[0].Value + ")");//Owner_ID=" + dataGridView1.Rows[i].Cells[0].Value + " 
-            //        cmd.ExecuteNonQuery();
-            //        //total += int.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString());   
-            //        total += lls;
-                    
-            //        conn.Close();
-            //    }
-            //    label2.Text = total.ToString();
-            //    MessageBox.Show("Data updated","Lilies",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            //    this.Cursor = Cursors.Default;
-            //    this.Enabled = true;
-            //}
-            //catch (Exception exp) {
-            //    MessageBox.Show(exp.ToString());
-            //}
+            
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -323,11 +294,17 @@ namespace Mansi_Flowers
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            BindingSource bs = new BindingSource();
-            bs.DataSource = dataGridView1.DataSource;
-            bs.Filter = "OwnerName like '%" + textBox1.Text + "%' or Owner_ID like '%" + textBox1.Text + "%' or Lilies like '%" + textBox1.Text + "%'";
-            dataGridView1.DataSource = bs;
-           
+            try
+            {
+                BindingSource bs = new BindingSource();
+                bs.DataSource = dataGridView1.DataSource;
+                bs.Filter = "OwnerName like '%" + textBox1.Text + "%' or Owner_ID like '%" + textBox1.Text + "%' or Lilies like '%" + textBox1.Text + "%'";
+                dataGridView1.DataSource = bs;
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.ToString());
+            }
             
         
         }
@@ -360,19 +337,26 @@ namespace Mansi_Flowers
 
         private void textBox1_Enter(object sender, EventArgs e)
         {
-            textBox1.Text = "";
-            int total = 0;
-            int count = dataGridView1.Rows.Count;
-            int lls = 0;
-            for (int i = 0; i < count; i++)
+            try
             {
-                if (int.TryParse(dataGridView1.Rows[i].Cells[2].Value.ToString(), out lls))
-                    total += lls;
+                textBox1.Text = "";
+                int total = 0;
+                int count = dataGridView1.Rows.Count;
+                int lls = 0;
+                for (int i = 0; i < count; i++)
+                {
+                    if (int.TryParse(dataGridView1.Rows[i].Cells[2].Value.ToString(), out lls))
+                        total += lls;
 
 
 
+                }
+                label2.Text = total.ToString();
             }
-            label2.Text = total.ToString();
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.ToString());
+            }
         }
 
         private void dataGridView1_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
@@ -382,25 +366,31 @@ namespace Mansi_Flowers
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            int total = 0;
-            int count = dataGridView1.Rows.Count;
-            int lls = 0;
-            for (int i = 0; i < count; i++)
+            try
             {
-                if (int.TryParse(dataGridView1.Rows[i].Cells[2].Value.ToString(), out lls))
-                    total += lls;
+                int total = 0;
+                int count = dataGridView1.Rows.Count;
+                int lls = 0;
+                for (int i = 0; i < count; i++)
+                {
+                    if (int.TryParse(dataGridView1.Rows[i].Cells[2].Value.ToString(), out lls))
+                        total += lls;
 
-                
-                
+
+
+                }
+                label2.Text = total.ToString();
+                string theDate = dateTimePicker1.Value.ToString("dd-MM-yyyy");
+                cmd.Connection = conn;
+                conn.Open();
+                cmd.CommandText = ("UPDATE lilie_master SET Lilies='" + dataGridView1.CurrentRow.Cells[2].Value + "' WHERE (Lilie_Date ='" + theDate + "' AND Owner_ID=" + dataGridView1.CurrentRow.Cells[0].Value + ")");
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            
             }
-            label2.Text = total.ToString();
-            string theDate = dateTimePicker1.Value.ToString("dd-MM-yyyy");
-            cmd.Connection = conn;
-            conn.Open();
-            cmd.CommandText = ("UPDATE lilie_master SET Lilies='" + dataGridView1.CurrentRow.Cells[2].Value + "' WHERE (Lilie_Date ='" + theDate + "' AND Owner_ID=" + dataGridView1.CurrentRow.Cells[0].Value + ")");
-            cmd.ExecuteNonQuery();
-            conn.Close();
-            //int rowIndex = dataGridView1.CurrentCell.RowIndex;
+            catch (Exception exp) {
+                MessageBox.Show(exp.ToString());
+            }
 
             //MessageBox.Show(dataGridView1.CurrentRow.Cells[0].Value.ToString());
             
@@ -408,25 +398,26 @@ namespace Mansi_Flowers
 
         private void textBox1_Leave(object sender, EventArgs e)
         {
-            //textBox1.Text = "";
-            int total = 0;
-            int count = dataGridView1.Rows.Count;
-            int lls = 0;
-            for (int i = 0; i < count; i++)
+            try
             {
-                if (int.TryParse(dataGridView1.Rows[i].Cells[2].Value.ToString(), out lls))
-                    total += lls;
+                int total = 0;
+                int count = dataGridView1.Rows.Count;
+                int lls = 0;
+                for (int i = 0; i < count; i++)
+                {
+                    if (int.TryParse(dataGridView1.Rows[i].Cells[2].Value.ToString(), out lls))
+                        total += lls;
 
 
 
+                }
+                label2.Text = total.ToString();
             }
-            label2.Text = total.ToString();
-            //string theDate = dateTimePicker1.Value.ToString("dd-MM-yyyy");
-            //cmd.Connection = conn;
-            //conn.Open();
-            //cmd.CommandText = ("UPDATE lilie_master SET Lilies='" + dataGridView1.CurrentRow.Cells[2].Value + "' WHERE (Lilie_Date ='" + theDate + "' AND Owner_ID=" + dataGridView1.CurrentRow.Cells[0].Value + ")");
-            //cmd.ExecuteNonQuery();
-            //conn.Close();
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.ToString());
+            }
+            
         }
 
         private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
@@ -446,7 +437,8 @@ namespace Mansi_Flowers
 
         private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            //dataGridView1.BeginEdit(true);
+                        
+                
         }
 
         

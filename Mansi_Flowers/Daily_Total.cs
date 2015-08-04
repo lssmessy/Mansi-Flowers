@@ -35,15 +35,7 @@ namespace Mansi_Flowers
 
         private void Daily_Total_Load(object sender, EventArgs e)
         {
-            //CrystalReport3 rp3 = new CrystalReport3();
-            //rp3.SetDataSource(ds);
-            ////ExportOptions exp=new ExportOptions();
-            ////exp.ExportFormatType = ExportFormatType.PortableDocFormat;
-
-            //rp3.SetParameterValue("Total_Lilies", p);
-            //rp3.SetParameterValue("Month", month);
-            //crystalReportViewer1.ReportSource = rp3;
-            //crystalReportViewer1.Refresh();
+            
             
             ReportParameter total_liles = new ReportParameter("Total_Lilies", p);
             ReportParameter mnth = new ReportParameter("Month", month);

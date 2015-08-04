@@ -8,8 +8,6 @@
             <xs:sequence>
               <xs:element name="Owner_ID" type="xs:int" minOccurs="0" />
               <xs:element name="OwnerName" type="xs:string" minOccurs="0" />
-              <xs:element name="Contact_Number" type="xs:string" minOccurs="0" />
-              <xs:element name="Address" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

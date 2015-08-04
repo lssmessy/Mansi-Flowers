@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.owners_Dataset = new Mansi_Flowers.XSDs.Owners_Dataset();
             this.ownersDatasetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -42,9 +42,9 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource2.Name = "owner_data";
-            reportDataSource2.Value = this.owner_tblBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "Ownerdtls";
+            reportDataSource1.Value = this.owner_tblBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Mansi_Flowers.Owners_view_rp.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
@@ -86,9 +86,10 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource ownersDatasetBindingSource;
-        private XSDs.Owners_Dataset owners_Dataset;
         private System.Windows.Forms.BindingSource owner_tblBindingSource;
+        private XSDs.Owners_Dataset owners_Dataset;
+        private System.Windows.Forms.BindingSource ownersDatasetBindingSource;
+        //private XSDs.Owners_Dataset owners_Dataset;
 
     }
 }

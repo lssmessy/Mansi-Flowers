@@ -85,7 +85,7 @@ namespace Mansi_Flowers
                     if (int.TryParse(dataGridView1.Rows[i].Cells[2].Value.ToString(), out rates))
                         if (int.TryParse(dataGridView1.Rows[i].Cells[1].Value.ToString(), out lilis))
 
-                            amount = (lilis * rates) / 1000.0;
+                    amount = (lilis * rates) / 1000.0;
                     dataGridView1.Rows[i].Cells[3].Value = amount;
                     total_lilis += lilis;
                     total_amount += (double)amount;
