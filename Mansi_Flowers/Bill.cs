@@ -217,8 +217,9 @@ namespace Mansi_Flowers
         private void button3_Click(object sender, EventArgs e)
         {
             String month = dateTimePicker1.Value.ToString("MMMM-yyyy");
-            new Bill_View(ds, label2.Text,label3.Text, label5.Text, label7.Text, label9.Text, label11.Text, label13.Text,month).ShowDialog();
-            
+            String owner_id=oid.ToString();
+            new Bill_View(ds, label2.Text,label3.Text, label5.Text, label7.Text, label9.Text, label11.Text, label13.Text,month,owner_id).ShowDialog();
+            //new Bill_View(ds, label2.Text, label3.Text, label5.Text, label7.Text, label9.Text, label11.Text, label13.Text, month).ShowDialog();
             
         }
     }

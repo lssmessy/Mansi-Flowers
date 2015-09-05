@@ -143,14 +143,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Mansi_Flowers.exe" size="888832">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Mansi_Flowers.exe" size="891392">
       <assemblyIdentity name="Mansi_Flowers" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>mOigMGbvkF6Jo5S5DsXeD9+sBx5EEkoJfZr62ej35CM=</dsig:DigestValue>
+        <dsig:DigestValue>aI4Qz1KgEqrHKaRrO7eT48dFHiQBPaIFGkEO+/rVDT8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -361,7 +361,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>5XxgV+P5D3eIJ0ysJxUEIrVl194XDQYlLUHyrPKToyc=</dsig:DigestValue>
+      <dsig:DigestValue>pNyTwlrd8IKQFbk3wJuOTOJx0cq5pRLJTNtrFZP6V+Q=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Lilies_Master.sdf" size="65536" writeableType="applicationData">
@@ -370,7 +370,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>yYvxXXZIkcMlz1uJ70pCMu94TiuQ/uaK0+tf7uqEHXo=</dsig:DigestValue>
+      <dsig:DigestValue>PpL6u6QlTX8kPTUDULO3yJlb9u5GRu46k+DBG4oRFZw=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Mansi_Flowers.exe.config" size="1261">

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,7 @@ namespace Mansi_Flowers
         private string p6;
         private string p7;
         private string month;
-
+        private string owner_id;
         
         //public Bill_View(DataSet ds)
         //{
@@ -45,7 +46,7 @@ namespace Mansi_Flowers
         //    this.p7 = p7;
         //}
 
-        public Bill_View(DataSet ds, string p1, string p2, string p3, string p4, string p5, string p6, string p7, string month)
+        public Bill_View(DataSet ds, string p1, string p2, string p3, string p4, string p5, string p6, string p7, string month,string owner_id)
         {
             // TODO: Complete member initialization
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
@@ -60,6 +61,7 @@ namespace Mansi_Flowers
             this.p6 = p6;
             this.p7 = p7;
             this.month = month;
+            this.owner_id = owner_id;
         }
 
         private void Bill_View_Load(object sender, EventArgs e)
@@ -85,6 +87,7 @@ namespace Mansi_Flowers
             ReportParameter ttl_amt = new ReportParameter("Total_Amount", p6);
             ReportParameter final = new ReportParameter("Final_Amount", p7);
             ReportParameter mnth = new ReportParameter("Month", month);
+            ReportParameter oid = new ReportParameter("ID", owner_id);
             this.NewDataSetBindingSource.DataSource = ds;
             reportViewer1.LocalReport.SetParameters(nme);
             reportViewer1.LocalReport.SetParameters(ttl);
@@ -94,11 +97,18 @@ namespace Mansi_Flowers
             reportViewer1.LocalReport.SetParameters(ttl_amt);
             reportViewer1.LocalReport.SetParameters(final);
             reportViewer1.LocalReport.SetParameters(mnth);
+            reportViewer1.LocalReport.SetParameters(oid);
             reportViewer1.RefreshReport();
+            //setting the customized margins for the page
+            System.Drawing.Printing.PageSettings rps = new System.Drawing.Printing.PageSettings();
+            rps.Margins.Left = 96; //25.4 mm
+            rps.Margins.Right = 96;
+            rps.Margins.Top = 30;//7.9375 mm
+            rps.Margins.Bottom = 19;//5.0 mm
+                        
+            reportViewer1.SetPageSettings(rps);
 
-
-
-
+            
             this.reportViewer1.RefreshReport();
         }
 
@@ -116,6 +126,12 @@ namespace Mansi_Flowers
             {
                 this.Close();
             }
+        }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+            
+            
         }
     }
 }

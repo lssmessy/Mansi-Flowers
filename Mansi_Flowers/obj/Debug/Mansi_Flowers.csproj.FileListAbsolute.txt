@@ -107,3 +107,4 @@ H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.exe.manifest
 H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.application
 H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.exe
 H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.pdb
+H:\Mansi-Flowers\Mansi_Flowers\obj\Debug\Mansi_Flowers.csprojResolveAssemblyReference.cache

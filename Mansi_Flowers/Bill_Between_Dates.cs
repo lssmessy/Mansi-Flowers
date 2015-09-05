@@ -93,6 +93,7 @@ namespace Mansi_Flowers
 
 
                 }
+               
 
                 ds.Tables.Add(dtbl);
                 ds.WriteXmlSchema("Bill.xml");
@@ -138,7 +139,7 @@ namespace Mansi_Flowers
             dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Pixel);
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.PaleVioletRed;
             dataGridView1.EnableHeadersVisualStyles = false;
-            //dateTimePicker2.MaxDate = DateTime.Today;
+            
         }
 
         
@@ -146,7 +147,9 @@ namespace Mansi_Flowers
         private void button3_Click(object sender, EventArgs e)
         {
             String month = dateTimePicker1.Value.ToString("MMMM-yyyy");
-            new Bill_View(ds, label2.Text, label3.Text, label5.Text, label7.Text, label9.Text, label11.Text, label13.Text, month).ShowDialog();
+            String owner_id = oid.ToString();
+            new Bill_View(ds, label2.Text, label3.Text, label5.Text, label7.Text, label9.Text, label11.Text, label13.Text, month, owner_id).ShowDialog();
+            //new Bill_View(ds, label2.Text, label3.Text, label5.Text, label7.Text, label9.Text, label11.Text, label13.Text, month).ShowDialog();
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)

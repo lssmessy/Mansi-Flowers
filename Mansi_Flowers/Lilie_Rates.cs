@@ -206,37 +206,9 @@ namespace Mansi_Flowers
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //try{
-            //    this.Enabled = false;
-            //    this.Cursor = Cursors.WaitCursor;
-
-            //for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            //{
-            //    cmd.Connection = conn;
-            //    conn.Open();
-            //    string dts = dataGridView1.Rows[i].Cells[0].Value.ToString();
-            //    int rates = 0;
-            //    if (int.TryParse(dataGridView1.Rows[i].Cells[1].Value.ToString(), out rates))
-
-
-            //    cmd.CommandText = ("UPDATE lilie_master SET Rate='" + rates + "' WHERE Lilie_Date ='" + dts + "'");
-            //    cmd.ExecuteNonQuery();//dataGridView1.Rows[i].Cells["Rate"].Value
-            //    conn.Close();
-            //}
-            //MessageBox.Show("Rates updated", "Rates", MessageBoxButtons.OK,MessageBoxIcon.Information);
-            //this.Cursor = Cursors.Default;
-            //this.Enabled = true;
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.ToString());
-            //}
+            
         }
 
-        //private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
-        //{
-
-        //}
         private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             e.Control.KeyPress -= new KeyPressEventHandler(Contact_Number_Clicked);
@@ -261,19 +233,59 @@ namespace Mansi_Flowers
 
         private void button3_Click(object sender, EventArgs e)
         {
+            
             String thedate = dateTimePicker1.Value.ToString("MMMM - yyyy");
-            new Rate_View(ds,thedate).ShowDialog();
+                        
+            new Rate_View(this.ds,thedate).ShowDialog();
             
         }
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            string theDate = dateTimePicker1.Value.ToString("dd-MM-yyyy");
-            cmd.Connection = conn;
-            conn.Open();
-            cmd.CommandText = ("UPDATE lilie_master SET Rate='" + dataGridView1.CurrentRow.Cells[1].Value + "' WHERE Lilie_Date ='" + dataGridView1.CurrentRow.Cells[0].Value + "'");
-            cmd.ExecuteNonQuery();
-            conn.Close();
+            try
+            {
+                string theDate = dateTimePicker1.Value.ToString("dd-MM-yyyy");
+                cmd.Connection = conn;
+                conn.Open();
+                cmd.CommandText = ("UPDATE lilie_master SET Rate='" + dataGridView1.CurrentRow.Cells[1].Value + "' WHERE Lilie_Date ='" + dataGridView1.CurrentRow.Cells[0].Value + "'");
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                ds.Tables[0].GetChanges();
+                ds.WriteXmlSchema("Rates.xsd");
+                
+                
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.ToString());
+            }
+
+            //DataTable dt = ListToDataTable(lstPairs);
+            //dataGridView1.DataSource = dt;
+            //dataGridView1.Refresh();
+            
+
+            //for (int i = 0; i <= dataGridView1.Rows.Count - 1; i++)
+            //{
+            //    if (dataGridView1.Rows[i].Cells[1].Value.ToString() == "")
+            //    {
+            //        String dts = dataGridView1.Rows[i].Cells[0].Value.ToString();
+            //        cmd.Connection = conn;
+            //        conn.Open();
+            //        int s = 0;
+            //        cmd.CommandText = ("UPDATE lilie_master SET Rate='" + s + "' WHERE Lilie_Date='" + dataGridView1.Rows[i].Cells[0].Value.ToString() + "'");
+            //        cmd.ExecuteNonQuery();
+            //        conn.Close();
+
+            //    }
+            //}
+
+
+
+            //ds.Namespace = "rate_dataset";
+            //dt.TableName = "Rate_tbl";
+            //ds.Tables.Add(dt);
+            ////ds.WriteXmlSchema("Rate_View.xml");
+            //ds.WriteXmlSchema("Rates.xsd");
         }
 
         private void button2_Click(object sender, EventArgs e)

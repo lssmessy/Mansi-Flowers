@@ -339,15 +339,14 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>0.95834in</Height>
+    <Height>0.91667in</Height>
     <Style />
   </Body>
-  <Width>8.30208in</Width>
+  <Width>5.45833in</Width>
   <Page>
     <PageHeader>
       <Height>1.06125in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
-      <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
         <Textbox Name="Textbox9">
           <CanGrow>true</CanGrow>

@@ -122,24 +122,28 @@ namespace Mansi_Flowers
             //bs.Filter = "OwnerName like '%" + textBox1.Text + "%'";// OR Contact_Number LIKE '%" + searchText + "%' OR Address LIKE '%" + searchText + "%')";
             //dataGridView1.DataSource = bs;
 
-            try{
-            dataGridView1.Rows.Clear();
-            dataGridView1.Refresh();
-            String searchText = textBox1.Text;
-            String query = "SELECT * FROM owner_master WHERE OwnerName LIKE '%" + searchText + "%' OR Contact_Number LIKE '%" + searchText + "%' OR Address LIKE '%" + searchText + "%'";
-            SqlCeDataAdapter adapter = new SqlCeDataAdapter(query, conn);
-            //OleDbDataAdapter adapter = new OleDbDataAdapter(query, conn);
-            //OleDbCommandBuilder commnder = new OleDbCommandBuilder(adapter);
-            SqlCeCommandBuilder commnder = new SqlCeCommandBuilder(adapter);
-            DataTable dt = new DataTable();
-            DataSet ds = new DataSet();
-            adapter.Fill(dt);
-            for (int i = 0; i < dt.Rows.Count; i++)
+
+
+
+            try
             {
+                dataGridView1.Rows.Clear();
+                dataGridView1.Refresh();
+                String searchText = textBox1.Text;
+                String query = "SELECT * FROM owner_master WHERE Owner_ID LIKE '%" + searchText + "%' OR OwnerName LIKE '%" + searchText + "%'";// OR Contact_Number LIKE '%" + searchText + "%' OR Address LIKE '%" + searchText + "%'";
+                SqlCeDataAdapter adapter = new SqlCeDataAdapter(query, conn);
+                //OleDbDataAdapter adapter = new OleDbDataAdapter(query, conn);
+                //OleDbCommandBuilder commnder = new OleDbCommandBuilder(adapter);
+                SqlCeCommandBuilder commnder = new SqlCeCommandBuilder(adapter);
+                DataTable dt = new DataTable();
+                DataSet ds = new DataSet();
+                adapter.Fill(dt);
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
 
-                dataGridView1.Rows.Add(dt.Rows[i][0], dt.Rows[i][1], dt.Rows[i][2], dt.Rows[i][3]);
+                    dataGridView1.Rows.Add(dt.Rows[i][0], dt.Rows[i][1], dt.Rows[i][2], dt.Rows[i][3]);
 
-            }
+                }
             }
             catch (Exception ex)
             {

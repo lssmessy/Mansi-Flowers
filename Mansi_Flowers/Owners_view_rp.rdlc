@@ -333,12 +333,11 @@
     <Height>0.91666in</Height>
     <Style />
   </Body>
-  <Width>7.95833in</Width>
+  <Width>6.5in</Width>
   <Page>
     <PageHeader>
       <Height>1.07167in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
-      <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
         <Image Name="bunch_flowers">
           <Source>Embedded</Source>

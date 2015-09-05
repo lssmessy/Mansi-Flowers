@@ -190,12 +190,11 @@
     <Height>0.58334in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>4.04167in</Width>
   <Page>
     <PageHeader>
       <Height>1in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
-      <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
         <Image Name="Image5">
           <Source>Embedded</Source>

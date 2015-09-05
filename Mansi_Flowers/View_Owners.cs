@@ -94,6 +94,7 @@ namespace Mansi_Flowers
                 {
                     button1.Enabled = false;
                 }
+                
             }
             catch (Exception ex)
             {
@@ -155,11 +156,11 @@ namespace Mansi_Flowers
                 dataGridView1.Refresh();
                 String searchText = textBox1.Text;
                 String query = "SELECT * FROM owner_master WHERE Owner_ID LIKE '%" + searchText + "%' OR OwnerName LIKE '%" + searchText + "%' OR Contact_Number LIKE '%" + searchText + "%' OR Address LIKE '%" + searchText + "%'";
-            
+
                 SqlCeDataAdapter adapter = new SqlCeDataAdapter(query, conn);
                 SqlCeCommandBuilder commnder = new SqlCeCommandBuilder(adapter);
                 DataTable dt = new DataTable();
-           
+
                 adapter.Fill(dt);
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
@@ -173,10 +174,24 @@ namespace Mansi_Flowers
                 MessageBox.Show(ex.ToString());
             }
 
-            //BindingSource bs = new BindingSource();
-            //bs.DataSource = dataGridView1.DataSource;
-            //bs.Filter = "OwnerName like '%" + textBox1.Text + "%' or Owner_ID like '%" + textBox1.Text + "%' or Address like '%" + textBox1.Text + "%'";
-            //dataGridView1.DataSource = bs;
+            //try
+            //{
+            //    if (textBox1.Text == "")
+            //    {
+            //    }
+            //    else
+            //    {
+            //        BindingSource bs = new BindingSource();
+            //        bs.DataSource = dataGridView1.DataSource;
+            //        bs.Filter = "OwnerName like '%" + textBox1.Text + "%' or Owner_ID like '%" + textBox1.Text;
+            //        dataGridView1.DataSource = bs;
+            //    }
+            //}
+            //catch (Exception exp)
+            //{
+            //    MessageBox.Show(exp.ToString());
+            //}
+            
         }
 
         private void textBox1_Enter(object sender, EventArgs e)
@@ -216,7 +231,7 @@ namespace Mansi_Flowers
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-           
+            
             try{
                 //if (e.RowIndex == -1 || e.ColumnIndex != 4)  // ignore header row and any column
                 //    return;                                  //  that doesn't have a file name
@@ -230,6 +245,7 @@ namespace Mansi_Flowers
                     String owner = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                     int oid = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
                     //Bill bill = new Bill(owner,oid);
+                    
                     Bill_Between_Dates bill = new Bill_Between_Dates(owner, oid);
                     bill.ShowDialog();
 
@@ -239,6 +255,7 @@ namespace Mansi_Flowers
             {
                 try
                 {
+                   //int oid = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
                     int total_lilis = 0;
                     double amount = 0.0;
                     //label2.Text = owner;
@@ -318,7 +335,9 @@ namespace Mansi_Flowers
 
 
                     String month_my = dateTimePicker1.Value.ToString("MMMM-yyyy");
-                    new Bill_View(ds, owner, total_lilis.ToString(), total_amount.ToString(), rent.ToString(), commission.ToString(), final_amount.ToString(), round_final.ToString(), month_my).ShowDialog();
+                    //MessageBox.Show(oid);
+                    new Bill_View(ds, owner, total_lilis.ToString(), total_amount.ToString(), rent.ToString(), commission.ToString(), final_amount.ToString(), round_final.ToString(), month_my,oid).ShowDialog();
+                    //new Bill_View(ds, owner, total_lilis.ToString(), total_amount.ToString(), rent.ToString(), commission.ToString(), final_amount.ToString(), round_final.ToString(), month_my).ShowDialog();
                     
                 }
                 catch (Exception ex)

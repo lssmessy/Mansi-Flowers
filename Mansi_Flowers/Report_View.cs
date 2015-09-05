@@ -16,11 +16,7 @@ namespace Mansi_Flowers
         private DataSet ds;
         private string p;
 
-        //public Report_View(DataSet ds)
-        //{
-        //    // TODO: Complete member initialization
-            
-        //}
+        
 
         public Report_View(DataSet ds, string p)
         {
